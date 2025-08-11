@@ -116,7 +116,9 @@ def process_benchmark_csv(benchmark_dir: Path) -> bool:
                 continue
                 
             # Extract all available test metrics
-            metrics = run_data.get('metrics', {})
+            # Test metrics are stored in the summary section, not metrics section
+            summary = run_data.get('summary', {})
+            metrics = run_data.get('metrics', {})  # Keep for backward compatibility
             config = run_data.get('config', {})
             
             # Build enhanced row
@@ -129,24 +131,30 @@ def process_benchmark_csv(benchmark_dir: Path) -> bool:
                 'learning_rate': config.get('learning_rate', row.get('config_learning_rate', None)),
                 'batch_size': config.get('batch_size', row.get('config_batch_size', None)),
                 'epochs': config.get('epochs', row.get('config_epochs', None)),
-                'epoch': metrics.get('epoch', row.get('metric_epoch', None)),
+                'epoch': summary.get('epoch', metrics.get('epoch', row.get('metric_epoch', None))),
             }
             
-            # Add test metrics (prioritize test metrics over val/train)
+            # Add test metrics - updated to match WandB format exactly
             test_metrics = [
-                ('test_balanced_accuracy', ['test/accuracy', 'Test/Balanced_Accuracy', 'test/balanced_accuracy']),
-                ('test_accuracy', ['test/acc', 'test/accuracy']),
-                ('test_f1', ['test/f1_score', 'Test/F1', 'test/f1']),
-                ('test_auc', ['test/auc', 'test/roc_auc']),
-                ('test_precision', ['test/precision']),
-                ('test_recall', ['test/recall']),
-                ('test_sensitivity', ['test/sensitivity']),
-                ('test_specificity', ['test/specificity']),
+                ('Test_Balanced_Accuracy', ['Test/Balanced_Accuracy']),
+                ('Test_F1', ['Test/F1']),
+                ('Test_AUROC', ['Test/AUROC']),
+                ('Test_AP', ['Test/AP']),
+                ('Test_Accuracy', ['Test/Accuracy']),
+                ('Test_Precision', ['Test/Precision']),
+                ('Test_Recall', ['Test/Recall']),
+                ('Test_Sensitivity', ['Test/Sensitivity']),
+                ('Test_Specificity', ['Test/Specificity']),
             ]
             
             for metric_name, possible_keys in test_metrics:
                 value = None
                 for key in possible_keys:
+                    # First check summary section (where WandB stores final metrics)
+                    if key in summary:
+                        value = summary[key]
+                        break
+                    # Then check metrics section for backward compatibility
                     if key in metrics:
                         value = metrics[key]
                         break
@@ -157,19 +165,26 @@ def process_benchmark_csv(benchmark_dir: Path) -> bool:
                         break
                 enhanced_row[metric_name] = value
             
-            # Add validation metrics
+            # Add validation metrics - updated to match WandB format
             val_metrics = [
-                ('val_balanced_accuracy', ['val/accuracy', 'Val/Balanced_Accuracy', 'val/balanced_accuracy']),
-                ('val_f1', ['val/f1_score', 'Val/F1', 'val/f1']),
-                ('val_auc', ['val/auc', 'val/roc_auc']),
+                ('Val_Balanced_Accuracy', ['Val/Balanced_Accuracy']),
+                ('Val_F1', ['Val/F1']),
+                ('Val_AUROC', ['Val/AUROC']),
+                ('Val_AP', ['Val/AP']),
             ]
             
             for metric_name, possible_keys in val_metrics:
                 value = None
                 for key in possible_keys:
+                    # First check summary section (where WandB stores final metrics)
+                    if key in summary:
+                        value = summary[key]
+                        break
+                    # Then check metrics section for backward compatibility
                     if key in metrics:
                         value = metrics[key]
                         break
+                    # Also check with metric_ prefix from original CSV
                     metric_key = f'metric_{key}'
                     if metric_key in row:
                         value = row[metric_key]
@@ -187,13 +202,13 @@ def process_benchmark_csv(benchmark_dir: Path) -> bool:
         # Create new DataFrame
         enhanced_df = pd.DataFrame(enhanced_rows)
         
-        # Reorder columns for better readability
+        # Reorder columns for better readability - updated metric names
         column_order = [
             'run_id', 'run_name', 'project', 'modality', 'model', 
             'learning_rate', 'batch_size', 'epochs', 'epoch',
-            'test_balanced_accuracy', 'test_accuracy', 'test_f1', 'test_auc', 
-            'test_precision', 'test_recall', 'test_sensitivity', 'test_specificity',
-            'val_balanced_accuracy', 'val_f1', 'val_auc',
+            'Test_Balanced_Accuracy', 'Test_Accuracy', 'Test_F1', 'Test_AUROC', 'Test_AP',
+            'Test_Precision', 'Test_Recall', 'Test_Sensitivity', 'Test_Specificity',
+            'Val_Balanced_Accuracy', 'Val_F1', 'Val_AUROC', 'Val_AP',
             'notes'
         ]
         
@@ -203,7 +218,11 @@ def process_benchmark_csv(benchmark_dir: Path) -> bool:
         
         # Save enhanced CSV
         enhanced_df.to_csv(csv_path, index=False)
-        print(f"Enhanced CSV saved for {benchmark_dir.name}: {len(enhanced_df)} rows")
+        
+        # Print summary of extracted metrics
+        test_metrics_found = sum(1 for col in ['Test_Balanced_Accuracy', 'Test_F1', 'Test_AUROC', 'Test_AP'] 
+                               if col in enhanced_df.columns and enhanced_df[col].notna().sum() > 0)
+        print(f"Enhanced CSV saved for {benchmark_dir.name}: {len(enhanced_df)} rows, {test_metrics_found}/4 test metrics populated")
         
         return True
         
