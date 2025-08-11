@@ -1,208 +1,232 @@
-# MDAE Data Repository
-
-This repository contains the data extraction, processing, and analysis infrastructure for the MDAE (Masked Denoising Autoencoder) paper benchmarking experiments.
+# MDAE Benchmarking Data Analysis Pipeline
 
 ## Overview
 
-This repository organizes and tracks experimental results from various brain MRI classification benchmarks, comparing MDAE against established baseline models including BrainMVP, BrainIAC, MRI-CORE, and OpenMind-based methods.
+This repository contains the complete data extraction, processing, and analysis infrastructure for the MDAE (Masked-Diffusion Autoencoder) paper benchmarking experiments. The pipeline processes results from 15 brain MRI classification benchmarks across multiple modalities, comparing MDAE against established baseline models.
+
+## Quick Start
+
+```bash
+# 1. Extract data from WandB
+python scripts/extract_wandb_data.py --all
+
+# 2. Run comprehensive analysis (recommended)
+python run_comprehensive_analysis.py
+
+# Alternative: Use individual scripts
+# python process_results_final.py
+# python create_final_tables.py
+```
 
 ## Repository Structure
 
 ```
-MDAE_data/
-├── benchmarks/          # Benchmark task definitions and metadata
-├── baselines/           # Baseline model configurations
-├── scripts/             # Data extraction and analysis scripts
-├── raw_data/            # Raw extracted data from WandB
-├── processed_data/      # Cleaned and aggregated results
-├── outputs/             # Final tables, figures, and reports
-└── docs/                # Documentation
+data/
+├── raw_data/                    # Raw data from WandB
+│   └── 20250811/                # Latest extraction
+│       └── [benchmark_name]/    # 15 benchmark folders
+│           ├── full_data.json   # Complete WandB data
+│           └── runs_summary.csv # Flattened metrics
+│
+├── processed_data/              # Processed results
+│   └── benchmark_results_final/ # Latest analysis
+│       ├── [benchmark_name]/    # Per-benchmark results
+│       │   └── modalities/      # Per-modality analysis
+│       └── *.csv                # Summary tables
+│
+├── scripts/                     # Processing scripts
+│   ├── extract_wandb_data.py   # WandB data extraction
+│   └── *.py                     # Analysis scripts
+│
+├── baselines/                   # Method configurations
+│   └── key_baselines.txt       # Method name patterns
+│
+└── README_METHODS.md           # Method pattern documentation
 ```
 
-## Setup
+## Current Workflow (Updated 2024-08-11)
 
-### Prerequisites
-
-- Python 3.8+
-- WandB account with access to experiment runs
-- Environment variable `WANDB_API_KEY` set
-
-### Installation
+### Step 1: Data Extraction
+Extract experiment results from WandB, including all metrics and configurations.
 
 ```bash
-# Clone the repository
-git clone /home/t-jiachentu/repos/benchmarking/misc/data MDAE_data
-cd MDAE_data
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up WandB API key (if not already set)
-export WANDB_API_KEY=your_api_key_here
-```
-
-## Project Workflow
-
-### Complete Data Processing Pipeline
-
-This repository follows a 4-step workflow for comprehensive benchmarking analysis:
-
-#### Step 1: Data Extraction from WandB
-Extract experiment results from WandB API, including run configurations, metrics, and notes.
-
-```bash
-# Extract data for a specific benchmark
-python scripts/extract_wandb_data.py --benchmark brats18/lgg_vs_hgg
-
 # Extract all benchmark data
 python scripts/extract_wandb_data.py --all
 
-# Extract with specific date range
-python scripts/extract_wandb_data.py --benchmark brats18/lgg_vs_hgg --start-date 2024-07-01
+# Extract specific benchmark
+python scripts/extract_wandb_data.py --benchmark brats18/lgg_vs_hgg
 ```
 
-**Output**: Raw data stored in `raw_data/YYYYMMDD/benchmark_name/`
-- `full_data.json`: Complete WandB run data including metrics, configs, and notes
-- `runs_summary.csv`: Flattened view of key metrics for analysis
+**Output**: `raw_data/YYYYMMDD/[benchmark_name]/`
 
-#### Step 2: CSV Regeneration and Cleaning
-Regenerate CSV files to ensure all test metrics are properly extracted from JSON data.
+### Step 2: Process Results with Fixed Patterns
+Process all benchmarks using corrected MDAE pattern recognition.
 
 ```bash
-# Regenerate all CSV files with complete test metrics
-python scripts/regenerate_csv_files.py
-
-# Sort CSV files by Test/AUROC for analysis
-python scripts/sort_csv_by_auroc.py
+# Main processing script with fixed MDAE patterns
+python process_results_final.py
 ```
 
-**Key metrics extracted**:
-- Test/AUROC (Area Under ROC Curve)
-- Test/AP (Average Precision)
-- Test/Balanced_Accuracy
-- Test/F1 (F1 Score)
-- Additional validation metrics
+**Key Features**:
+- ✅ Correctly identifies all MDAE variants (`resenc_MDAE_pretrained_*`, etc.)
+- ✅ Processes all modalities for each benchmark
+- ✅ Generates threshold-independent visualizations (AUROC & AP)
+- ✅ Creates comprehensive metrics tables
 
-#### Step 3: Data Organization and Analysis
-Organize and analyze results across 15 benchmark tasks with 3,003+ experimental runs.
+**Output**: `processed_data/benchmark_results_final/`
+
+### Step 3: Generate Analysis Tables
+Create comprehensive tables for paper and analysis.
 
 ```bash
-# Aggregate results across all baselines for a benchmark
-python scripts/aggregate_results.py --benchmark brats18/lgg_vs_hgg
-
-# Generate comparison tables
-python scripts/generate_tables.py --format latex --output outputs/tables/
+# Generate summary tables and LaTeX formatting
+python create_final_tables.py
 ```
 
-#### Step 4: Report Generation
-Generate comprehensive reports and visualizations for publication.
+**Output Files**:
+- `comprehensive_auroc_ap_table.csv` - All methods × all benchmarks
+- `methods_summary_statistics.csv` - Summary with mean ± std
+- `paper_comprehensive_table.tex` - LaTeX table for paper
+
+### Step 4: Combined MDAE Analysis (Optional)
+Combine MDAE and MDAE-TC variants for overall analysis.
 
 ```bash
-# Generate comprehensive report
-python scripts/generate_report.py --output outputs/reports/mdae_benchmark_report.pdf
+python process_mdae_combined.py
 ```
 
-### Current Data Status
+## Method Recognition Patterns
 
-As of August 2025, the repository contains:
-- **15 benchmark tasks** across 6 major brain MRI datasets
-- **3,003+ experimental runs** from WandB
-- **Complete test metrics** extracted and organized by Test/AUROC
-- **Standardized CSV format** with notes field included
-- **Git-tracked results** with proper version control
+**CRITICAL**: The system uses pattern matching to identify methods. See `README_METHODS.md` for complete documentation.
 
-### Data Quality Assurance
+### Our Methods
+- **MDAE**: `resenc_MDAETrainer_*`, `resenc_MDAE_pretrained_*`, `resenc_MDAE_scratch_*`
+- **MDAE (TC)**: `resenc_time_conditioned_*`, `resenc_multimodal_mm_mdae_*`
 
-The workflow includes multiple quality checks:
-1. **Metric validation**: Ensures all test metrics are extracted from WandB summary section
-2. **Sorting verification**: Results ordered by Test/AUROC for consistent analysis
-3. **Notes inclusion**: WandB notes field now captured for run documentation
-4. **Version control**: All changes tracked with descriptive commit messages
-
-## Benchmark Tasks
-
-The repository tracks 15 benchmark tasks across multiple datasets:
-
-1. **BRATS18**: LGG vs HGG classification
-2. **BRATS23**: Multiple tumor type classifications
-3. **RSNA-MICCAI**: MGMT methylation prediction
-4. **TCGA-GBM**: Survival predictions
-5. **UCSF-PDGM**: IDH classification
-6. **UPenn-GBM**: Various clinical outcome predictions
-
-See `docs/baselines_and_benchmarks.md` for complete details.
-
-## Baseline Models
-
-### Foundation Models
-- **BrainMVP**: Brain Masked Vision Pretraining
-- **BrainIAC**: Foundation model for generalized brain MRI analysis
-- **MRI-CORE**: Core MRI analysis model
-
-### OpenMind-based Methods
-- VF (Vision Foundation)
-- VoCo (Volume Contrastive)
-- MG (Multi-Grid)
-- SimCLR
-- SwinUNETR
-- MAE (Masked Autoencoder)
-
-## Data Organization
-
-### Benchmark Metadata
-Each benchmark is defined with:
-- Task description
-- Modalities tested
-- WandB project URLs
-- Evaluation metrics
-- Priority levels (indicated by ★ ratings)
-
-### Extracted Data Format
-- **Raw data**: Complete WandB run information in JSON
-- **Processed data**: Standardized CSV/Parquet files
-- **Aggregated results**: Summary statistics and comparisons
+### Baselines
+- **SSL Methods**: MAE, SimCLR, VoCo, MG, SwinUNETR, VF, S3D
+- **Foundation Models**: BrainIAC, MRI-Core, BrainMVP
+- **Others**: DinoV2, ResNet-50 (scratch)
 
 ## Key Scripts
 
-### `extract_wandb_data.py`
-Connects to WandB API and extracts experiment metrics.
+### Core Processing
 
-### `aggregate_results.py`
-Combines results across modalities and baselines.
+#### `run_comprehensive_analysis.py` ⭐ PRIMARY SCRIPT
+Complete reproducible pipeline for all analysis.
+- Processes raw data to final results
+- Handles all 15 benchmarks and 44+ modality combinations
+- Creates MDAE (Combined) analysis
+- Generates all visualizations and tables
+- **Single command to regenerate everything**
 
-### `generate_tables.py`
-Creates publication-ready tables in LaTeX/Markdown format.
+#### `process_results_final.py`
+Alternative processing script with MDAE pattern recognition.
+- Processes all benchmarks and modalities
+- Generates clean visualizations (AUROC & AP)
+- Creates metrics tables
 
-## Contributing
+#### `process_results_fixed.py`
+Alternative processing with threshold-independent metrics focus.
 
-When adding new benchmarks or baselines:
+#### `process_mdae_combined.py`
+Combines MDAE variants (standard and time-conditioned) for unified analysis.
 
-1. Create appropriate JSON configuration in `benchmarks/` or `baselines/`
-2. Update `docs/baselines_and_benchmarks.md`
-3. Run extraction scripts to populate data
-4. Commit changes with descriptive message
+### Table Generation
 
-## WandB Projects
+#### `create_final_tables.py`
+Generates comprehensive tables from processed results.
+- Summary statistics
+- LaTeX formatting
+- Excel-friendly CSV outputs
 
-All experiments are tracked under the Microsoft Research WandB organization:
-- Entity: `t-jiachentu`
-- Projects: `july_stratified_*`
+### Data Extraction
+
+#### `scripts/extract_wandb_data.py`
+Extracts data from WandB API.
+- Supports batch extraction
+- Handles all test metrics
+
+## Benchmark Tasks
+
+15 benchmarks across 6 major datasets:
+
+### Tumor Classification
+- BraTS18: LGG vs HGG
+- BraTS23: Glioma vs Meningioma
+- BraTS23: Glioma vs Metastasis  
+- BraTS23: Meningioma vs Metastasis
+
+### Molecular Markers
+- RSNA-MICCAI: MGMT methylation
+- UCSF-PDGM: IDH classification
+- UPenn-GBM: IDH1 status
+
+### Survival Prediction
+- TCGA-GBM: DSS 1-year
+- TCGA-GBM: PFI 1-year
+- UPenn-GBM: 18-month survival
+- UPenn-GBM: 1-year survival
+- UPenn-GBM: 2-year survival
+
+### Clinical Features
+- UPenn-GBM: Age group
+- UPenn-GBM: Gender
+- UPenn-GBM: GTR status
+
+## Metrics
+
+### Threshold-Independent (Primary)
+- **Test_AUROC**: Area Under ROC Curve
+- **Test_AP**: Average Precision
+
+### Threshold-Dependent (Secondary)
+- **Test_F1**: F1 Score
+- **Test_Balanced_Accuracy**: Balanced Accuracy
+
+## Current Results Summary
+
+As of 2025-08-11:
+- **MDAE (Combined) Mean AUROC**: 76.3% across all benchmarks
+- **MDAE Mean AUROC**: 75.4% 
+- **MDAE (TC) Mean AUROC**: 74.2%
+- **Improvement over SSL baselines**: 8.1% average (vs VoCo)
+- **Improvement over foundation models**: 8.0% average (vs BrainIAC)
+- **Total runs analyzed**: 3,000+
+- **Benchmarks**: 15
+- **Modality combinations**: 44
+
+## Troubleshooting
+
+### Issue: MDAE methods not recognized
+**Solution**: Ensure using `process_results_final.py` which includes fixed patterns for `resenc_MDAE_pretrained_*`
+
+### Issue: Missing modalities
+**Solution**: Script automatically processes all available modalities in raw data
+
+### Issue: Outdated results
+**Solution**: Re-run `process_results_final.py` after any new data extraction
+
+## Archive
+
+Outdated scripts have been moved to `archive_old_scripts/` for reference.
 
 ## Citation
 
-If you use this data or infrastructure, please cite:
+If using this pipeline, please cite:
 ```bibtex
 @article{mdae2024,
-  title={Masked Denoising Autoencoder for Brain MRI Analysis},
+  title={Masked-Diffusion Autoencoders for Self-Supervised 3D Brain MRI Classification},
   author={...},
+  journal={ICLR},
   year={2024}
 }
 ```
 
 ## Contact
 
-For questions or issues, please contact the repository maintainer.
+For questions about the pipeline or results, please contact the maintainers.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT License - See LICENSE file for details.
