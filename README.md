@@ -41,9 +41,14 @@ pip install -r requirements.txt
 export WANDB_API_KEY=your_api_key_here
 ```
 
-## Usage
+## Project Workflow
 
-### 1. Extract Data from WandB
+### Complete Data Processing Pipeline
+
+This repository follows a 4-step workflow for comprehensive benchmarking analysis:
+
+#### Step 1: Data Extraction from WandB
+Extract experiment results from WandB API, including run configurations, metrics, and notes.
 
 ```bash
 # Extract data for a specific benchmark
@@ -56,7 +61,30 @@ python scripts/extract_wandb_data.py --all
 python scripts/extract_wandb_data.py --benchmark brats18/lgg_vs_hgg --start-date 2024-07-01
 ```
 
-### 2. Aggregate Results
+**Output**: Raw data stored in `raw_data/YYYYMMDD/benchmark_name/`
+- `full_data.json`: Complete WandB run data including metrics, configs, and notes
+- `runs_summary.csv`: Flattened view of key metrics for analysis
+
+#### Step 2: CSV Regeneration and Cleaning
+Regenerate CSV files to ensure all test metrics are properly extracted from JSON data.
+
+```bash
+# Regenerate all CSV files with complete test metrics
+python scripts/regenerate_csv_files.py
+
+# Sort CSV files by Test/AUROC for analysis
+python scripts/sort_csv_by_auroc.py
+```
+
+**Key metrics extracted**:
+- Test/AUROC (Area Under ROC Curve)
+- Test/AP (Average Precision)
+- Test/Balanced_Accuracy
+- Test/F1 (F1 Score)
+- Additional validation metrics
+
+#### Step 3: Data Organization and Analysis
+Organize and analyze results across 15 benchmark tasks with 3,003+ experimental runs.
 
 ```bash
 # Aggregate results across all baselines for a benchmark
@@ -66,12 +94,30 @@ python scripts/aggregate_results.py --benchmark brats18/lgg_vs_hgg
 python scripts/generate_tables.py --format latex --output outputs/tables/
 ```
 
-### 3. Generate Reports
+#### Step 4: Report Generation
+Generate comprehensive reports and visualizations for publication.
 
 ```bash
 # Generate comprehensive report
 python scripts/generate_report.py --output outputs/reports/mdae_benchmark_report.pdf
 ```
+
+### Current Data Status
+
+As of August 2025, the repository contains:
+- **15 benchmark tasks** across 6 major brain MRI datasets
+- **3,003+ experimental runs** from WandB
+- **Complete test metrics** extracted and organized by Test/AUROC
+- **Standardized CSV format** with notes field included
+- **Git-tracked results** with proper version control
+
+### Data Quality Assurance
+
+The workflow includes multiple quality checks:
+1. **Metric validation**: Ensures all test metrics are extracted from WandB summary section
+2. **Sorting verification**: Results ordered by Test/AUROC for consistent analysis
+3. **Notes inclusion**: WandB notes field now captured for run documentation
+4. **Version control**: All changes tracked with descriptive commit messages
 
 ## Benchmark Tasks
 

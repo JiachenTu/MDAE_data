@@ -75,6 +75,7 @@ class WandBDataExtractor:
                     'tags': run.tags,
                     'url': run.url,
                     'project': project,
+                    'notes': run.notes,
                 }
                 
                 # Extract key metrics
