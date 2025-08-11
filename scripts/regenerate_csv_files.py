@@ -3,9 +3,9 @@
 Regenerate CSV files with enhanced format for MDAE data analysis.
 
 This script improves the CSV format by:
-- Removing unnecessary columns (url, created_at, state)
-- Adding comprehensive test metrics  
-- Adding notes column extracted from run names
+- Removing unnecessary columns (url, created_at, state, unwanted test metrics)
+- Adding key test metrics (Test_Balanced_Accuracy, Test_F1, Test_AUROC, Test_AP)
+- Adding wandb_notes column extracted from actual WandB notes
 - Better column organization for analysis
 """
 
@@ -14,61 +14,7 @@ import pandas as pd
 import os
 from pathlib import Path
 from typing import Dict, List
-import re
 
-
-def extract_notes_from_run_name(run_name: str, model) -> str:
-    """
-    Extract meaningful notes from run name and model configuration.
-    
-    Args:
-        run_name: The run name from wandb
-        model: Model name from config (can be string, float, or None)
-    
-    Returns:
-        Extracted notes string
-    """
-    notes_parts = []
-    
-    # Ensure run_name is string
-    run_name = str(run_name) if run_name else ""
-    
-    # Extract training type (scratch, pretrained, finetuned, frozen)
-    if 'scratch' in run_name.lower():
-        notes_parts.append('scratch')
-    elif 'pretrained' in run_name.lower():
-        notes_parts.append('pretrained')
-    elif 'frozen' in run_name.lower():
-        notes_parts.append('frozen')
-    elif 'finetune' in run_name.lower() or 'ft_' in run_name.lower():
-        notes_parts.append('finetuned')
-    
-    # Extract model type
-    if model and str(model).lower() != 'nan':
-        model_str = str(model)
-        if model_str.lower() not in run_name.lower():
-            notes_parts.append(f'model_{model_str}')
-    
-    # Extract modality from run name
-    modality_patterns = [
-        r't1ce?(?![a-z])', r't2w?(?![a-z])', r'flair(?![a-z])', 
-        r'swi(?![a-z])', r'asl(?![a-z])', r't1gd(?![a-z])',
-        r't1n(?![a-z])', r't2f(?![a-z])', r'mixed_contrasts'
-    ]
-    
-    for pattern in modality_patterns:
-        if re.search(pattern, run_name.lower()):
-            modality_match = re.search(pattern, run_name.lower())
-            if modality_match:
-                notes_parts.append(f'mod_{modality_match.group()}')
-                break
-    
-    # Add timestamp info if present
-    timestamp_pattern = r'(\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2})'
-    if re.search(timestamp_pattern, run_name):
-        notes_parts.append('timestamped')
-    
-    return ' | '.join(notes_parts) if notes_parts else 'standard_run'
 
 
 def process_benchmark_csv(benchmark_dir: Path) -> bool:
@@ -134,17 +80,12 @@ def process_benchmark_csv(benchmark_dir: Path) -> bool:
                 'epoch': summary.get('epoch', metrics.get('epoch', row.get('metric_epoch', None))),
             }
             
-            # Add test metrics - updated to match WandB format exactly
+            # Add test metrics - updated to match WandB format exactly (excluding unwanted columns)
             test_metrics = [
                 ('Test_Balanced_Accuracy', ['Test/Balanced_Accuracy']),
                 ('Test_F1', ['Test/F1']),
                 ('Test_AUROC', ['Test/AUROC']),
                 ('Test_AP', ['Test/AP']),
-                ('Test_Accuracy', ['Test/Accuracy']),
-                ('Test_Precision', ['Test/Precision']),
-                ('Test_Recall', ['Test/Recall']),
-                ('Test_Sensitivity', ['Test/Sensitivity']),
-                ('Test_Specificity', ['Test/Specificity']),
             ]
             
             for metric_name, possible_keys in test_metrics:
@@ -191,25 +132,21 @@ def process_benchmark_csv(benchmark_dir: Path) -> bool:
                         break
                 enhanced_row[metric_name] = value
             
-            # Generate notes
-            enhanced_row['notes'] = extract_notes_from_run_name(
-                row['run_name'], 
-                enhanced_row['model']
-            )
+            # Extract actual WandB notes from run data
+            enhanced_row['wandb_notes'] = run_data.get('notes', '')
             
             enhanced_rows.append(enhanced_row)
         
         # Create new DataFrame
         enhanced_df = pd.DataFrame(enhanced_rows)
         
-        # Reorder columns for better readability - updated metric names
+        # Reorder columns for better readability - updated metric names (removed unwanted columns)
         column_order = [
             'run_id', 'run_name', 'project', 'modality', 'model', 
             'learning_rate', 'batch_size', 'epochs', 'epoch',
-            'Test_Balanced_Accuracy', 'Test_Accuracy', 'Test_F1', 'Test_AUROC', 'Test_AP',
-            'Test_Precision', 'Test_Recall', 'Test_Sensitivity', 'Test_Specificity',
+            'Test_Balanced_Accuracy', 'Test_F1', 'Test_AUROC', 'Test_AP',
             'Val_Balanced_Accuracy', 'Val_F1', 'Val_AUROC', 'Val_AP',
-            'notes'
+            'wandb_notes'
         ]
         
         # Only include columns that exist
