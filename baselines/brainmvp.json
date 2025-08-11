@@ -1,0 +1,25 @@
+{
+  "model_name": "BrainMVP",
+  "full_name": "Brain Masked Vision Pretraining",
+  "type": "foundation_model",
+  "architecture": "Vision Transformer",
+  "pretraining_method": "Masked Image Modeling",
+  "reference_paper": "/home/t-jiachentu/repos/benchmarking/misc/MDAE_Paper/related_articles/BrainMVP.pdf",
+  "key_features": [
+    "Specialized for brain MRI analysis",
+    "Pretrained on large-scale brain imaging datasets",
+    "Supports multiple MRI modalities",
+    "Efficient fine-tuning for downstream tasks"
+  ],
+  "implementation_details": {
+    "framework": "PyTorch",
+    "input_size": [160, 160, 160],
+    "patch_size": 16,
+    "embedding_dim": 768,
+    "num_heads": 12,
+    "num_layers": 12
+  },
+  "checkpoint_path": null,
+  "wandb_runs": [],
+  "notes": "One of the main baseline models for comparison"
+}

@@ -1,0 +1,32 @@
+{
+  "model_name": "MAE",
+  "full_name": "Masked Autoencoder",
+  "type": "self_supervised",
+  "architecture": "Vision Transformer with Autoencoder",
+  "pretraining_method": "Masked Image Modeling",
+  "reference": "OpenMind paper - trained under same settings",
+  "key_features": [
+    "Randomly masks patches of input images",
+    "Reconstructs missing patches",
+    "Learns rich visual representations",
+    "Efficient pretraining strategy"
+  ],
+  "implementation_details": {
+    "framework": "PyTorch",
+    "masking_ratio": 0.75,
+    "encoder_architecture": "ViT",
+    "decoder_architecture": "Lightweight ViT",
+    "patch_size": 16,
+    "embedding_dim": 768
+  },
+  "training_settings": {
+    "dataset": "OpenMind",
+    "epochs": null,
+    "batch_size": null,
+    "optimizer": "AdamW",
+    "learning_rate": null
+  },
+  "checkpoint_path": null,
+  "wandb_runs": [],
+  "notes": "Part of OpenMind baseline suite"
+}
