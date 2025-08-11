@@ -88,8 +88,11 @@ Thumbs.db
 *.h5
 *.hdf5
 
-# Raw data (keep processed data)
+# Raw data - keep JSON and CSV files but exclude other formats  
 raw_data/*
+!raw_data/*/
+!raw_data/*/*.json
+!raw_data/*/*.csv
 !raw_data/.gitkeep
 
 # Temporary files

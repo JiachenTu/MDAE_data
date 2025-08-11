@@ -1,0 +1,40 @@
+{
+  "benchmark_name": "UPenn-GBM 2-Year Survival Prediction",
+  "dataset": "UPenn-GBM",
+  "task_type": "binary_classification",
+  "description": "Predict 2-year survival for Glioblastoma Multiforme patients",
+  "focus_modalities": ["T1", "T2"],
+  "evaluation_metrics": ["accuracy", "auc", "f1_score", "precision", "recall", "sensitivity", "specificity"],
+  "modalities": {
+    "T1": {
+      "wandb_project": "july_stratified_upenn_gbm_survival_2year_single_t1",
+      "wandb_url": "https://microsoft-research.wandb.io/t-jiachentu/july_stratified_upenn_gbm_survival_2year_single_t1",
+      "priority": 3,
+      "notes": "T1-weighted imaging without contrast"
+    },
+    "T1gd": {
+      "wandb_project": "july_stratified_upenn_gbm_survival_2year_single_t1gd",
+      "wandb_url": "https://microsoft-research.wandb.io/t-jiachentu/july_stratified_upenn_gbm_survival_2year_single_t1gd",
+      "priority": 1,
+      "notes": "T1-weighted with gadolinium contrast"
+    },
+    "T2": {
+      "wandb_project": "july_stratified_upenn_gbm_survival_2year_single_t2",
+      "wandb_url": "https://microsoft-research.wandb.io/t-jiachentu/july_stratified_upenn_gbm_survival_2year_single_t2",
+      "priority": 1,
+      "notes": "T2-weighted imaging"
+    },
+    "FLAIR": {
+      "wandb_project": "july_stratified_upenn_gbm_survival_2year_single_flair",
+      "wandb_url": "https://microsoft-research.wandb.io/t-jiachentu/july_stratified_upenn_gbm_survival_2year_single_flair",
+      "priority": 0,
+      "notes": "Fluid-attenuated inversion recovery"
+    }
+  },
+  "clinical_significance": "Long-term survival prediction is crucial for understanding patient outcomes and treatment efficacy in GBM",
+  "dataset_splits": {
+    "train": "stratified",
+    "validation": "stratified",
+    "test": "stratified"
+  }
+}

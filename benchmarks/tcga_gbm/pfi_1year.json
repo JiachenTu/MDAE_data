@@ -1,0 +1,22 @@
+{
+  "benchmark_name": "TCGA-GBM Progression-Free Interval 1-Year Prediction",
+  "dataset": "TCGA-GBM",
+  "task_type": "binary_classification",
+  "description": "Predict 1-year progression-free interval for glioblastoma patients",
+  "evaluation_metrics": ["accuracy", "auc", "f1_score", "precision", "recall"],
+  "modalities": {
+    "mixed_contrasts": {
+      "wandb_project": "july_stratified_tcga_gbm_pfi_1year_single_mixed_contrasts",
+      "wandb_url": "https://microsoft-research.wandb.io/t-jiachentu/july_stratified_tcga_gbm_pfi_1year_single_mixed_contrasts",
+      "priority": 1,
+      "notes": "Mixed contrast imaging modalities combined"
+    }
+  },
+  "clinical_significance": "Progression-free interval prediction helps assess treatment efficacy and patient outcomes in GBM",
+  "dataset_splits": {
+    "train": "stratified",
+    "validation": "stratified",
+    "test": "stratified"
+  },
+  "data_characteristics": "Mixed contrasts from TCGA repository"
+}

@@ -1,0 +1,32 @@
+{
+  "benchmark_name": "UCSF-PDGM IDH Classification",
+  "dataset": "UCSF-PDGM",
+  "task_type": "binary_classification",
+  "description": "Classify IDH mutation status in brain tumors using specialized MRI sequences",
+  "notes": "Generalization test benchmark",
+  "evaluation_metrics": ["accuracy", "auc", "f1_score", "precision", "recall"],
+  "modalities": {
+    "SWI": {
+      "wandb_project": "july_stratified_ucsf_pdgm_idh_classification_single_swi",
+      "wandb_url": "https://microsoft-research.wandb.io/t-jiachentu/july_stratified_ucsf_pdgm_idh_classification_single_swi",
+      "priority": 1,
+      "notes": "Susceptibility-weighted imaging - specialized sequence"
+    },
+    "ASL": {
+      "wandb_project": "july_stratified_ucsf_pdgm_idh_classification_single_asl",
+      "wandb_url": "https://microsoft-research.wandb.io/t-jiachentu/july_stratified_ucsf_pdgm_idh_classification_single_asl",
+      "priority": 1,
+      "notes": "Arterial spin labeling - perfusion imaging"
+    }
+  },
+  "clinical_significance": "IDH mutation status is crucial for brain tumor classification and treatment planning",
+  "dataset_splits": {
+    "train": "stratified",
+    "validation": "stratified",
+    "test": "stratified"
+  },
+  "special_characteristics": [
+    "Uses specialized MRI sequences (SWI, ASL)",
+    "Serves as generalization test for models trained on conventional sequences"
+  ]
+}

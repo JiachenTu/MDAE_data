@@ -1,0 +1,28 @@
+{
+  "benchmark_name": "BRATS23 Glioma vs Meningioma Classification",
+  "dataset": "BRATS23",
+  "task_type": "binary_classification",
+  "description": "Classify brain tumors as Glioma or Meningioma",
+  "focus_modalities": ["T1c", "T2w"],
+  "evaluation_metrics": ["accuracy", "auc", "f1_score", "precision", "recall"],
+  "modalities": {
+    "T1c": {
+      "wandb_project": "july_stratified_brats23_gli_vs_men_single_t1c",
+      "wandb_url": "https://microsoft-research.wandb.io/t-jiachentu/july_stratified_brats23_gli_vs_men_single_t1c",
+      "priority": 3,
+      "notes": "T1-weighted with contrast - top performing modality"
+    },
+    "T2w": {
+      "wandb_project": "july_stratified_brats23_gli_vs_men_single_t2w",
+      "wandb_url": "https://microsoft-research.wandb.io/t-jiachentu/july_stratified_brats23_gli_vs_men_single_t2w",
+      "priority": 3,
+      "notes": "T2-weighted - top performing modality"
+    }
+  },
+  "dataset_splits": {
+    "train": "stratified",
+    "validation": "stratified",
+    "test": "stratified"
+  },
+  "clinical_significance": "Distinguishing glioma from meningioma is crucial for treatment planning"
+}

@@ -1,0 +1,40 @@
+{
+  "benchmark_name": "RSNA-MICCAI Brain Tumor MGMT Methylation Prediction",
+  "dataset": "RSNA-MICCAI Brain Tumor",
+  "task_type": "binary_classification",
+  "description": "Predict MGMT promoter methylation status in glioblastoma patients",
+  "focus_modalities": ["T1wce", "FLAIR"],
+  "evaluation_metrics": ["accuracy", "auc", "f1_score", "precision", "recall"],
+  "modalities": {
+    "T1w": {
+      "wandb_project": "july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_t1w",
+      "wandb_url": "https://microsoft-research.wandb.io/t-jiachentu/july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_t1w",
+      "priority": 1,
+      "notes": "T1-weighted imaging without contrast"
+    },
+    "T1wce": {
+      "wandb_project": "july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_t1wce",
+      "wandb_url": "https://microsoft-research.wandb.io/t-jiachentu/july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_t1wce",
+      "priority": 2,
+      "notes": "T1-weighted with contrast enhancement"
+    },
+    "T2w": {
+      "wandb_project": "july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_t2w",
+      "wandb_url": "https://microsoft-research.wandb.io/t-jiachentu/july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_t2w",
+      "priority": 1,
+      "notes": "T2-weighted imaging"
+    },
+    "FLAIR": {
+      "wandb_project": "july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_flair",
+      "wandb_url": "https://microsoft-research.wandb.io/t-jiachentu/july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_flair",
+      "priority": 2,
+      "notes": "Fluid-attenuated inversion recovery"
+    }
+  },
+  "clinical_significance": "MGMT methylation status is a key biomarker for glioblastoma treatment response and prognosis",
+  "dataset_splits": {
+    "train": "stratified",
+    "validation": "stratified",
+    "test": "stratified"
+  }
+}
