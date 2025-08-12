@@ -1,0 +1,47 @@
+{
+  "benchmark": "upenn_gbm_survival_1year",
+  "info": {
+    "name": "UPenn-GBM Survival 1-Year",
+    "category": "Survival Prediction",
+    "task": "Binary Classification",
+    "description": "Overall survival at 1 year"
+  },
+  "best_method": "VoCo",
+  "best_auroc": 0.6736438274383545,
+  "mdae_performance": {
+    "auroc": 0.6465212106704712,
+    "ap": 0.632075846195221,
+    "f1": 0.5835667848587036,
+    "balanced_accuracy": 0.5857900977134705,
+    "rank": 3,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "VoCo",
+      "auroc": 0.6736438274383545
+    },
+    {
+      "method": "MAE",
+      "auroc": 0.6680424213409424
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.6465212106704712
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.6465212106704712
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.6329599618911743
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.618150536219279,
+    "std_auroc": 0.03106393587584576,
+    "median_auroc": 0.6064268350601196,
+    "num_methods": 15
+  }
+}

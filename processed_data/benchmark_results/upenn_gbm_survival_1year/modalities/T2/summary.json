@@ -1,0 +1,46 @@
+{
+  "benchmark": "upenn_gbm_survival_1year",
+  "modality": "T2",
+  "modality_name": "T2-weighted",
+  "num_runs": 44,
+  "num_methods": 15,
+  "best_method": "MDAE",
+  "best_auroc": 0.6465212106704712,
+  "mdae_performance": {
+    "auroc": 0.6465212106704712,
+    "ap": 0.632075846195221,
+    "f1": 0.5835667848587036,
+    "balanced_accuracy": 0.5857900977134705,
+    "rank": 1,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "MDAE",
+      "auroc": 0.6465212106704712
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.6465212106704712
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.6329599618911743
+    },
+    {
+      "method": "SimCLR",
+      "auroc": 0.6254421472549438
+    },
+    {
+      "method": "MAE",
+      "auroc": 0.6105542182922363
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.5886890649795532,
+    "std_auroc": 0.04477374755561776,
+    "median_auroc": 0.6059846878051758,
+    "min_auroc": 0.5066332817077637,
+    "max_auroc": 0.6465212106704712
+  }
+}

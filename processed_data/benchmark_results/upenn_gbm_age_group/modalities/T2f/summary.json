@@ -1,0 +1,46 @@
+{
+  "benchmark": "upenn_gbm_age_group",
+  "modality": "T2f",
+  "modality_name": "T2-FLAIR",
+  "num_runs": 38,
+  "num_methods": 15,
+  "best_method": "DinoV2",
+  "best_auroc": 0.8712384104728699,
+  "mdae_performance": {
+    "auroc": 0.8676215410232544,
+    "ap": 0.8682731986045837,
+    "f1": 0.7621500492095947,
+    "balanced_accuracy": 0.7601273059844971,
+    "rank": 3,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "DinoV2",
+      "auroc": 0.8712384104728699
+    },
+    {
+      "method": "SwinUNETR",
+      "auroc": 0.8692129850387573
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.8676215410232544
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.8676215410232544
+    },
+    {
+      "method": "VoCo",
+      "auroc": 0.8622685670852661
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.7948495427767436,
+    "std_auroc": 0.12025853445155339,
+    "median_auroc": 0.854889988899231,
+    "min_auroc": 0.5548322200775146,
+    "max_auroc": 0.8712384104728699
+  }
+}

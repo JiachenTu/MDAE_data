@@ -1,0 +1,47 @@
+{
+  "benchmark": "upenn_gbm_survival_2year",
+  "info": {
+    "name": "UPenn-GBM Survival 2-Year",
+    "category": "Survival Prediction",
+    "task": "Binary Classification",
+    "description": "Overall survival at 2 years"
+  },
+  "best_method": "BrainIAC",
+  "best_auroc": 0.7054521441459656,
+  "mdae_performance": {
+    "auroc": 0.7016844153404236,
+    "ap": 0.6722248792648315,
+    "f1": 0.4433962404727936,
+    "balanced_accuracy": 0.5,
+    "rank": 2,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "BrainIAC",
+      "auroc": 0.7054521441459656
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.7016844153404236
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.7016844153404236
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.6498227119445801
+    },
+    {
+      "method": "MAE",
+      "auroc": 0.6480496525764465
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.6252216418584188,
+    "std_auroc": 0.048460557570917474,
+    "median_auroc": 0.6130319237709045,
+    "num_methods": 15
+  }
+}

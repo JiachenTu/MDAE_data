@@ -1,0 +1,46 @@
+{
+  "benchmark": "brats18_lgg_vs_hgg",
+  "modality": "T1",
+  "modality_name": "T1-weighted",
+  "num_runs": 65,
+  "num_methods": 15,
+  "best_method": "DinoV2",
+  "best_auroc": 0.7269841432571411,
+  "mdae_performance": {
+    "auroc": 0.7079365253448486,
+    "ap": 0.7343157529830933,
+    "f1": 0.4242424368858337,
+    "balanced_accuracy": 0.5,
+    "rank": 3,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "DinoV2",
+      "auroc": 0.7269841432571411
+    },
+    {
+      "method": "BrainIAC",
+      "auroc": 0.7238094806671143
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.7079365253448486
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.7079365253448486
+    },
+    {
+      "method": "MAE",
+      "auroc": 0.6936508417129517
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.6186243255933126,
+    "std_auroc": 0.08252762711823275,
+    "median_auroc": 0.6142857074737549,
+    "min_auroc": 0.4809523820877075,
+    "max_auroc": 0.7269841432571411
+  }
+}

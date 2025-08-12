@@ -1,0 +1,46 @@
+{
+  "benchmark": "rsna_miccai_mgmt_methylation",
+  "modality": "T1W",
+  "modality_name": "T1W",
+  "num_runs": 63,
+  "num_methods": 15,
+  "best_method": "MDAE (TC)",
+  "best_auroc": 0.5893235206604004,
+  "mdae_performance": {
+    "auroc": 0.5893235206604004,
+    "ap": 0.5761017203330994,
+    "f1": 0.5710859298706055,
+    "balanced_accuracy": 0.573731541633606,
+    "rank": 1,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.5893235206604004
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.5893235206604004
+    },
+    {
+      "method": "BrainMVP",
+      "auroc": 0.5874735713005066
+    },
+    {
+      "method": "MG",
+      "auroc": 0.5655391216278076
+    },
+    {
+      "method": "MRI-Core",
+      "auroc": 0.562632143497467
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.5443093736966451,
+    "std_auroc": 0.029770351621999216,
+    "median_auroc": 0.5433403253555298,
+    "min_auroc": 0.4957716464996338,
+    "max_auroc": 0.5893235206604004
+  }
+}

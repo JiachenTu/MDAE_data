@@ -1,0 +1,46 @@
+{
+  "benchmark": "upenn_gbm_age_group",
+  "modality": "T1",
+  "modality_name": "T1-weighted",
+  "num_runs": 39,
+  "num_methods": 14,
+  "best_method": "MDAE",
+  "best_auroc": 0.8466434478759766,
+  "mdae_performance": {
+    "auroc": 0.8466434478759766,
+    "ap": 0.8490417003631592,
+    "f1": 0.7691806554794312,
+    "balanced_accuracy": 0.7688078880310059,
+    "rank": 1,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "MDAE",
+      "auroc": 0.8466434478759766
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.8466434478759766
+    },
+    {
+      "method": "MAE",
+      "auroc": 0.8454861640930176
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.8363715410232544
+    },
+    {
+      "method": "SimCLR",
+      "auroc": 0.8310185670852661
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.753658230815615,
+    "std_auroc": 0.10583258105185854,
+    "median_auroc": 0.7969473302364349,
+    "min_auroc": 0.5642361640930176,
+    "max_auroc": 0.8466434478759766
+  }
+}

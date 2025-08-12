@@ -1,0 +1,46 @@
+{
+  "benchmark": "upenn_gbm_survival_1year",
+  "modality": "T1GD",
+  "modality_name": "T1GD",
+  "num_runs": 41,
+  "num_methods": 14,
+  "best_method": "MDAE (TC)",
+  "best_auroc": 0.5933077931404114,
+  "mdae_performance": {
+    "auroc": 0.5933077931404114,
+    "ap": 0.5785840749740601,
+    "f1": 0.451298713684082,
+    "balanced_accuracy": 0.5191627144813538,
+    "rank": 1,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.5933077931404114
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.5933077931404114
+    },
+    {
+      "method": "MRI-Core",
+      "auroc": 0.5865271091461182
+    },
+    {
+      "method": "BrainIAC",
+      "auroc": 0.5663325786590576
+    },
+    {
+      "method": "BrainMVP",
+      "auroc": 0.5654481053352356
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.5444954463413784,
+    "std_auroc": 0.04191766953912948,
+    "median_auroc": 0.5527712106704712,
+    "min_auroc": 0.4484080076217651,
+    "max_auroc": 0.5933077931404114
+  }
+}

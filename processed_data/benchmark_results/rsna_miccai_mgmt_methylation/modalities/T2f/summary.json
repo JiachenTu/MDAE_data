@@ -1,0 +1,46 @@
+{
+  "benchmark": "rsna_miccai_mgmt_methylation",
+  "modality": "T2f",
+  "modality_name": "T2-FLAIR",
+  "num_runs": 66,
+  "num_methods": 15,
+  "best_method": "BrainIAC",
+  "best_auroc": 0.6511627435684204,
+  "mdae_performance": {
+    "auroc": 0.6434988975524902,
+    "ap": 0.6629034280776978,
+    "f1": 0.3358778655529022,
+    "balanced_accuracy": 0.5,
+    "rank": 2,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "BrainIAC",
+      "auroc": 0.6511627435684204
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.6434988975524902
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.6434988975524902
+    },
+    {
+      "method": "ResNet-50",
+      "auroc": 0.6189217567443848
+    },
+    {
+      "method": "MAE",
+      "auroc": 0.6144291758537292
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.5787702560424804,
+    "std_auroc": 0.048098735246926094,
+    "median_auroc": 0.5676532983779907,
+    "min_auroc": 0.5161205530166626,
+    "max_auroc": 0.6511627435684204
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "benchmark": "upenn_gbm_survival_2year",
+  "modality": "T2f",
+  "modality_name": "T2-FLAIR",
+  "num_runs": 50,
+  "num_methods": 15,
+  "best_method": "DinoV2",
+  "best_auroc": 0.6110372543334961,
+  "mdae_performance": {
+    "auroc": 0.5842198133468628,
+    "ap": 0.5540164113044739,
+    "f1": 0.4433962404727936,
+    "balanced_accuracy": 0.5,
+    "rank": 4,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "DinoV2",
+      "auroc": 0.6110372543334961
+    },
+    {
+      "method": "MAE",
+      "auroc": 0.601285457611084
+    },
+    {
+      "method": "ResNet-50",
+      "auroc": 0.5921986103057861
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.5842198133468628
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.5842198133468628
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.5560874660809835,
+    "std_auroc": 0.05314401511070998,
+    "median_auroc": 0.5680407881736755,
+    "min_auroc": 0.3834219574928284,
+    "max_auroc": 0.6110372543334961
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "benchmark": "ucsf_pdgm_idh_classification",
+  "modality": "ASL",
+  "modality_name": "ASL",
+  "num_runs": 66,
+  "num_methods": 15,
+  "best_method": "VF",
+  "best_auroc": 0.7967032790184021,
+  "mdae_performance": {
+    "auroc": 0.7539682388305664,
+    "ap": 0.7399681806564331,
+    "f1": 0.6804160475730896,
+    "balanced_accuracy": 0.6584249138832092,
+    "rank": 8,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "VF",
+      "auroc": 0.7967032790184021
+    },
+    {
+      "method": "BrainIAC",
+      "auroc": 0.7924298048019409
+    },
+    {
+      "method": "SwinUNETR",
+      "auroc": 0.7893772125244141
+    },
+    {
+      "method": "DinoV2",
+      "auroc": 0.788156270980835
+    },
+    {
+      "method": "VoCo",
+      "auroc": 0.7878510355949402
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.7365486303965251,
+    "std_auroc": 0.05981942715058723,
+    "median_auroc": 0.7539682388305664,
+    "min_auroc": 0.6074481010437012,
+    "max_auroc": 0.7967032790184021
+  }
+}

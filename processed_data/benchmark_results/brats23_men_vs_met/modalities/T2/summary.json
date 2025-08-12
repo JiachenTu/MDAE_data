@@ -1,0 +1,46 @@
+{
+  "benchmark": "brats23_men_vs_met",
+  "modality": "T2",
+  "modality_name": "T2-weighted",
+  "num_runs": 64,
+  "num_methods": 15,
+  "best_method": "MDAE",
+  "best_auroc": 0.958783745765686,
+  "mdae_performance": {
+    "auroc": 0.958783745765686,
+    "ap": 0.9597154855728148,
+    "f1": 0.3518238663673401,
+    "balanced_accuracy": 0.512499988079071,
+    "rank": 1,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "MDAE",
+      "auroc": 0.958783745765686
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.958783745765686
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.9510135054588318
+    },
+    {
+      "method": "SwinUNETR",
+      "auroc": 0.9175676107406616
+    },
+    {
+      "method": "MAE",
+      "auroc": 0.8689188957214355
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.7595495422681172,
+    "std_auroc": 0.14667945901720628,
+    "median_auroc": 0.6959459781646729,
+    "min_auroc": 0.5577702522277832,
+    "max_auroc": 0.958783745765686
+  }
+}

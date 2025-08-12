@@ -1,0 +1,46 @@
+{
+  "benchmark": "ucsf_pdgm_idh_classification",
+  "modality": "SWI",
+  "modality_name": "SWI",
+  "num_runs": 70,
+  "num_methods": 15,
+  "best_method": "DinoV2",
+  "best_auroc": 0.7912087440490723,
+  "mdae_performance": {
+    "auroc": 0.7710622549057007,
+    "ap": 0.7029664516448975,
+    "f1": 0.5193063616752625,
+    "balanced_accuracy": 0.5347985625267029,
+    "rank": 2,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "DinoV2",
+      "auroc": 0.7912087440490723
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.7710622549057007
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.7710622549057007
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.7698413133621216
+    },
+    {
+      "method": "VoCo",
+      "auroc": 0.7594627141952515
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.7149979631106059,
+    "std_auroc": 0.07227360408044041,
+    "median_auroc": 0.7411477565765381,
+    "min_auroc": 0.5250304937362671,
+    "max_auroc": 0.7912087440490723
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "benchmark": "rsna_miccai_mgmt_methylation",
+  "modality": "T2",
+  "modality_name": "T2-weighted",
+  "num_runs": 64,
+  "num_methods": 15,
+  "best_method": "MDAE (TC)",
+  "best_auroc": 0.5961945056915283,
+  "mdae_performance": {
+    "auroc": 0.5961945056915283,
+    "ap": 0.6102862358093262,
+    "f1": 0.5086206793785095,
+    "balanced_accuracy": 0.5594608783721924,
+    "rank": 1,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.5961945056915283
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.5961945056915283
+    },
+    {
+      "method": "BrainIAC",
+      "auroc": 0.5877378582954407
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.5776955485343933
+    },
+    {
+      "method": "VF",
+      "auroc": 0.5480972528457642
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.5404510239760081,
+    "std_auroc": 0.037608419681504836,
+    "median_auroc": 0.533562421798706,
+    "min_auroc": 0.4571881592273712,
+    "max_auroc": 0.5961945056915283
+  }
+}

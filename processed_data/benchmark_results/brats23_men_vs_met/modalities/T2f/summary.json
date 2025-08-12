@@ -1,0 +1,46 @@
+{
+  "benchmark": "brats23_men_vs_met",
+  "modality": "T2f",
+  "modality_name": "T2-FLAIR",
+  "num_runs": 62,
+  "num_methods": 15,
+  "best_method": "MDAE (TC)",
+  "best_auroc": 0.9702702760696412,
+  "mdae_performance": {
+    "auroc": 0.9702702760696412,
+    "ap": 0.9699050188064576,
+    "f1": 0.3245614171028137,
+    "balanced_accuracy": 0.5,
+    "rank": 1,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.9702702760696412
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.9702702760696412
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.9648648500442504
+    },
+    {
+      "method": "SwinUNETR",
+      "auroc": 0.9317567348480223
+    },
+    {
+      "method": "VoCo",
+      "auroc": 0.8189189434051514
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.7388738691806793,
+    "std_auroc": 0.18090863818980446,
+    "median_auroc": 0.7695945501327515,
+    "min_auroc": 0.4452702701091766,
+    "max_auroc": 0.9702702760696412
+  }
+}

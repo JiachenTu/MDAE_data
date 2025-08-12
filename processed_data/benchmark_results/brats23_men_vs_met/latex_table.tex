@@ -1,0 +1,26 @@
+\begin{table}[ht]
+\centering
+\caption{BraTS23 Meningioma vs Metastasis - Performance Metrics}
+\label{tab:brats23_men_vs_met}
+\begin{tabular}{lcccc}
+\toprule
+Method & AUROC & AP & F1 & Balanced Acc \\
+\midrule
+VoCo & \textbf{0.976} & \textbf{0.976} & 0.342 & 0.500 \\
+MDAE (TC) & 0.970 & 0.970 & 0.325 & 0.500 \\
+MDAE (Combined) & 0.970 & 0.970 & 0.325 & 0.500 \\
+MDAE & 0.965 & 0.967 & \textbf{0.680} & \textbf{0.712} \\
+SwinUNETR & 0.932 & 0.927 & 0.342 & 0.500 \\
+MAE & 0.929 & 0.923 & 0.325 & 0.500 \\
+BrainMVP & 0.888 & 0.892 & 0.669 & 0.690 \\
+DinoV2 & 0.828 & 0.836 & 0.572 & 0.623 \\
+BrainIAC & 0.817 & 0.832 & 0.451 & 0.562 \\
+MG & 0.801 & 0.816 & 0.596 & 0.634 \\
+MRI-Core & 0.776 & 0.789 & 0.546 & 0.611 \\
+SimCLR & 0.757 & 0.776 & 0.606 & 0.632 \\
+ResNet-50 & 0.741 & 0.736 & 0.596 & 0.636 \\
+S3D & 0.730 & 0.759 & 0.546 & 0.611 \\
+VF & 0.627 & 0.632 & 0.562 & 0.609 \\
+\bottomrule
+\end{tabular}
+\end{table}

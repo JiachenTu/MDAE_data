@@ -1,0 +1,46 @@
+{
+  "benchmark": "brats23_gli_vs_met",
+  "modality": "T2f",
+  "modality_name": "T2-FLAIR",
+  "num_runs": 69,
+  "num_methods": 15,
+  "best_method": "VoCo",
+  "best_auroc": 0.975327730178833,
+  "mdae_performance": {
+    "auroc": 0.972565531730652,
+    "ap": 0.9518988132476808,
+    "f1": 0.4651567935943603,
+    "balanced_accuracy": 0.5,
+    "rank": 2,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "VoCo",
+      "auroc": 0.975327730178833
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.972565531730652
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.972565531730652
+    },
+    {
+      "method": "DinoV2",
+      "auroc": 0.966666579246521
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.9655430316925048
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.8721410671869914,
+    "std_auroc": 0.10012761809413058,
+    "median_auroc": 0.8841760158538818,
+    "min_auroc": 0.6878277063369751,
+    "max_auroc": 0.975327730178833
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "benchmark": "brats23_gli_vs_met",
+  "modality": "T1N",
+  "modality_name": "T1N",
+  "num_runs": 70,
+  "num_methods": 15,
+  "best_method": "MDAE",
+  "best_auroc": 0.9634363651275636,
+  "mdae_performance": {
+    "auroc": 0.9634363651275636,
+    "ap": 0.9504302740097046,
+    "f1": 0.4651567935943603,
+    "balanced_accuracy": 0.5,
+    "rank": 1,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "MDAE",
+      "auroc": 0.9634363651275636
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.9634363651275636
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.958567440509796
+    },
+    {
+      "method": "BrainMVP",
+      "auroc": 0.9262171983718872
+    },
+    {
+      "method": "VoCo",
+      "auroc": 0.9144194722175598
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.8014856537183126,
+    "std_auroc": 0.12565860415910077,
+    "median_auroc": 0.7714887857437134,
+    "min_auroc": 0.5831460952758789,
+    "max_auroc": 0.9634363651275636
+  }
+}

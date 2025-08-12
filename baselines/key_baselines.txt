@@ -1,0 +1,50 @@
+Our Methods:
+
+    MDAE
+    - resenc_MDAE...
+
+    MDAE (TC)
+    - resenc_time_conditioned...
+    - resenc_multimodal_mm_mdae...
+
+
+Baselines:
+
+    ResNet-50
+    - brainiac_scratch...
+
+    BrainIAC
+    - brainiac_pretrained...
+
+    MRI_Core
+    - mri_core...
+
+    BrainMVP
+    - brainmvp...
+
+    DinoV2
+    - dinov2...
+
+    MAE
+    - resenc_pretrained...
+
+    MG
+    - resenc_MG
+
+    SwinUNETR
+    - resenc_SwinUNETR...
+
+    VoCo
+    - resenc_VoCo...
+
+    S3D
+    - resenc_S3D...
+
+    VF
+    - resenc_VF...
+
+    SimCLR
+    - resenc_SimCLR...
+
+
+

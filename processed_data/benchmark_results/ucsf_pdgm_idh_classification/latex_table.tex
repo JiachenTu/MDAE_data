@@ -1,0 +1,26 @@
+\begin{table}[ht]
+\centering
+\caption{IDH Mutation Status - Performance Metrics}
+\label{tab:ucsf_pdgm_idh_classification}
+\begin{tabular}{lcccc}
+\toprule
+Method & AUROC & AP & F1 & Balanced Acc \\
+\midrule
+VF & \textbf{0.797} & 0.704 & 0.698 & 0.698 \\
+BrainIAC & 0.792 & 0.751 & 0.674 & 0.663 \\
+DinoV2 & 0.791 & 0.704 & 0.441 & 0.500 \\
+SwinUNETR & 0.789 & 0.722 & 0.707 & 0.726 \\
+VoCo & 0.788 & \textbf{0.760} & 0.713 & 0.678 \\
+MDAE (TC) & 0.771 & 0.703 & 0.519 & 0.535 \\
+MDAE (Combined) & 0.771 & 0.703 & 0.519 & 0.535 \\
+MDAE & 0.770 & 0.716 & 0.725 & \textbf{0.750} \\
+SimCLR & 0.768 & 0.730 & \textbf{0.728} & 0.706 \\
+MG & 0.759 & 0.717 & 0.694 & 0.676 \\
+MAE & 0.759 & 0.655 & 0.441 & 0.500 \\
+MRI-Core & 0.693 & 0.602 & 0.441 & 0.500 \\
+BrainMVP & 0.691 & 0.627 & 0.441 & 0.500 \\
+ResNet-50 & 0.661 & 0.611 & 0.483 & 0.517 \\
+S3D & 0.624 & 0.590 & 0.441 & 0.500 \\
+\bottomrule
+\end{tabular}
+\end{table}

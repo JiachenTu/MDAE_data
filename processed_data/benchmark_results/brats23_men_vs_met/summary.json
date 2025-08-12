@@ -1,0 +1,47 @@
+{
+  "benchmark": "brats23_men_vs_met",
+  "info": {
+    "name": "BraTS23 Meningioma vs Metastasis",
+    "category": "Tumor Type",
+    "task": "Binary Classification",
+    "description": "Meningioma vs Brain Metastasis"
+  },
+  "best_method": "VoCo",
+  "best_auroc": 0.9760135412216188,
+  "mdae_performance": {
+    "auroc": 0.9702702760696412,
+    "ap": 0.9699050188064576,
+    "f1": 0.3245614171028137,
+    "balanced_accuracy": 0.5,
+    "rank": 2,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "VoCo",
+      "auroc": 0.9760135412216188
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.9702702760696412
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.9702702760696412
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.9648648500442504
+    },
+    {
+      "method": "SwinUNETR",
+      "auroc": 0.9317567348480223
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.8470945914586385,
+    "std_auroc": 0.1090334878764438,
+    "median_auroc": 0.8277026414871216,
+    "num_methods": 15
+  }
+}

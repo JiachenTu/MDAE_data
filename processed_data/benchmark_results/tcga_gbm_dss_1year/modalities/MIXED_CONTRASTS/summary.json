@@ -1,0 +1,46 @@
+{
+  "benchmark": "tcga_gbm_dss_1year",
+  "modality": "MIXED_CONTRASTS",
+  "modality_name": "MIXED_CONTRASTS",
+  "num_runs": 49,
+  "num_methods": 13,
+  "best_method": "MDAE",
+  "best_auroc": 0.7207791805267334,
+  "mdae_performance": {
+    "auroc": 0.7207791805267334,
+    "ap": 0.7297800779342651,
+    "f1": 0.718196451663971,
+    "balanced_accuracy": 0.7207792401313782,
+    "rank": 1,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "MDAE",
+      "auroc": 0.7207791805267334
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.7207791805267334
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.6883116960525513
+    },
+    {
+      "method": "S3D",
+      "auroc": 0.6558441519737244
+    },
+    {
+      "method": "VoCo",
+      "auroc": 0.6233766078948975
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.5608141743219816,
+    "std_auroc": 0.13007730918567864,
+    "median_auroc": 0.5779221057891846,
+    "min_auroc": 0.2792207598686218,
+    "max_auroc": 0.7207791805267334
+  }
+}

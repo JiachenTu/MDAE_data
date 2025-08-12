@@ -1,0 +1,46 @@
+{
+  "benchmark": "brats18_lgg_vs_hgg",
+  "modality": "T1c",
+  "modality_name": "T1-contrast enhanced",
+  "num_runs": 63,
+  "num_methods": 15,
+  "best_method": "SwinUNETR",
+  "best_auroc": 0.9095238447189332,
+  "mdae_performance": {
+    "auroc": 0.7888889312744141,
+    "ap": 0.7749053239822388,
+    "f1": 0.7563155889511108,
+    "balanced_accuracy": 0.761904776096344,
+    "rank": 6,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "SwinUNETR",
+      "auroc": 0.9095238447189332
+    },
+    {
+      "method": "VoCo",
+      "auroc": 0.905555546283722
+    },
+    {
+      "method": "BrainMVP",
+      "auroc": 0.8666666746139526
+    },
+    {
+      "method": "MRI-Core",
+      "auroc": 0.831745982170105
+    },
+    {
+      "method": "MAE",
+      "auroc": 0.7968254089355469
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.7402645508448283,
+    "std_auroc": 0.12678112128861535,
+    "median_auroc": 0.7873015403747559,
+    "min_auroc": 0.5,
+    "max_auroc": 0.9095238447189332
+  }
+}

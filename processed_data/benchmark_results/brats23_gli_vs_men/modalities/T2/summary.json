@@ -1,0 +1,46 @@
+{
+  "benchmark": "brats23_gli_vs_men",
+  "modality": "T2",
+  "modality_name": "T2-weighted",
+  "num_runs": 65,
+  "num_methods": 15,
+  "best_method": "DinoV2",
+  "best_auroc": 0.978945255279541,
+  "mdae_performance": {
+    "auroc": 0.9722137451171876,
+    "ap": 0.9433045983314514,
+    "f1": 0.8736028671264648,
+    "balanced_accuracy": 0.8866788148880005,
+    "rank": 4,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "DinoV2",
+      "auroc": 0.978945255279541
+    },
+    {
+      "method": "MG",
+      "auroc": 0.977275013923645
+    },
+    {
+      "method": "SwinUNETR",
+      "auroc": 0.974390149116516
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.9722137451171876
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.9722137451171876
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.9123392939567566,
+    "std_auroc": 0.11870515226441654,
+    "median_auroc": 0.9665957689285278,
+    "min_auroc": 0.5837129354476929,
+    "max_auroc": 0.978945255279541
+  }
+}

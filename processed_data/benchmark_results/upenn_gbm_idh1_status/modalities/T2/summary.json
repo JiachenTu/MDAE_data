@@ -1,0 +1,46 @@
+{
+  "benchmark": "upenn_gbm_idh1_status",
+  "modality": "T2",
+  "modality_name": "T2-weighted",
+  "num_runs": 42,
+  "num_methods": 15,
+  "best_method": "MDAE",
+  "best_auroc": 0.6035836935043335,
+  "mdae_performance": {
+    "auroc": 0.6035836935043335,
+    "ap": 0.5643071532249451,
+    "f1": 0.4511627852916717,
+    "balanced_accuracy": 0.5,
+    "rank": 1,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "MDAE",
+      "auroc": 0.6035836935043335
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.6035836935043335
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.6008836030960083
+    },
+    {
+      "method": "BrainIAC",
+      "auroc": 0.5586646795272827
+    },
+    {
+      "method": "DinoV2",
+      "auroc": 0.5569465160369873
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.5373424967130025,
+    "std_auroc": 0.04621644453566187,
+    "median_auroc": 0.537800669670105,
+    "min_auroc": 0.4401080012321472,
+    "max_auroc": 0.6035836935043335
+  }
+}

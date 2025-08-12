@@ -1,0 +1,46 @@
+{
+  "benchmark": "upenn_gbm_age_group",
+  "modality": "T1GD",
+  "modality_name": "T1GD",
+  "num_runs": 40,
+  "num_methods": 14,
+  "best_method": "DinoV2",
+  "best_auroc": 0.8686342239379883,
+  "mdae_performance": {
+    "auroc": 0.8318865895271301,
+    "ap": 0.8302628993988037,
+    "f1": 0.7593240141868591,
+    "balanced_accuracy": 0.7581018209457397,
+    "rank": 4,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "DinoV2",
+      "auroc": 0.8686342239379883
+    },
+    {
+      "method": "VF",
+      "auroc": 0.8376736044883728
+    },
+    {
+      "method": "SwinUNETR",
+      "auroc": 0.8326099514961243
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.8318865895271301
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.8318865895271301
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.7664723907198224,
+    "std_auroc": 0.11010104106343915,
+    "median_auroc": 0.8178529739379883,
+    "min_auroc": 0.539641261100769,
+    "max_auroc": 0.8686342239379883
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "benchmark": "upenn_gbm_survival_2year",
+  "modality": "T1",
+  "modality_name": "T1-weighted",
+  "num_runs": 48,
+  "num_methods": 15,
+  "best_method": "BrainIAC",
+  "best_auroc": 0.7054521441459656,
+  "mdae_performance": {
+    "auroc": 0.627437949180603,
+    "ap": 0.5907291173934937,
+    "f1": 0.4433962404727936,
+    "balanced_accuracy": 0.5,
+    "rank": 3,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "BrainIAC",
+      "auroc": 0.7054521441459656
+    },
+    {
+      "method": "SwinUNETR",
+      "auroc": 0.6385195255279541
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.627437949180603
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.627437949180603
+    },
+    {
+      "method": "BrainMVP",
+      "auroc": 0.6156915426254272
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.5856974065303803,
+    "std_auroc": 0.05735355265521149,
+    "median_auroc": 0.5859929323196411,
+    "min_auroc": 0.4514627754688263,
+    "max_auroc": 0.7054521441459656
+  }
+}

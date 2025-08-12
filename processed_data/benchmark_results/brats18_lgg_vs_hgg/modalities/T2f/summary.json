@@ -1,0 +1,46 @@
+{
+  "benchmark": "brats18_lgg_vs_hgg",
+  "modality": "T2f",
+  "modality_name": "T2-FLAIR",
+  "num_runs": 75,
+  "num_methods": 15,
+  "best_method": "MRI-Core",
+  "best_auroc": 0.8968254327774048,
+  "mdae_performance": {
+    "auroc": 0.596825361251831,
+    "ap": 0.5632067918777466,
+    "f1": 0.4242424368858337,
+    "balanced_accuracy": 0.5,
+    "rank": 8,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "MRI-Core",
+      "auroc": 0.8968254327774048
+    },
+    {
+      "method": "BrainMVP",
+      "auroc": 0.7333333492279053
+    },
+    {
+      "method": "ResNet-50",
+      "auroc": 0.7317460179328918
+    },
+    {
+      "method": "SimCLR",
+      "auroc": 0.726190447807312
+    },
+    {
+      "method": "S3D",
+      "auroc": 0.6841269731521606
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.6223809480667114,
+    "std_auroc": 0.12163633144943581,
+    "median_auroc": 0.596825361251831,
+    "min_auroc": 0.3888888955116272,
+    "max_auroc": 0.8968254327774048
+  }
+}

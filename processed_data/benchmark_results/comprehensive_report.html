@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MDAE Benchmark Results Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #2E7D32; }
+        h2 { color: #1976D2; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .best { background-color: #E8F5E9; font-weight: bold; }
+        .category { margin: 30px 0; padding: 20px; border-left: 4px solid #2E7D32; background: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <h1>MDAE Comprehensive Benchmark Results</h1>
+
+    <div class="category">
+        <h2>Tumor Grade</h2>
+        <table>
+            <tr>
+                <th>Benchmark</th>
+                <th>MDAE AUROC</th>
+                <th>MDAE Rank</th>
+                <th>Best Method</th>
+                <th>Best AUROC</th>
+            </tr>
+
+            <tr class="">
+                <td>BraTS18 LGG vs HGG</td>
+                <td>0.803</td>
+                <td>7</td>
+                <td>SwinUNETR</td>
+                <td>0.910</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="category">
+        <h2>Tumor Type</h2>
+        <table>
+            <tr>
+                <th>Benchmark</th>
+                <th>MDAE AUROC</th>
+                <th>MDAE Rank</th>
+                <th>Best Method</th>
+                <th>Best AUROC</th>
+            </tr>
+
+            <tr class="">
+                <td>BraTS23 Glioma vs Meningioma</td>
+                <td>0.986</td>
+                <td>5</td>
+                <td>BrainIAC</td>
+                <td>0.999</td>
+            </tr>
+
+            <tr class="">
+                <td>BraTS23 Glioma vs Metastasis</td>
+                <td>0.973</td>
+                <td>2</td>
+                <td>VoCo</td>
+                <td>0.975</td>
+            </tr>
+
+            <tr class="">
+                <td>BraTS23 Meningioma vs Metastasis</td>
+                <td>0.970</td>
+                <td>2</td>
+                <td>VoCo</td>
+                <td>0.976</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="category">
+        <h2>Molecular Marker</h2>
+        <table>
+            <tr>
+                <th>Benchmark</th>
+                <th>MDAE AUROC</th>
+                <th>MDAE Rank</th>
+                <th>Best Method</th>
+                <th>Best AUROC</th>
+            </tr>
+
+            <tr class="">
+                <td>MGMT Methylation Status</td>
+                <td>0.643</td>
+                <td>2</td>
+                <td>BrainIAC</td>
+                <td>0.651</td>
+            </tr>
+
+            <tr class="">
+                <td>IDH Mutation Status</td>
+                <td>0.771</td>
+                <td>6</td>
+                <td>VF</td>
+                <td>0.797</td>
+            </tr>
+
+            <tr class="">
+                <td>UPenn-GBM IDH1 Status</td>
+                <td>0.644</td>
+                <td>1</td>
+                <td>MDAE</td>
+                <td>0.644</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="category">
+        <h2>Survival Prediction</h2>
+        <table>
+            <tr>
+                <th>Benchmark</th>
+                <th>MDAE AUROC</th>
+                <th>MDAE Rank</th>
+                <th>Best Method</th>
+                <th>Best AUROC</th>
+            </tr>
+
+            <tr class="">
+                <td>TCGA-GBM DSS 1-Year</td>
+                <td>0.721</td>
+                <td>1</td>
+                <td>MDAE</td>
+                <td>0.721</td>
+            </tr>
+
+            <tr class="">
+                <td>TCGA-GBM PFI 1-Year</td>
+                <td>0.669</td>
+                <td>4</td>
+                <td>DinoV2</td>
+                <td>0.722</td>
+            </tr>
+
+            <tr class="">
+                <td>UPenn-GBM Survival 18-Month</td>
+                <td>0.695</td>
+                <td>1</td>
+                <td>MDAE</td>
+                <td>0.695</td>
+            </tr>
+
+            <tr class="">
+                <td>UPenn-GBM Survival 1-Year</td>
+                <td>0.647</td>
+                <td>3</td>
+                <td>VoCo</td>
+                <td>0.674</td>
+            </tr>
+
+            <tr class="">
+                <td>UPenn-GBM Survival 2-Year</td>
+                <td>0.702</td>
+                <td>2</td>
+                <td>BrainIAC</td>
+                <td>0.705</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="category">
+        <h2>Clinical Feature</h2>
+        <table>
+            <tr>
+                <th>Benchmark</th>
+                <th>MDAE AUROC</th>
+                <th>MDAE Rank</th>
+                <th>Best Method</th>
+                <th>Best AUROC</th>
+            </tr>
+
+            <tr class="">
+                <td>UPenn-GBM Age Group</td>
+                <td>0.913</td>
+                <td>3</td>
+                <td>SimCLR</td>
+                <td>0.927</td>
+            </tr>
+
+            <tr class="">
+                <td>UPenn-GBM Gender</td>
+                <td>0.870</td>
+                <td>3</td>
+                <td>MG</td>
+                <td>0.873</td>
+            </tr>
+
+            <tr class="">
+                <td>UPenn-GBM GTR Status</td>
+                <td>0.630</td>
+                <td>1</td>
+                <td>MDAE (TC)</td>
+                <td>0.630</td>
+            </tr>
+
+        </table>
+    </div>
+
+</body>
+</html>

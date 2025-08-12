@@ -1,0 +1,26 @@
+\begin{table}[ht]
+\centering
+\caption{UPenn-GBM Survival 2-Year - Performance Metrics}
+\label{tab:upenn_gbm_survival_2year}
+\begin{tabular}{lcccc}
+\toprule
+Method & AUROC & AP & F1 & Balanced Acc \\
+\midrule
+BrainIAC & \textbf{0.705} & 0.653 & 0.443 & 0.500 \\
+MDAE (TC) & 0.702 & \textbf{0.672} & 0.443 & 0.500 \\
+MDAE (Combined) & 0.702 & 0.672 & 0.443 & 0.500 \\
+MDAE & 0.650 & 0.582 & 0.443 & 0.500 \\
+MAE & 0.648 & 0.619 & 0.443 & 0.500 \\
+SwinUNETR & 0.639 & 0.599 & \textbf{0.585} & \textbf{0.577} \\
+BrainMVP & 0.616 & 0.564 & 0.443 & 0.500 \\
+DinoV2 & 0.613 & 0.566 & 0.443 & 0.500 \\
+ResNet-50 & 0.613 & 0.592 & 0.443 & 0.500 \\
+SimCLR & 0.608 & 0.560 & 0.443 & 0.500 \\
+S3D & 0.593 & 0.553 & 0.443 & 0.500 \\
+MG & 0.589 & 0.571 & 0.443 & 0.500 \\
+MRI-Core & 0.579 & 0.530 & 0.443 & 0.500 \\
+VoCo & 0.566 & 0.543 & 0.443 & 0.500 \\
+VF & 0.556 & 0.538 & 0.443 & 0.500 \\
+\bottomrule
+\end{tabular}
+\end{table}

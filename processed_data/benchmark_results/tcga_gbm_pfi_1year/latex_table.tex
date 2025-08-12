@@ -1,0 +1,24 @@
+\begin{table}[ht]
+\centering
+\caption{TCGA-GBM PFI 1-Year - Performance Metrics}
+\label{tab:tcga_gbm_pfi_1year}
+\begin{tabular}{lcccc}
+\toprule
+Method & AUROC & AP & F1 & Balanced Acc \\
+\midrule
+DinoV2 & \textbf{0.722} & 0.702 & 0.422 & \textbf{0.500} \\
+MRI-Core & 0.722 & \textbf{0.771} & 0.422 & 0.500 \\
+VoCo & 0.692 & 0.649 & 0.422 & 0.500 \\
+MDAE (TC) & 0.669 & 0.658 & 0.422 & 0.500 \\
+MDAE (Combined) & 0.669 & 0.658 & 0.422 & 0.500 \\
+MDAE & 0.662 & 0.628 & 0.422 & 0.500 \\
+VF & 0.609 & 0.591 & 0.409 & 0.474 \\
+BrainMVP & 0.534 & 0.568 & 0.422 & 0.500 \\
+SimCLR & 0.504 & 0.550 & 0.381 & 0.421 \\
+SwinUNETR & 0.481 & 0.523 & 0.422 & 0.500 \\
+MG & 0.436 & 0.486 & \textbf{0.481} & 0.492 \\
+S3D & 0.338 & 0.454 & 0.422 & 0.500 \\
+MAE & 0.323 & 0.455 & 0.422 & 0.500 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,47 @@
+{
+  "benchmark": "brats18_lgg_vs_hgg",
+  "info": {
+    "name": "BraTS18 LGG vs HGG",
+    "category": "Tumor Grade",
+    "task": "Binary Classification",
+    "description": "Low-grade vs High-grade Glioma"
+  },
+  "best_method": "SwinUNETR",
+  "best_auroc": 0.9095238447189332,
+  "mdae_performance": {
+    "auroc": 0.803174614906311,
+    "ap": 0.7965859770774841,
+    "f1": 0.4242424368858337,
+    "balanced_accuracy": 0.5,
+    "rank": 7,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "SwinUNETR",
+      "auroc": 0.9095238447189332
+    },
+    {
+      "method": "VoCo",
+      "auroc": 0.905555546283722
+    },
+    {
+      "method": "MRI-Core",
+      "auroc": 0.8968254327774048
+    },
+    {
+      "method": "BrainMVP",
+      "auroc": 0.8666666746139526
+    },
+    {
+      "method": "DinoV2",
+      "auroc": 0.8563492298126221
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.8016402165095011,
+    "std_auroc": 0.0779133063476311,
+    "median_auroc": 0.803174614906311,
+    "num_methods": 15
+  }
+}

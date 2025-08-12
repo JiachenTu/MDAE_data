@@ -1,0 +1,26 @@
+\begin{table}[ht]
+\centering
+\caption{BraTS23 Glioma vs Metastasis - Performance Metrics}
+\label{tab:brats23_gli_vs_met}
+\begin{tabular}{lcccc}
+\toprule
+Method & AUROC & AP & F1 & Balanced Acc \\
+\midrule
+VoCo & \textbf{0.975} & 0.930 & 0.685 & 0.636 \\
+MDAE & 0.973 & \textbf{0.952} & 0.465 & 0.500 \\
+MDAE (Combined) & 0.973 & 0.952 & 0.465 & 0.500 \\
+MDAE (TC) & 0.967 & 0.934 & 0.791 & 0.725 \\
+DinoV2 & 0.967 & 0.914 & \textbf{0.829} & \textbf{0.791} \\
+BrainIAC & 0.955 & 0.889 & 0.669 & 0.623 \\
+BrainMVP & 0.926 & 0.877 & 0.465 & 0.500 \\
+ResNet-50 & 0.900 & 0.847 & 0.736 & 0.675 \\
+VF & 0.884 & 0.785 & 0.537 & 0.538 \\
+MAE & 0.879 & 0.819 & 0.669 & 0.623 \\
+SwinUNETR & 0.821 & 0.753 & 0.716 & 0.788 \\
+MRI-Core & 0.806 & 0.731 & 0.465 & 0.500 \\
+MG & 0.750 & 0.731 & 0.728 & 0.680 \\
+S3D & 0.732 & 0.702 & 0.652 & 0.611 \\
+SimCLR & 0.697 & 0.600 & 0.566 & 0.567 \\
+\bottomrule
+\end{tabular}
+\end{table}

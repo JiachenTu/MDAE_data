@@ -1,0 +1,47 @@
+{
+  "benchmark": "ucsf_pdgm_idh_classification",
+  "info": {
+    "name": "IDH Mutation Status",
+    "category": "Molecular Marker",
+    "task": "Binary Classification",
+    "description": "IDH1/2 mutation status prediction"
+  },
+  "best_method": "VF",
+  "best_auroc": 0.7967032790184021,
+  "mdae_performance": {
+    "auroc": 0.7710622549057007,
+    "ap": 0.7029664516448975,
+    "f1": 0.5193063616752625,
+    "balanced_accuracy": 0.5347985625267029,
+    "rank": 6,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "VF",
+      "auroc": 0.7967032790184021
+    },
+    {
+      "method": "BrainIAC",
+      "auroc": 0.7924298048019409
+    },
+    {
+      "method": "DinoV2",
+      "auroc": 0.7912087440490723
+    },
+    {
+      "method": "SwinUNETR",
+      "auroc": 0.7893772125244141
+    },
+    {
+      "method": "VoCo",
+      "auroc": 0.7878510355949402
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.7482295473416646,
+    "std_auroc": 0.054072292059217264,
+    "median_auroc": 0.7698413133621216,
+    "num_methods": 15
+  }
+}

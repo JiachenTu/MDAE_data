@@ -1,0 +1,46 @@
+{
+  "benchmark": "upenn_gbm_survival_2year",
+  "modality": "T1GD",
+  "modality_name": "T1GD",
+  "num_runs": 45,
+  "num_methods": 15,
+  "best_method": "MDAE (TC)",
+  "best_auroc": 0.6646720170974731,
+  "mdae_performance": {
+    "auroc": 0.6646720170974731,
+    "ap": 0.590003490447998,
+    "f1": 0.4433962404727936,
+    "balanced_accuracy": 0.5,
+    "rank": 1,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.6646720170974731
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.6646720170974731
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.6351950168609619
+    },
+    {
+      "method": "DinoV2",
+      "auroc": 0.6130319237709045
+    },
+    {
+      "method": "MAE",
+      "auroc": 0.583776593208313
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.5637263655662537,
+    "std_auroc": 0.061357252638272575,
+    "median_auroc": 0.551196813583374,
+    "min_auroc": 0.4667553305625915,
+    "max_auroc": 0.6646720170974731
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "benchmark": "brats23_men_vs_met",
+  "modality": "T1N",
+  "modality_name": "T1N",
+  "num_runs": 71,
+  "num_methods": 15,
+  "best_method": "VoCo",
+  "best_auroc": 0.9685810804367064,
+  "mdae_performance": {
+    "auroc": 0.9655405282974244,
+    "ap": 0.9675551652908324,
+    "f1": 0.6464646458625793,
+    "balanced_accuracy": 0.6875,
+    "rank": 2,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "VoCo",
+      "auroc": 0.9685810804367064
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.9655405282974244
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.9655405282974244
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.9493243098258972
+    },
+    {
+      "method": "MAE",
+      "auroc": 0.9290540218353271
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.7950225234031677,
+    "std_auroc": 0.15184198508325752,
+    "median_auroc": 0.7885135412216187,
+    "min_auroc": 0.5439189076423645,
+    "max_auroc": 0.9685810804367064
+  }
+}

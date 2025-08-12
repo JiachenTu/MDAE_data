@@ -1,0 +1,47 @@
+{
+  "benchmark": "brats23_gli_vs_men",
+  "info": {
+    "name": "BraTS23 Glioma vs Meningioma",
+    "category": "Tumor Type",
+    "task": "Binary Classification",
+    "description": "Glioma vs Meningioma differentiation"
+  },
+  "best_method": "BrainIAC",
+  "best_auroc": 0.9985828399658204,
+  "mdae_performance": {
+    "auroc": 0.985524833202362,
+    "ap": 0.9587235450744628,
+    "f1": 0.854013979434967,
+    "balanced_accuracy": 0.9336471557617188,
+    "rank": 5,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "BrainIAC",
+      "auroc": 0.9985828399658204
+    },
+    {
+      "method": "DinoV2",
+      "auroc": 0.9982791543006896
+    },
+    {
+      "method": "VoCo",
+      "auroc": 0.9894219636917114
+    },
+    {
+      "method": "VF",
+      "auroc": 0.985727310180664
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.985524833202362
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.9433377106984456,
+    "std_auroc": 0.10579662637003717,
+    "median_auroc": 0.983095407485962,
+    "num_methods": 15
+  }
+}

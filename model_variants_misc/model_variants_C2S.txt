@@ -1,0 +1,4 @@
+
+Resenc_C2S
+- /mnt/hanoverlimitedwus2/mri/scratch/t-jiachentu/nnssl_data/nnssl_results/c2s/Openmind/0702/Dataset005_OpenMind/BaseC2STrainer_BS48_1000ep__nnsslPlans__onemmiso/fold_all/checkpoint_best.pth
+

@@ -1,0 +1,46 @@
+{
+  "benchmark": "upenn_gbm_gender",
+  "modality": "T1",
+  "modality_name": "T1-weighted",
+  "num_runs": 41,
+  "num_methods": 14,
+  "best_method": "VoCo",
+  "best_auroc": 0.8720364570617676,
+  "mdae_performance": {
+    "auroc": 0.8674771785736084,
+    "ap": 0.8694100975990295,
+    "f1": 0.7828612923622131,
+    "balanced_accuracy": 0.7727963328361511,
+    "rank": 2,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "VoCo",
+      "auroc": 0.8720364570617676
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.8674771785736084
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.8674771785736084
+    },
+    {
+      "method": "SwinUNETR",
+      "auroc": 0.8553191423416138
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.844984769821167
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.7855405850069863,
+    "std_auroc": 0.09612305788992703,
+    "median_auroc": 0.8042553067207336,
+    "min_auroc": 0.5428571701049805,
+    "max_auroc": 0.8720364570617676
+  }
+}

@@ -1,0 +1,26 @@
+\begin{table}[ht]
+\centering
+\caption{BraTS23 Glioma vs Meningioma - Performance Metrics}
+\label{tab:brats23_gli_vs_men}
+\begin{tabular}{lcccc}
+\toprule
+Method & AUROC & AP & F1 & Balanced Acc \\
+\midrule
+BrainIAC & \textbf{0.999} & \textbf{0.995} & 0.959 & 0.932 \\
+DinoV2 & 0.998 & 0.992 & 0.905 & 0.863 \\
+VoCo & 0.989 & 0.977 & 0.930 & 0.925 \\
+VF & 0.986 & 0.984 & \textbf{0.963} & \textbf{0.979} \\
+MDAE (TC) & 0.986 & 0.959 & 0.854 & 0.934 \\
+MDAE (Combined) & 0.986 & 0.959 & 0.854 & 0.934 \\
+MAE & 0.984 & 0.966 & 0.930 & 0.925 \\
+SimCLR & 0.983 & 0.979 & 0.913 & 0.865 \\
+MDAE & 0.979 & 0.966 & 0.932 & 0.892 \\
+MG & 0.977 & 0.945 & 0.891 & 0.914 \\
+SwinUNETR & 0.975 & 0.933 & 0.811 & 0.886 \\
+S3D & 0.967 & 0.945 & 0.914 & 0.910 \\
+ResNet-50 & 0.960 & 0.842 & 0.841 & 0.813 \\
+BrainMVP & 0.758 & 0.690 & 0.591 & 0.568 \\
+MRI-Core & 0.625 & 0.532 & 0.468 & 0.500 \\
+\bottomrule
+\end{tabular}
+\end{table}

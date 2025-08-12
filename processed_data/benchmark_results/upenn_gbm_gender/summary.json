@@ -1,0 +1,47 @@
+{
+  "benchmark": "upenn_gbm_gender",
+  "info": {
+    "name": "UPenn-GBM Gender",
+    "category": "Clinical Feature",
+    "task": "Binary Classification",
+    "description": "Gender prediction from MRI"
+  },
+  "best_method": "MG",
+  "best_auroc": 0.8729482889175415,
+  "mdae_performance": {
+    "auroc": 0.8702127933502197,
+    "ap": 0.8673837184906006,
+    "f1": 0.8039575815200806,
+    "balanced_accuracy": 0.7940729260444641,
+    "rank": 3,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "MG",
+      "auroc": 0.8729482889175415
+    },
+    {
+      "method": "VoCo",
+      "auroc": 0.8720364570617676
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.8702127933502197
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.8702127933502197
+    },
+    {
+      "method": "SimCLR",
+      "auroc": 0.8621580600738525
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.8051570336023967,
+    "std_auroc": 0.0945078669260427,
+    "median_auroc": 0.844984769821167,
+    "num_methods": 15
+  }
+}

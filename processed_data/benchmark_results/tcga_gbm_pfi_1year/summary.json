@@ -1,0 +1,47 @@
+{
+  "benchmark": "tcga_gbm_pfi_1year",
+  "info": {
+    "name": "TCGA-GBM PFI 1-Year",
+    "category": "Survival Prediction",
+    "task": "Binary Classification",
+    "description": "Progression-free interval at 1 year"
+  },
+  "best_method": "DinoV2",
+  "best_auroc": 0.7218044996261597,
+  "mdae_performance": {
+    "auroc": 0.6691729426383972,
+    "ap": 0.6578984260559082,
+    "f1": 0.422222226858139,
+    "balanced_accuracy": 0.5,
+    "rank": 4,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "DinoV2",
+      "auroc": 0.7218044996261597
+    },
+    {
+      "method": "MRI-Core",
+      "auroc": 0.7218044996261597
+    },
+    {
+      "method": "VoCo",
+      "auroc": 0.6917293071746826
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.6691729426383972
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.6691729426383972
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.5662232454006488,
+    "std_auroc": 0.1403414063534934,
+    "median_auroc": 0.6090225577354431,
+    "num_methods": 13
+  }
+}

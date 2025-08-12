@@ -1,0 +1,47 @@
+{
+  "benchmark": "brats23_gli_vs_met",
+  "info": {
+    "name": "BraTS23 Glioma vs Metastasis",
+    "category": "Tumor Type",
+    "task": "Binary Classification",
+    "description": "Glioma vs Brain Metastasis"
+  },
+  "best_method": "VoCo",
+  "best_auroc": 0.975327730178833,
+  "mdae_performance": {
+    "auroc": 0.972565531730652,
+    "ap": 0.9518988132476808,
+    "f1": 0.4651567935943603,
+    "balanced_accuracy": 0.5,
+    "rank": 2,
+    "best_variant": "MDAE"
+  },
+  "top_5_methods": [
+    {
+      "method": "VoCo",
+      "auroc": 0.975327730178833
+    },
+    {
+      "method": "MDAE",
+      "auroc": 0.972565531730652
+    },
+    {
+      "method": "MDAE (Combined)",
+      "auroc": 0.972565531730652
+    },
+    {
+      "method": "MDAE (TC)",
+      "auroc": 0.9670880436897278
+    },
+    {
+      "method": "DinoV2",
+      "auroc": 0.966666579246521
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.8802496870358785,
+    "std_auroc": 0.09671601697332734,
+    "median_auroc": 0.8995318412780762,
+    "num_methods": 15
+  }
+}

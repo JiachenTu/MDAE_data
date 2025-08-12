@@ -1,0 +1,46 @@
+{
+  "benchmark": "upenn_gbm_survival_18month",
+  "modality": "T1GD",
+  "modality_name": "T1GD",
+  "num_runs": 39,
+  "num_methods": 15,
+  "best_method": "VoCo",
+  "best_auroc": 0.6506004333496094,
+  "mdae_performance": {
+    "auroc": 0.5665367841720581,
+    "ap": 0.5732505321502686,
+    "f1": 0.5178494453430176,
+    "balanced_accuracy": 0.5452775359153748,
+    "rank": 6,
+    "best_variant": "MDAE (TC)"
+  },
+  "top_5_methods": [
+    {
+      "method": "VoCo",
+      "auroc": 0.6506004333496094
+    },
+    {
+      "method": "BrainIAC",
+      "auroc": 0.6014281511306763
+    },
+    {
+      "method": "MAE",
+      "auroc": 0.5715676546096802
+    },
+    {
+      "method": "BrainMVP",
+      "auroc": 0.5673482418060303
+    },
+    {
+      "method": "MRI-Core",
+      "auroc": 0.5668613910675049
+    }
+  ],
+  "statistics": {
+    "mean_auroc": 0.5318727612495422,
+    "std_auroc": 0.06605988443075611,
+    "median_auroc": 0.5376501083374023,
+    "min_auroc": 0.3925673365592956,
+    "max_auroc": 0.6506004333496094
+  }
+}

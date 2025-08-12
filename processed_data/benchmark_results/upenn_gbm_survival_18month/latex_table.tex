@@ -1,0 +1,26 @@
+\begin{table}[ht]
+\centering
+\caption{UPenn-GBM Survival 18-Month - Performance Metrics}
+\label{tab:upenn_gbm_survival_18month}
+\begin{tabular}{lcccc}
+\toprule
+Method & AUROC & AP & F1 & Balanced Acc \\
+\midrule
+MDAE & \textbf{0.695} & \textbf{0.681} & 0.401 & 0.500 \\
+MDAE (Combined) & 0.695 & 0.681 & 0.401 & 0.500 \\
+MAE & 0.688 & 0.671 & 0.508 & 0.545 \\
+MDAE (TC) & 0.684 & 0.644 & 0.401 & 0.500 \\
+SimCLR & 0.666 & 0.643 & 0.428 & 0.513 \\
+VF & 0.664 & 0.636 & 0.594 & 0.591 \\
+BrainIAC & 0.657 & 0.654 & \textbf{0.621} & \textbf{0.617} \\
+VoCo & 0.651 & 0.661 & 0.428 & 0.513 \\
+S3D & 0.644 & 0.658 & 0.591 & 0.592 \\
+SwinUNETR & 0.640 & 0.638 & 0.584 & 0.612 \\
+MG & 0.623 & 0.592 & 0.566 & 0.565 \\
+BrainMVP & 0.620 & 0.614 & 0.330 & 0.519 \\
+MRI-Core & 0.602 & 0.566 & 0.401 & 0.500 \\
+DinoV2 & 0.597 & 0.577 & 0.401 & 0.500 \\
+ResNet-50 & 0.521 & 0.521 & 0.401 & 0.500 \\
+\bottomrule
+\end{tabular}
+\end{table}

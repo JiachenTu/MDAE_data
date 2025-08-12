@@ -79,8 +79,7 @@ venv.bak/
 .DS_Store
 Thumbs.db
 
-# Data files
-*.csv
+# Data files (excluding raw_data CSV summaries)
 *.xlsx
 *.xls
 *.parquet

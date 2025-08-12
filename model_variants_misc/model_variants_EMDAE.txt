@@ -1,0 +1,131 @@
+================================================================================
+                        EMDAE Model Variants Documentation
+================================================================================
+
+# EMDAE (Embedding-space Masked Denoising AutoEncoder)
+
+EMDAE is an advanced self-supervised pretraining method that combines:
+1. **Pixel-space masking** (like MAE): Masks input pixels to create reconstruction targets
+2. **Embedding-space corruption**: Adds noise to internal feature representations
+3. **Multi-level learning**: Can corrupt embeddings at single or multiple encoder stages
+
+## Key Differences from Related Methods:
+- **MAE**: Only masks pixels, no corruption (pure reconstruction)
+- **MDAE**: Masks pixels + corrupts visible pixels (pixel-level noise)
+- **EMDAE**: Masks pixels + corrupts feature embeddings (feature-level noise)
+
+## Architecture:
+- Base: ResEncL with 6 encoder stages (stages 0-5)
+- Stage dimensions: [32, 64, 128, 256, 320, 320] channels
+- Default masking: 90% of patches masked
+- Corruption applied to embeddings at configurable stages
+
+================================================================================
+                          Available Model Variants
+================================================================================
+
+Base Directory: /mnt/hanoverlimitedwus2/mri/scratch/t-jiachentu/nnssl_data/nnssl_results/EMDAE/Openmind/0711/Dataset005_OpenMind
+
+--------------------------------------------------------------------------------
+## 1. BaseEMDAETrainer_BS48_90Mask_1000ep
+--------------------------------------------------------------------------------
+**Description**: Standard EMDAE with embedding corruption at stage 5 (default)
+**Key Features**:
+  - Batch size: 48
+  - Masking ratio: 90%
+  - Epochs: 1000
+  - Corruption: DDPM at encoder stage 5 (bottleneck)
+  - SDE type: DDPM (variance preserving)
+
+**Checkpoint Path**: 
+/mnt/hanoverlimitedwus2/mri/scratch/t-jiachentu/nnssl_data/nnssl_results/EMDAE/Openmind/0711/Dataset005_OpenMind/BaseEMDAETrainer_BS48_90Mask_1000ep__nnsslPlans__onemmiso/fold_all/checkpoint_best.pth
+
+--------------------------------------------------------------------------------
+## 2. BaseEMDAETrainer_BottleneckCorruption_BS48_90Mask_2000ep
+--------------------------------------------------------------------------------
+**Description**: EMDAE with explicit bottleneck corruption (stage 5 - final encoder stage)
+**Key Features**:
+  - Batch size: 48
+  - Masking ratio: 90%
+  - Epochs: 2000 (extended training)
+  - Corruption: DDPM at encoder stage 5 only
+  - Focus: Corrupts features directly used for downstream tasks
+  - SDE type: DDPM (variance preserving)
+
+**Checkpoint Path**:
+/mnt/hanoverlimitedwus2/mri/scratch/t-jiachentu/nnssl_data/nnssl_results/EMDAE/Openmind/0711/Dataset005_OpenMind/BaseEMDAETrainer_BottleneckCorruption_BS48_90Mask_2000ep__nnsslPlans__onemmiso/fold_all/checkpoint_best.pth
+
+--------------------------------------------------------------------------------
+## 3. BaseEMDAETrainer_BottleneckCorruption_Flow_BS48_90Mask_2000ep
+--------------------------------------------------------------------------------
+**Description**: Bottleneck EMDAE with flow matching corruption
+**Key Features**:
+  - Batch size: 48
+  - Masking ratio: 90%
+  - Epochs: 2000
+  - Corruption: Flow matching at encoder stage 5
+  - SDE type: Flow (linear interpolation between data and noise)
+  - Advantage: Simpler corruption dynamics than DDPM
+
+**Checkpoint Path**:
+/mnt/hanoverlimitedwus2/mri/scratch/t-jiachentu/nnssl_data/nnssl_results/EMDAE/Openmind/0711/Dataset005_OpenMind/BaseEMDAETrainer_BottleneckCorruption_Flow_BS48_90Mask_2000ep__nnsslPlans__onemmiso/fold_all/checkpoint_best.pth
+
+--------------------------------------------------------------------------------
+## 4. BaseEMDAETrainer_MultiStage_Flow_BS48_90Mask_2000ep
+--------------------------------------------------------------------------------
+**Description**: Advanced EMDAE corrupting ALL encoder stages simultaneously
+**Key Features**:
+  - Batch size: 48
+  - Masking ratio: 90%
+  - Epochs: 2000
+  - Corruption: Flow matching at ALL 6 encoder stages (0-5)
+  - SDE type: Flow
+  - Advantage: Most comprehensive corruption, learns robustness at all feature levels
+  - Trade-off: More computationally intensive
+
+**Checkpoint Path**:
+/mnt/hanoverlimitedwus2/mri/scratch/t-jiachentu/nnssl_data/nnssl_results/EMDAE/Openmind/0711/Dataset005_OpenMind/BaseEMDAETrainer_MultiStage_Flow_BS48_90Mask_2000ep__nnsslPlans__onemmiso/fold_all/checkpoint_best.pth
+
+--------------------------------------------------------------------------------
+## 5. BaseEMDAETrainer_RandomMask_BottleneckCorruption_Flow_BS48_2000ep
+--------------------------------------------------------------------------------
+**Description**: EMDAE with variable masking difficulty and flow corruption
+**Key Features**:
+  - Batch size: 48
+  - Masking ratio: Random (1% to 99% per batch)
+  - Epochs: 2000
+  - Corruption: Flow matching at encoder stage 5 (bottleneck)
+  - SDE type: Flow
+  - Advantage: Curriculum-like learning with varying reconstruction difficulty
+  - Use case: Better generalization through diverse masking patterns
+
+**Checkpoint Path**:
+/mnt/hanoverlimitedwus2/mri/scratch/t-jiachentu/nnssl_data/nnssl_results/EMDAE/Openmind/0711/Dataset005_OpenMind/BaseEMDAETrainer_RandomMask_BottleneckCorruption_Flow_BS48_2000ep__nnsslPlans__onemmiso/fold_all/checkpoint_best.pth
+
+--------------------------------------------------------------------------------
+## 6. BaseEMDAETrainer_RandomMask_MultiStage_BS48_2000ep
+--------------------------------------------------------------------------------
+**Description**: Most complex variant - random masking with multi-stage corruption
+**Key Features**:
+  - Batch size: 48
+  - Masking ratio: Random (1% to 99% per batch)
+  - Epochs: 2000
+  - Corruption: DDPM at ALL 6 encoder stages (0-5)
+  - SDE type: DDPM
+  - Advantage: Maximum training diversity and robustness
+  - Use case: When seeking the most robust feature representations
+
+**Checkpoint Path**:
+/mnt/hanoverlimitedwus2/mri/scratch/t-jiachentu/nnssl_data/nnssl_results/EMDAE/Openmind/0711/Dataset005_OpenMind/BaseEMDAETrainer_RandomMask_MultiStage_BS48_2000ep__nnsslPlans__onemmiso/fold_all/checkpoint_best.pth
+
+================================================================================
+                           Variant Selection Guide
+================================================================================
+
+**For fastest training**: Use variant #1 (BS48_90Mask_1000ep)
+**For best downstream performance**: Try variant #4 (MultiStage_Flow)
+**For maximum robustness**: Use variant #6 (RandomMask_MultiStage)
+**For computational efficiency**: Use variants #2 or #3 (BottleneckCorruption)
+**For experimental/research**: Try variant #5 (RandomMask with Flow)
+
+================================================================================
