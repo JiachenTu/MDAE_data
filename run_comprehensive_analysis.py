@@ -10,9 +10,11 @@ Key improvements:
 - Creates MDAE (Combined) from best of MDAE and MDAE (TC)
 - Highlights MDAE variants in visualizations
 - Generates paper-ready outputs
+- Option to use combined MDAE only (default) or keep all variants
 
 Usage:
-    python run_comprehensive_analysis_enhanced.py
+    python run_comprehensive_analysis.py                    # Combined MDAE only (default)
+    python run_comprehensive_analysis.py --no-combine-mdae  # Keep all three variants
 """
 
 import argparse
@@ -38,6 +40,7 @@ warnings.filterwarnings('ignore')
 # Default paths
 DEFAULT_RAW_DATA_DIR = Path('/home/jtu9/Documents/MDAE/MDAE_data/raw_data/20250811')
 DEFAULT_OUTPUT_DIR = Path('/home/jtu9/Documents/MDAE/MDAE_data/processed_data/comprehensive_analysis')
+DEFAULT_COMBINED_OUTPUT_DIR = Path('/home/jtu9/Documents/MDAE/MDAE_data/processed_data_combined')
 
 # Benchmark name mapping for display
 BENCHMARK_MAPPING = {
@@ -135,12 +138,13 @@ METHOD_PATTERNS = {
     'MAE': r'^resenc_pretrained_'
 }
 
-# MDAE variants for highlighting
-MDAE_VARIANTS = ['MDAE', 'MDAE (TC)', 'MDAE (Combined)']
+# MDAE variants for highlighting (will be updated based on combine_mdae flag)
+MDAE_VARIANTS_ALL = ['MDAE', 'MDAE (TC)', 'MDAE (Combined)']
+MDAE_VARIANTS_COMBINED_ONLY = ['MDAE']
 
 # Color scheme for visualizations
 COLOR_SCHEME = {
-    'MDAE': '#FF6B6B',           # Red
+    'MDAE': '#45B7D1',           # Blue (using the combined color when in combined mode)
     'MDAE (TC)': '#4ECDC4',       # Teal
     'MDAE (Combined)': '#45B7D1', # Blue
     # Other methods will use grey scale
@@ -201,8 +205,14 @@ def load_benchmark_data(benchmark_dir: Path, verbose: bool = False) -> pd.DataFr
     
     return df
 
-def create_mdae_combined(df: pd.DataFrame) -> pd.DataFrame:
-    """Create MDAE (Combined) by taking best of MDAE and MDAE (TC) for each modality."""
+def create_mdae_combined(df: pd.DataFrame, combine_mdae: bool = True) -> pd.DataFrame:
+    """Create MDAE (Combined) by taking best of MDAE and MDAE (TC) for each modality.
+    
+    Args:
+        df: DataFrame with benchmark results
+        combine_mdae: If True, only keep combined MDAE (labeled as 'MDAE').
+                     If False, keep all three variants.
+    """
     combined_rows = []
     
     # Get unique modalities
@@ -228,11 +238,22 @@ def create_mdae_combined(df: pd.DataFrame) -> pd.DataFrame:
                 else:
                     combined = mdae_tc_row.copy()
             
-            combined['Method'] = 'MDAE (Combined)'
+            if combine_mdae:
+                # In combined mode, label as just 'MDAE'
+                combined['Method'] = 'MDAE'
+            else:
+                # In full mode, label as 'MDAE (Combined)'
+                combined['Method'] = 'MDAE (Combined)'
+            
             combined_rows.append(combined)
     
     if combined_rows:
         combined_df = pd.concat(combined_rows, ignore_index=True)
+        
+        if combine_mdae:
+            # Remove original MDAE and MDAE (TC) entries
+            df = df[~df['Method'].isin(['MDAE', 'MDAE (TC)'])]
+        
         df = pd.concat([df, combined_df], ignore_index=True)
     
     return df
@@ -271,7 +292,8 @@ def detect_and_merge_duplicates(df: pd.DataFrame, benchmark_name: str, verbose: 
 # VISUALIZATION FUNCTIONS
 # ============================================================================
 
-def create_modality_visualizations(df: pd.DataFrame, output_dir: Path, modality: str, benchmark_name: str):
+def create_modality_visualizations(df: pd.DataFrame, output_dir: Path, modality: str, benchmark_name: str, 
+                                  mdae_variants: List[str]):
     """Create visualizations for a single modality with MDAE highlighting."""
     output_dir.mkdir(parents=True, exist_ok=True)
     
@@ -306,7 +328,7 @@ def create_modality_visualizations(df: pd.DataFrame, output_dir: Path, modality:
     
     # Highlight MDAE variants
     for i, method in enumerate(df['Method']):
-        if method in MDAE_VARIANTS:
+        if method in mdae_variants:
             bars1[i].set_edgecolor('black')
             bars1[i].set_linewidth(2)
     
@@ -324,7 +346,7 @@ def create_modality_visualizations(df: pd.DataFrame, output_dir: Path, modality:
     
     # Highlight MDAE variants
     for i, method in enumerate(df['Method']):
-        if method in MDAE_VARIANTS:
+        if method in mdae_variants:
             bars2[i].set_edgecolor('black')
             bars2[i].set_linewidth(2)
     
@@ -350,7 +372,7 @@ def create_modality_visualizations(df: pd.DataFrame, output_dir: Path, modality:
         
         # Highlight MDAE variants
         for i, method in enumerate(df['Method']):
-            if method in MDAE_VARIANTS:
+            if method in mdae_variants:
                 bars[i].set_edgecolor('black')
                 bars[i].set_linewidth(2)
     
@@ -359,7 +381,7 @@ def create_modality_visualizations(df: pd.DataFrame, output_dir: Path, modality:
     plt.savefig(output_dir / 'all_metrics.png', dpi=150, bbox_inches='tight')
     plt.close()
 
-def create_cross_modality_comparison(results: Dict, output_dir: Path, benchmark_name: str):
+def create_cross_modality_comparison(results: Dict, output_dir: Path, benchmark_name: str, mdae_variants: List[str]):
     """Create cross-modality comparison with MDAE highlighting."""
     # Prepare data for comparison
     all_methods = set()
@@ -392,7 +414,7 @@ def create_cross_modality_comparison(results: Dict, output_dir: Path, benchmark_
     # Highlight MDAE variants with bold labels
     y_labels = []
     for method in all_methods:
-        if method in MDAE_VARIANTS:
+        if method in mdae_variants:
             y_labels.append(f'**{method}**')
         else:
             y_labels.append(method)
@@ -403,7 +425,7 @@ def create_cross_modality_comparison(results: Dict, output_dir: Path, benchmark_
     
     # Add border for MDAE variants
     for i, method in enumerate(all_methods):
-        if method in MDAE_VARIANTS:
+        if method in mdae_variants:
             for j in range(len(modalities)):
                 rect = plt.Rectangle((j, i), 1, 1, fill=False, edgecolor='black', lw=2)
                 ax.add_patch(rect)
@@ -416,7 +438,8 @@ def create_cross_modality_comparison(results: Dict, output_dir: Path, benchmark_
 # PROCESSING FUNCTIONS
 # ============================================================================
 
-def process_benchmark(benchmark_name: str, benchmark_dir: Path, output_dir: Path, verbose: bool = False) -> Dict:
+def process_benchmark(benchmark_name: str, benchmark_dir: Path, output_dir: Path, 
+                     combine_mdae: bool = True, verbose: bool = False) -> Dict:
     """Process a single benchmark with all modalities."""
     if verbose:
         print(f"\nProcessing: {benchmark_name}")
@@ -432,7 +455,10 @@ def process_benchmark(benchmark_name: str, benchmark_dir: Path, output_dir: Path
     df = detect_and_merge_duplicates(df, benchmark_name, verbose)
     
     # Create MDAE (Combined)
-    df = create_mdae_combined(df)
+    df = create_mdae_combined(df, combine_mdae=combine_mdae)
+    
+    # Determine which MDAE variants to highlight
+    mdae_variants = MDAE_VARIANTS_COMBINED_ONLY if combine_mdae else MDAE_VARIANTS_ALL
     
     # Get display name
     display_name = BENCHMARK_MAPPING.get(benchmark_name, benchmark_name)
@@ -446,7 +472,7 @@ def process_benchmark(benchmark_name: str, benchmark_dir: Path, output_dir: Path
     if verbose:
         print(f"  Found {len(valid_modalities)} modalities: {', '.join(valid_modalities)}")
         # Check for MDAE variants
-        mdae_methods = df[df['Method'].isin(MDAE_VARIANTS)]['Method'].unique()
+        mdae_methods = df[df['Method'].isin(mdae_variants)]['Method'].unique()
         print(f"  MDAE variants present: {', '.join(mdae_methods)}")
     
     # Create output directory structure
@@ -465,18 +491,20 @@ def process_benchmark(benchmark_name: str, benchmark_dir: Path, output_dir: Path
         mod_output.mkdir(exist_ok=True)
         
         # Create visualizations
-        create_modality_visualizations(mod_df, mod_output, modality, display_name)
+        create_modality_visualizations(mod_df, mod_output, modality, display_name, mdae_variants)
         
         results[modality] = mod_df
     
     # Create cross-modality comparison if multiple modalities exist
     if len(results) > 1:
-        create_cross_modality_comparison(results, bench_output, display_name)
+        create_cross_modality_comparison(results, bench_output, display_name, mdae_variants)
     
     return results
 
-def create_overall_summary(all_results: Dict, output_dir: Path, verbose: bool = False):
+def create_overall_summary(all_results: Dict, output_dir: Path, combine_mdae: bool = True, verbose: bool = False):
     """Create overall summary statistics and visualizations."""
+    # Determine which MDAE variants to highlight
+    mdae_variants = MDAE_VARIANTS_COMBINED_ONLY if combine_mdae else MDAE_VARIANTS_ALL
     if verbose:
         print("\nCreating overall summary...")
     
@@ -552,7 +580,7 @@ def create_overall_summary(all_results: Dict, output_dir: Path, verbose: bool = 
     
     # Highlight MDAE variants
     for i, method in enumerate(stats_df['Method']):
-        if method in MDAE_VARIANTS:
+        if method in mdae_variants:
             bars[i].set_edgecolor('black')
             bars[i].set_linewidth(2)
             ax.get_yticklabels()[i].set_weight('bold')
@@ -574,17 +602,26 @@ def main():
     parser = argparse.ArgumentParser(description='Enhanced MDAE Benchmarking Analysis')
     parser.add_argument('--input-dir', type=Path, default=DEFAULT_RAW_DATA_DIR,
                        help='Input directory with raw data')
-    parser.add_argument('--output-dir', type=Path, default=DEFAULT_OUTPUT_DIR,
+    parser.add_argument('--output-dir', type=Path, default=None,
                        help='Output directory for processed results')
+    parser.add_argument('--combine-mdae', dest='combine_mdae', action='store_true', default=True,
+                       help='Combine MDAE and MDAE (TC) into single MDAE (default: True)')
+    parser.add_argument('--no-combine-mdae', dest='combine_mdae', action='store_false',
+                       help='Keep MDAE, MDAE (TC), and MDAE (Combined) separate')
     parser.add_argument('--verbose', action='store_true', help='Verbose output')
     
     args = parser.parse_args()
+    
+    # Set output directory based on combine_mdae flag if not specified
+    if args.output_dir is None:
+        args.output_dir = DEFAULT_COMBINED_OUTPUT_DIR if args.combine_mdae else DEFAULT_OUTPUT_DIR
     
     print("="*70)
     print("ENHANCED MDAE COMPREHENSIVE ANALYSIS")
     print("="*70)
     print(f"Input: {args.input_dir}")
     print(f"Output: {args.output_dir}")
+    print(f"Mode: {'Combined MDAE only' if args.combine_mdae else 'All MDAE variants'}")
     print("="*70)
     
     # Create output directory
@@ -604,12 +641,13 @@ def main():
     
     for benchmark_dir in tqdm(sorted(benchmark_dirs), desc="Processing benchmarks"):
         benchmark_name = benchmark_dir.name
-        results = process_benchmark(benchmark_name, benchmark_dir, args.output_dir, args.verbose)
+        results = process_benchmark(benchmark_name, benchmark_dir, args.output_dir, 
+                                   combine_mdae=args.combine_mdae, verbose=args.verbose)
         if results:
             all_results[benchmark_name] = results
     
     # Create overall summary
-    create_overall_summary(all_results, args.output_dir, args.verbose)
+    create_overall_summary(all_results, args.output_dir, combine_mdae=args.combine_mdae, verbose=args.verbose)
     
     print("\n" + "="*70)
     print("PROCESSING COMPLETE")
@@ -620,7 +658,8 @@ def main():
     stats_path = args.output_dir / 'overall_summary_statistics.csv'
     if stats_path.exists():
         stats_df = pd.read_csv(stats_path)
-        mdae_stats = stats_df[stats_df['Method'].isin(MDAE_VARIANTS)]
+        mdae_variants = MDAE_VARIANTS_COMBINED_ONLY if args.combine_mdae else MDAE_VARIANTS_ALL
+        mdae_stats = stats_df[stats_df['Method'].isin(mdae_variants)]
         if not mdae_stats.empty:
             print("\nMDAE Performance Summary:")
             for _, row in mdae_stats.iterrows():

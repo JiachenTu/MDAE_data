@@ -11,7 +11,11 @@ This repository contains the complete data extraction, processing, and analysis 
 python scripts/extract_wandb_data.py --all
 
 # 2. Run comprehensive analysis (recommended)
+# Default: Combined MDAE mode (shows single best MDAE)
 python run_comprehensive_analysis.py
+
+# Alternative: Show all MDAE variants separately
+python run_comprehensive_analysis.py --no-combine-mdae
 
 # Alternative: Use individual scripts
 # python process_results_final.py
@@ -32,6 +36,10 @@ data/
 │   └── benchmark_results_final/ # Latest analysis
 │       ├── [benchmark_name]/    # Per-benchmark results
 │       │   └── modalities/      # Per-modality analysis
+│       └── *.csv                # Summary tables
+│
+├── processed_data_combined/     # Combined MDAE results (simplified mode)
+│   └── benchmarks/              # Per-benchmark visualizations
 │       └── *.csv                # Summary tables
 │
 ├── scripts/                     # Processing scripts
@@ -116,7 +124,9 @@ python process_mdae_combined.py
 Complete reproducible pipeline for all analysis with enhanced features.
 - Processes raw data to final results
 - Handles all 15 benchmarks and 44+ modality combinations
-- Creates MDAE (Combined) analysis (best of MDAE and MDAE TC)
+- **Two modes of operation**:
+  - `--combine-mdae` (default): Shows only best MDAE performance as single "MDAE" method
+  - `--no-combine-mdae`: Shows MDAE, MDAE (TC), and MDAE (Combined) separately
 - **Modality standardization**: Fixes T2F→FLAIR and T1WCE→T1CE duplicates
 - **Visualization highlighting**: MDAE variants highlighted in distinct colors
 - Generates all visualizations and tables
@@ -189,9 +199,9 @@ Extracts data from WandB API.
 ## Current Results Summary
 
 As of 2025-08-12:
-- **MDAE (Combined) Mean AUROC**: 76.5% across all benchmarks (#1 rank)
-- **MDAE Mean AUROC**: 75.7% 
-- **MDAE (TC) Mean AUROC**: 73.7%
+- **MDAE Mean AUROC**: 76.5% across all benchmarks (#1 rank)
+  - Combined best performance from MDAE and MDAE (TC) variants
+  - Default mode shows only this combined result as "MDAE"
 - **Improvement over SSL baselines**: 10.4% average
 - **Improvement over foundation models**: 10.8% average
 - **Total runs analyzed**: 3,000+
@@ -211,11 +221,16 @@ As of 2025-08-12:
 
 ## Changelog
 
+### 2025-08-12 - Simplified MDAE Mode
+- **Added combined mode**: `--combine-mdae` flag (default) shows only best MDAE as single method
+- **Created `processed_data_combined`**: New output directory for simplified results
+- **Flexible processing**: Can toggle between combined and full variant display
+
 ### 2025-08-12 - Enhanced Processing Pipeline
 - **Fixed modality duplicates**: T2F→FLAIR (BraTS23), T1WCE→T1CE (RSNA-MICCAI)
 - **Added MDAE (Combined)**: Takes best performance of MDAE and MDAE (TC)
 - **Visualization improvements**: Color-coded highlighting for MDAE variants
-- **Updated results**: MDAE (Combined) achieves 76.5% mean AUROC
+- **Updated results**: MDAE achieves 76.5% mean AUROC
 
 ### 2025-08-11 - Initial Pipeline
 - Fixed MDAE pattern recognition
