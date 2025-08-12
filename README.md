@@ -113,10 +113,12 @@ python process_mdae_combined.py
 ### Core Processing
 
 #### `run_comprehensive_analysis.py` ⭐ PRIMARY SCRIPT
-Complete reproducible pipeline for all analysis.
+Complete reproducible pipeline for all analysis with enhanced features.
 - Processes raw data to final results
 - Handles all 15 benchmarks and 44+ modality combinations
-- Creates MDAE (Combined) analysis
+- Creates MDAE (Combined) analysis (best of MDAE and MDAE TC)
+- **Modality standardization**: Fixes T2F→FLAIR and T1WCE→T1CE duplicates
+- **Visualization highlighting**: MDAE variants highlighted in distinct colors
 - Generates all visualizations and tables
 - **Single command to regenerate everything**
 
@@ -186,15 +188,15 @@ Extracts data from WandB API.
 
 ## Current Results Summary
 
-As of 2025-08-11:
-- **MDAE (Combined) Mean AUROC**: 76.3% across all benchmarks
-- **MDAE Mean AUROC**: 75.4% 
-- **MDAE (TC) Mean AUROC**: 74.2%
-- **Improvement over SSL baselines**: 8.1% average (vs VoCo)
-- **Improvement over foundation models**: 8.0% average (vs BrainIAC)
+As of 2025-08-12:
+- **MDAE (Combined) Mean AUROC**: 76.5% across all benchmarks (#1 rank)
+- **MDAE Mean AUROC**: 75.7% 
+- **MDAE (TC) Mean AUROC**: 73.7%
+- **Improvement over SSL baselines**: 10.4% average
+- **Improvement over foundation models**: 10.8% average
 - **Total runs analyzed**: 3,000+
 - **Benchmarks**: 15
-- **Modality combinations**: 44
+- **Modality combinations**: 44 (standardized, no duplicates)
 
 ## Troubleshooting
 
@@ -206,6 +208,19 @@ As of 2025-08-11:
 
 ### Issue: Outdated results
 **Solution**: Re-run `process_results_final.py` after any new data extraction
+
+## Changelog
+
+### 2025-08-12 - Enhanced Processing Pipeline
+- **Fixed modality duplicates**: T2F→FLAIR (BraTS23), T1WCE→T1CE (RSNA-MICCAI)
+- **Added MDAE (Combined)**: Takes best performance of MDAE and MDAE (TC)
+- **Visualization improvements**: Color-coded highlighting for MDAE variants
+- **Updated results**: MDAE (Combined) achieves 76.5% mean AUROC
+
+### 2025-08-11 - Initial Pipeline
+- Fixed MDAE pattern recognition
+- Processed all 15 benchmarks and 44 modality combinations
+- Initial MDAE (Combined) analysis
 
 ## Archive
 

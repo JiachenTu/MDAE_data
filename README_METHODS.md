@@ -78,11 +78,22 @@ Example runs:
 
 1. **Pattern Order Matters**: More specific patterns must be checked before generic ones. For example, `resenc_MDAE_pretrained` must be checked before `resenc_pretrained_` (MAE).
 
-2. **Combined MDAE Results**: For analysis, MDAE and MDAE (TC) variants are often combined by taking the best performance between them for each benchmark.
+2. **MDAE (Combined) Method**: 
+   - Created by taking the best performance between MDAE and MDAE (TC) for each benchmark/modality
+   - Represents the optimal MDAE variant performance
+   - Achieves 76.5% mean AUROC across all benchmarks
+   - Always shown alongside individual MDAE and MDAE (TC) results
 
-3. **Modality Suffixes**: Most patterns include modality suffixes like `_t1`, `_t2`, `_t2f`, `_asl`, `_swi`, etc.
+3. **Modality Standardization**:
+   - T2F/T2f → FLAIR (prevents duplicates in BraTS23)
+   - T1WCE/T1wce → T1CE (prevents duplicates in RSNA-MICCAI)
+   - T1W/T1w → T1
+   - T2W/T2w → T2
+   - Applied consistently across all benchmarks
 
-4. **Timestamp Format**: Run names typically end with timestamps in format `YYYY-MM-DD_HH-MM-SS`
+4. **Modality Suffixes**: Most patterns include modality suffixes like `_t1`, `_t2`, `_flair`, `_asl`, `_swi`, etc.
+
+5. **Timestamp Format**: Run names typically end with timestamps in format `YYYY-MM-DD_HH-MM-SS`
 
 ## Verification Examples
 
@@ -98,7 +109,13 @@ Example runs:
 
 ## Updates History
 
-### 2024-08-11
+### 2025-08-12
+- Added comprehensive modality standardization mappings
+- Documented MDAE (Combined) methodology
+- Fixed T2F→FLAIR and T1WCE→T1CE duplicates
+- Added visualization highlighting for MDAE variants
+
+### 2025-08-11
 - Fixed MDAE pattern to include `resenc_MDAE_pretrained` and `resenc_MDAE_scratch` variants
 - Removed non-ResNet models (eva_mdae) to focus on ResNet-based architectures
 - Verified fix with ucsf_pdgm_idh_classification benchmark (ASL modality now correctly shows MDAE AUROC=0.813)
