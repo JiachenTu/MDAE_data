@@ -108,6 +108,11 @@ MODALITY_MAPPING = {
     'T2w': 't2',
     'T2W': 't2',
     
+    # T1N variations → T1 (native T1 without contrast)
+    't1n': 't1',
+    'T1n': 't1',
+    'T1N': 't1',
+    
     # Standard names (keep as-is)
     'FLAIR': 'flair',
     'flair': 'flair',
@@ -119,9 +124,6 @@ MODALITY_MAPPING = {
     't1ce': 't1ce',
     'T1ce': 't1ce',
     'T1CE': 't1ce',
-    't1n': 't1n',
-    'T1n': 't1n',
-    'T1N': 't1n',
     't1gd': 't1gd',
     'T1gd': 't1gd',
     'T1GD': 't1gd',
