@@ -41,6 +41,7 @@ warnings.filterwarnings('ignore')
 DEFAULT_RAW_DATA_DIR = Path('/home/jtu9/Documents/MDAE/MDAE_data/raw_data/20250811')
 DEFAULT_OUTPUT_DIR = Path('/home/jtu9/Documents/MDAE/MDAE_data/processed_data/comprehensive_analysis')
 DEFAULT_COMBINED_OUTPUT_DIR = Path('/home/jtu9/Documents/MDAE/MDAE_data/processed_data_combined')
+DEFAULT_KEY_BENCHMARKS_DIR = Path('/home/jtu9/Documents/MDAE/MDAE_data/processed_data_key_benchmarks')
 
 # Benchmark name mapping for display
 BENCHMARK_MAPPING = {
@@ -60,6 +61,27 @@ BENCHMARK_MAPPING = {
     'upenn_gbm_idh1_status': 'UPenn-GBM: IDH1',
     'rsna_miccai_mgmt_methylation': 'RSNA-MICCAI: MGMT'
 }
+
+# Key benchmarks for ICLR paper - Category 1: T1/T2 modalities (in-distribution)
+KEY_BENCHMARKS_T1T2 = {
+    'brats18_lgg_vs_hgg': ['t1', 't2'],
+    'brats23_gli_vs_met': ['t1', 't2'],
+    'rsna_miccai_mgmt_methylation': ['t1', 't2'],
+    'upenn_gbm_survival_18month': ['t1', 't2'],
+    'upenn_gbm_idh1_status': ['t1', 't2']
+}
+
+# Key benchmarks for ICLR paper - Category 2: Generalization test
+KEY_BENCHMARKS_GENERALIZATION = {
+    'ucsf_pdgm_idh_classification': ['asl', 'swi'],
+    'upenn_gbm_age_group': ['flair'],
+    'upenn_gbm_gtr_status': ['t1gd'],
+    'tcga_gbm_dss_1year': ['mixed_contrasts'],
+    'tcga_gbm_pfi_1year': ['mixed_contrasts']
+}
+
+# Combined key benchmarks
+KEY_BENCHMARKS_ALL = {**KEY_BENCHMARKS_T1T2, **KEY_BENCHMARKS_GENERALIZATION}
 
 # Modality standardization mapping - comprehensive to avoid duplicates
 MODALITY_MAPPING = {
@@ -439,10 +461,22 @@ def create_cross_modality_comparison(results: Dict, output_dir: Path, benchmark_
 # ============================================================================
 
 def process_benchmark(benchmark_name: str, benchmark_dir: Path, output_dir: Path, 
-                     combine_mdae: bool = True, verbose: bool = False) -> Dict:
-    """Process a single benchmark with all modalities."""
+                     combine_mdae: bool = True, selected_modalities: Optional[List[str]] = None,
+                     verbose: bool = False) -> Dict:
+    """Process a single benchmark with all or selected modalities.
+    
+    Args:
+        benchmark_name: Name of the benchmark
+        benchmark_dir: Directory containing benchmark data
+        output_dir: Output directory for results
+        combine_mdae: Whether to combine MDAE variants
+        selected_modalities: List of specific modalities to process (None = all)
+        verbose: Verbose output
+    """
     if verbose:
         print(f"\nProcessing: {benchmark_name}")
+        if selected_modalities:
+            print(f"  Selected modalities: {', '.join(selected_modalities)}")
     
     # Load data
     df = load_benchmark_data(benchmark_dir, verbose)
@@ -468,6 +502,16 @@ def process_benchmark(benchmark_name: str, benchmark_dir: Path, output_dir: Path
     valid_modalities = [m for m in modalities if m not in ['multimodal', 'unknown']]
     if not valid_modalities and 'unknown' in modalities:
         valid_modalities = ['unknown']
+    
+    # Filter modalities if specific ones are selected
+    if selected_modalities:
+        # For mixed_contrasts, check if 'unknown' is in the data (for TCGA benchmarks)
+        if 'mixed_contrasts' in selected_modalities and 'unknown' in modalities:
+            # TCGA benchmarks use 'unknown' for mixed modalities
+            valid_modalities = ['unknown']
+        else:
+            # Filter to only selected modalities that exist in the data
+            valid_modalities = [m for m in valid_modalities if m in selected_modalities]
     
     if verbose:
         print(f"  Found {len(valid_modalities)} modalities: {', '.join(valid_modalities)}")
@@ -608,13 +652,33 @@ def main():
                        help='Combine MDAE and MDAE (TC) into single MDAE (default: True)')
     parser.add_argument('--no-combine-mdae', dest='combine_mdae', action='store_false',
                        help='Keep MDAE, MDAE (TC), and MDAE (Combined) separate')
+    parser.add_argument('--key-benchmarks', action='store_true',
+                       help='Process only key benchmarks for ICLR paper')
+    parser.add_argument('--key-benchmarks-category', choices=['t1t2', 'generalization', 'all'],
+                       default='all', help='Which category of key benchmarks to process')
     parser.add_argument('--verbose', action='store_true', help='Verbose output')
     
     args = parser.parse_args()
     
-    # Set output directory based on combine_mdae flag if not specified
+    # Determine which benchmarks to process
+    if args.key_benchmarks:
+        if args.key_benchmarks_category == 't1t2':
+            selected_benchmarks = KEY_BENCHMARKS_T1T2
+        elif args.key_benchmarks_category == 'generalization':
+            selected_benchmarks = KEY_BENCHMARKS_GENERALIZATION
+        else:  # 'all'
+            selected_benchmarks = KEY_BENCHMARKS_ALL
+    else:
+        selected_benchmarks = None
+    
+    # Set output directory based on mode if not specified
     if args.output_dir is None:
-        args.output_dir = DEFAULT_COMBINED_OUTPUT_DIR if args.combine_mdae else DEFAULT_OUTPUT_DIR
+        if args.key_benchmarks:
+            args.output_dir = DEFAULT_KEY_BENCHMARKS_DIR / args.key_benchmarks_category
+        elif args.combine_mdae:
+            args.output_dir = DEFAULT_COMBINED_OUTPUT_DIR
+        else:
+            args.output_dir = DEFAULT_OUTPUT_DIR
     
     print("="*70)
     print("ENHANCED MDAE COMPREHENSIVE ANALYSIS")
@@ -622,6 +686,8 @@ def main():
     print(f"Input: {args.input_dir}")
     print(f"Output: {args.output_dir}")
     print(f"Mode: {'Combined MDAE only' if args.combine_mdae else 'All MDAE variants'}")
+    if args.key_benchmarks:
+        print(f"Key Benchmarks: {args.key_benchmarks_category} ({len(selected_benchmarks)} benchmarks)")
     print("="*70)
     
     # Create output directory
@@ -629,6 +695,13 @@ def main():
     
     # Get all benchmark directories
     benchmark_dirs = [d for d in args.input_dir.iterdir() if d.is_dir()]
+    
+    # Filter benchmarks if key benchmarks mode is enabled
+    if selected_benchmarks is not None:
+        benchmark_dirs = [d for d in benchmark_dirs if d.name in selected_benchmarks]
+        if not benchmark_dirs:
+            print(f"No benchmark directories found for selected key benchmarks!")
+            return
     
     if not benchmark_dirs:
         print("No benchmark directories found!")
@@ -641,8 +714,14 @@ def main():
     
     for benchmark_dir in tqdm(sorted(benchmark_dirs), desc="Processing benchmarks"):
         benchmark_name = benchmark_dir.name
+        
+        # Get selected modalities for this benchmark (if in key benchmarks mode)
+        selected_modalities = selected_benchmarks.get(benchmark_name) if selected_benchmarks else None
+        
         results = process_benchmark(benchmark_name, benchmark_dir, args.output_dir, 
-                                   combine_mdae=args.combine_mdae, verbose=args.verbose)
+                                   combine_mdae=args.combine_mdae, 
+                                   selected_modalities=selected_modalities,
+                                   verbose=args.verbose)
         if results:
             all_results[benchmark_name] = results
     
