@@ -52,6 +52,23 @@ python run_comprehensive_analysis.py --no-combine-mdae --verbose
 # - Best for detailed analysis
 ```
 
+#### Option C: Key Benchmarks for ICLR Paper
+```bash
+# Process only T1/T2 modalities (in-distribution)
+python run_comprehensive_analysis.py --key-benchmarks --key-benchmarks-category t1t2
+
+# Process only generalization benchmarks
+python run_comprehensive_analysis.py --key-benchmarks --key-benchmarks-category generalization
+
+# Process all key benchmarks (default)
+python run_comprehensive_analysis.py --key-benchmarks
+
+# Output: processed_data_key_benchmarks/[category]/
+# - Filters to 16 representative benchmark/modality combinations
+# - T1/T2: 72.8% mean AUROC (10 combinations)
+# - Generalization: 76.9% mean AUROC (6 combinations)
+```
+
 ### Step 3: Key Processing Features
 
 #### Modality Standardization
