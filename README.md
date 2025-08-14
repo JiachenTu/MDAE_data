@@ -152,6 +152,42 @@ Generates comprehensive tables from processed results.
 - LaTeX formatting
 - Excel-friendly CSV outputs
 
+### Visualization
+
+#### `create_final_boxplot.py`
+Generates publication-ready box plot visualization comparing MDAE performance across all baselines.
+
+**Box Plot Configuration**:
+- **Notches**: Enabled to show 95% confidence intervals around medians
+  - Allows statistical comparison between methods
+  - Non-overlapping notches indicate significantly different medians
+- **Whiskers**: Set to 1.0×IQR (instead of default 1.5×IQR)
+  - Provides tighter bounds for "typical" values
+  - Makes outliers more visible as individual points
+- **Mean Markers**: Red diamonds show arithmetic mean alongside median
+- **Color Scheme**:
+  - Green: MDAE (our method)
+  - Blue: SSL baselines (MAE, SimCLR, VoCo, etc.)
+  - Purple: Foundation models (BrainIAC, MRI-Core, BrainMVP)
+  - Gray: Other methods (DinoV2)
+
+**Usage**:
+```bash
+python create_final_boxplot.py
+```
+
+**Output**:
+- `processed_data_combined/boxplot_final.png` - High-resolution (300 DPI) for presentations
+- `processed_data_combined/boxplot_final.pdf` - Vector format for publication
+
+**Box Plot Elements Explained**:
+- **Box**: Middle 50% of data (Q1 to Q3)
+- **Median Line**: Black horizontal line inside box
+- **Notch**: Narrowing at median showing confidence interval
+- **Mean**: Red diamond marker
+- **Whiskers**: Lines extending to furthest points within 1.0×IQR
+- **Outliers**: Circles beyond whisker range
+
 ### Data Extraction
 
 #### `scripts/extract_wandb_data.py`

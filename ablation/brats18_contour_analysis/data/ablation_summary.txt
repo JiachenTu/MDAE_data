@@ -1,0 +1,16 @@
+FLOWMDAE ABLATION ANALYSIS SUMMARY
+================================================================================
+
+Best Configurations by Modality:
+  T1: M95_N50 = 0.733
+  T1CE: M75_N100 = 0.865
+  T2: M25_N25 = 0.713
+  FLAIR: M50_N50 = 0.548
+
+Key Insights:
+• Best overall: T1CE with M75_N100 (AUROC=0.865)
+• Modality ranking: T1CE (0.755) > T2 (0.612) > T1 (0.564) > FLAIR (0.455)
+• Optimal masking ratio: M25 (mean AUROC=0.625)
+• Optimal noise level: N50 (mean AUROC=0.616)
+• Performance generally decreases with higher masking ratios
+• T1CE shows significantly better performance (0.755) than FLAIR (0.455)
