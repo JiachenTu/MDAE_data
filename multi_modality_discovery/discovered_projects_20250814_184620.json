@@ -1,0 +1,142 @@
+{
+  "discovery_date": "2025-08-14T18:46:20.056427",
+  "entity": "t-jiachentu",
+  "total_projects": 15,
+  "projects": [
+    {
+      "name": "july_stratified_upenn_gbm_survival_1year_multi_t1_t1gd_t2_flair",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_upenn_gbm_survival_1year_multi_t1_t1gd_t2_flair",
+      "run_count": "N/A",
+      "created_at": "2025-08-10T06:59:59Z",
+      "description": "",
+      "benchmark": "upenn_gbm_survival_1year",
+      "modalities": "t1_t1gd_t2_flair"
+    },
+    {
+      "name": "july_stratified_upenn_gbm_survival_18month_multi_t1_t1gd_t2_flair",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_upenn_gbm_survival_18month_multi_t1_t1gd_t2_flair",
+      "run_count": "N/A",
+      "created_at": "2025-08-10T06:59:49Z",
+      "description": "",
+      "benchmark": "upenn_gbm_survival_18month",
+      "modalities": "t1_t1gd_t2_flair"
+    },
+    {
+      "name": "july_stratified_upenn_gbm_idh1_status_multi_t1_t1gd_t2_flair",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_upenn_gbm_idh1_status_multi_t1_t1gd_t2_flair",
+      "run_count": "N/A",
+      "created_at": "2025-08-10T06:58:01Z",
+      "description": "",
+      "benchmark": "upenn_gbm_idh1_status",
+      "modalities": "t1_t1gd_t2_flair"
+    },
+    {
+      "name": "july_stratified_upenn_gbm_gender_multi_t1_t1gd_t2_flair",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_upenn_gbm_gender_multi_t1_t1gd_t2_flair",
+      "run_count": "N/A",
+      "created_at": "2025-08-10T06:57:56Z",
+      "description": "",
+      "benchmark": "upenn_gbm_gender",
+      "modalities": "t1_t1gd_t2_flair"
+    },
+    {
+      "name": "july_stratified_upenn_gbm_age_group_multi_t1_t1gd_t2_flair",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_upenn_gbm_age_group_multi_t1_t1gd_t2_flair",
+      "run_count": "N/A",
+      "created_at": "2025-08-10T06:54:43Z",
+      "description": "",
+      "benchmark": "upenn_gbm_age_group",
+      "modalities": "t1_t1gd_t2_flair"
+    },
+    {
+      "name": "july_stratified_ucsf_pdgm_idh_classification_multi_t1_t1c_t2_flair_swi_asl",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_ucsf_pdgm_idh_classification_multi_t1_t1c_t2_flair_swi_asl",
+      "run_count": "N/A",
+      "created_at": "2025-08-10T06:54:37Z",
+      "description": "",
+      "benchmark": "ucsf_pdgm_idh_classification",
+      "modalities": "t1_t1c_t2_flair_swi_asl"
+    },
+    {
+      "name": "july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_multi_t1w_t1wce_t2w_flair",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_multi_t1w_t1wce_t2w_flair",
+      "run_count": "N/A",
+      "created_at": "2025-08-10T06:54:01Z",
+      "description": "",
+      "benchmark": "rsna_miccai_brain_tumor_mgmt_methylation",
+      "modalities": "t1w_t1wce_t2w_flair"
+    },
+    {
+      "name": "july_stratified_brats23_men_vs_met_multi_t1n_t1c_t2w_t2f",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_brats23_men_vs_met_multi_t1n_t1c_t2w_t2f",
+      "run_count": "N/A",
+      "created_at": "2025-08-10T06:53:18Z",
+      "description": "",
+      "benchmark": "brats23_men_vs_met",
+      "modalities": "t1n_t1c_t2w_t2f"
+    },
+    {
+      "name": "july_stratified_brats23_gli_vs_met_multi_t1n_t1c_t2w_t2f",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_brats23_gli_vs_met_multi_t1n_t1c_t2w_t2f",
+      "run_count": "N/A",
+      "created_at": "2025-08-10T06:52:04Z",
+      "description": "",
+      "benchmark": "brats23_gli_vs_met",
+      "modalities": "t1n_t1c_t2w_t2f"
+    },
+    {
+      "name": "july_stratified_brats23_gli_vs_men_multi_t1n_t1c_t2w_t2f",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_brats23_gli_vs_men_multi_t1n_t1c_t2w_t2f",
+      "run_count": "N/A",
+      "created_at": "2025-08-10T06:51:58Z",
+      "description": "",
+      "benchmark": "brats23_gli_vs_men",
+      "modalities": "t1n_t1c_t2w_t2f"
+    },
+    {
+      "name": "july_stratified_brats18_lgg_vs_hgg_multi_flair_t1_t1ce_t2",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_brats18_lgg_vs_hgg_multi_flair_t1_t1ce_t2",
+      "run_count": "N/A",
+      "created_at": "2025-08-10T06:44:50Z",
+      "description": "",
+      "benchmark": "brats18_lgg_vs_hgg",
+      "modalities": "flair_t1_t1ce_t2"
+    },
+    {
+      "name": "july_stratified_upenn_gbm_gtr_status_multi_t1_t1gd_t2_flair",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_upenn_gbm_gtr_status_multi_t1_t1gd_t2_flair",
+      "run_count": "N/A",
+      "created_at": "2025-08-08T02:54:52Z",
+      "description": "",
+      "benchmark": "upenn_gbm_gtr_status",
+      "modalities": "t1_t1gd_t2_flair"
+    },
+    {
+      "name": "july_stratified_tcga_gbm_dss_1year_multi_t1_t1gd_t2_flair",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_tcga_gbm_dss_1year_multi_t1_t1gd_t2_flair",
+      "run_count": "N/A",
+      "created_at": "2025-07-31T21:13:46Z",
+      "description": "",
+      "benchmark": "tcga_gbm_dss_1year",
+      "modalities": "t1_t1gd_t2_flair"
+    },
+    {
+      "name": "july_stratified_tcga_gbm_pfi_1year_multi_t1_t1gd_t2_flair",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_tcga_gbm_pfi_1year_multi_t1_t1gd_t2_flair",
+      "run_count": "N/A",
+      "created_at": "2025-07-31T21:08:57Z",
+      "description": "",
+      "benchmark": "tcga_gbm_pfi_1year",
+      "modalities": "t1_t1gd_t2_flair"
+    },
+    {
+      "name": "july_stratified_upenn_gbm_survival_2year_multi_t1_t1gd_t2_flair",
+      "url": "https://wandb.ai/t-jiachentu/july_stratified_upenn_gbm_survival_2year_multi_t1_t1gd_t2_flair",
+      "run_count": "N/A",
+      "created_at": "2025-07-31T20:28:38Z",
+      "description": "",
+      "benchmark": "upenn_gbm_survival_2year",
+      "modalities": "t1_t1gd_t2_flair"
+    }
+  ]
+}
