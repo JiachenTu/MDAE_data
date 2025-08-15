@@ -1,0 +1,16 @@
+{
+  "project_name": "tcga_gbm_pfi_1year_multi_t1_t1gd_t2_flair",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:03:10.875710",
+  "project_metadata": {
+    "created_at": "2025-07-21T07:14:35Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 20,
+    "completed_runs": 10,
+    "failed_runs": 10,
+    "running_runs": 0
+  }
+}

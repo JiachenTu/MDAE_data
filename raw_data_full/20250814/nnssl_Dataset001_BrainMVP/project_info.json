@@ -1,0 +1,16 @@
+{
+  "project_name": "nnssl_Dataset001_BrainMVP",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:05:53.080703",
+  "project_metadata": {
+    "created_at": "2025-06-16T22:39:18Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 11,
+    "completed_runs": 1,
+    "failed_runs": 7,
+    "running_runs": 0
+  }
+}

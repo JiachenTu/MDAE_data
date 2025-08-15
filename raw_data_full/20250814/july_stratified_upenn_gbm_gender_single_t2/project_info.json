@@ -1,0 +1,16 @@
+{
+  "project_name": "july_stratified_upenn_gbm_gender_single_t2",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:00:05.016064",
+  "project_metadata": {
+    "created_at": "2025-08-01T04:42:02Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 60,
+    "completed_runs": 57,
+    "failed_runs": 0,
+    "running_runs": 2
+  }
+}

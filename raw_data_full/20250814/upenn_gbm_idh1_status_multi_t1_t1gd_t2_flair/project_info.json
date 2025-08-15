@@ -1,0 +1,16 @@
+{
+  "project_name": "upenn_gbm_idh1_status_multi_t1_t1gd_t2_flair",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:03:13.372763",
+  "project_metadata": {
+    "created_at": "2025-07-21T07:12:36Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 17,
+    "completed_runs": 7,
+    "failed_runs": 3,
+    "running_runs": 0
+  }
+}

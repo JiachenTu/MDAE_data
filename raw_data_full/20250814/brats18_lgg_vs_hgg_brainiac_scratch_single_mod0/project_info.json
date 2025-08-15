@@ -1,0 +1,16 @@
+{
+  "project_name": "brats18_lgg_vs_hgg_brainiac_scratch_single_mod0",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:04:47.395750",
+  "project_metadata": {
+    "created_at": "2025-07-14T04:14:33Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 5,
+    "completed_runs": 3,
+    "failed_runs": 1,
+    "running_runs": 0
+  }
+}

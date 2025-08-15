@@ -1,0 +1,16 @@
+{
+  "project_name": "brats23_gli_vs_men_dinov2_tunable",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:04:50.781001",
+  "project_metadata": {
+    "created_at": "2025-07-14T01:57:47Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 1,
+    "completed_runs": 1,
+    "failed_runs": 0,
+    "running_runs": 0
+  }
+}

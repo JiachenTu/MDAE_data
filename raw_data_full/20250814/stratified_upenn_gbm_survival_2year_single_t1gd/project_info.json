@@ -1,0 +1,16 @@
+{
+  "project_name": "stratified_upenn_gbm_survival_2year_single_t1gd",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:02:04.019495",
+  "project_metadata": {
+    "created_at": "2025-07-27T09:53:48Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 20,
+    "completed_runs": 19,
+    "failed_runs": 0,
+    "running_runs": 0
+  }
+}

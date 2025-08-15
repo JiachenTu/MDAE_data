@@ -1,0 +1,16 @@
+{
+  "project_name": "stratified_tcga_gbm_pfi_1year_single_t2",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:01:30.141553",
+  "project_metadata": {
+    "created_at": "2025-07-27T10:18:17Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 9,
+    "completed_runs": 9,
+    "failed_runs": 0,
+    "running_runs": 0
+  }
+}

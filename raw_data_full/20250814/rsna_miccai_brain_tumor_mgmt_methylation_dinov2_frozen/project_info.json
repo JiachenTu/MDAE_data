@@ -1,0 +1,16 @@
+{
+  "project_name": "rsna_miccai_brain_tumor_mgmt_methylation_dinov2_frozen",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:05:06.023026",
+  "project_metadata": {
+    "created_at": "2025-07-13T05:27:09Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 4,
+    "completed_runs": 2,
+    "failed_runs": 1,
+    "running_runs": 0
+  }
+}

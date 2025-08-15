@@ -1,0 +1,16 @@
+{
+  "project_name": "stratified_upenn_gbm_age_group_single_t1",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:02:14.534183",
+  "project_metadata": {
+    "created_at": "2025-07-27T01:05:02Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 17,
+    "completed_runs": 15,
+    "failed_runs": 1,
+    "running_runs": 0
+  }
+}

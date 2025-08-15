@@ -1,0 +1,16 @@
+{
+  "project_name": "brats23_gli_vs_men_multi_mod_0_1_2_3",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:05:00.995074",
+  "project_metadata": {
+    "created_at": "2025-07-13T09:27:16Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 1,
+    "completed_runs": 0,
+    "failed_runs": 1,
+    "running_runs": 0
+  }
+}

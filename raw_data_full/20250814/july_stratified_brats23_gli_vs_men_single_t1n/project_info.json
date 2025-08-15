@@ -1,0 +1,16 @@
+{
+  "project_name": "july_stratified_brats23_gli_vs_men_single_t1n",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:00:55.316295",
+  "project_metadata": {
+    "created_at": "2025-07-31T07:43:57Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 104,
+    "completed_runs": 98,
+    "failed_runs": 1,
+    "running_runs": 3
+  }
+}

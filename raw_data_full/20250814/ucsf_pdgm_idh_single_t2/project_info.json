@@ -1,0 +1,16 @@
+{
+  "project_name": "ucsf_pdgm_idh_single_t2",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:03:26.978001",
+  "project_metadata": {
+    "created_at": "2025-07-20T11:05:12Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 1,
+    "completed_runs": 1,
+    "failed_runs": 0,
+    "running_runs": 0
+  }
+}

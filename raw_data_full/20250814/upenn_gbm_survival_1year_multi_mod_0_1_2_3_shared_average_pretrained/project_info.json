@@ -1,0 +1,16 @@
+{
+  "project_name": "upenn_gbm_survival_1year_multi_mod_0_1_2_3_shared_average_pretrained",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:05:34.675265",
+  "project_metadata": {
+    "created_at": "2025-07-08T06:32:14Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 2,
+    "completed_runs": 1,
+    "failed_runs": 0,
+    "running_runs": 0
+  }
+}

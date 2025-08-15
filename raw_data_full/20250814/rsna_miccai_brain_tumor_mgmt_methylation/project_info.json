@@ -1,0 +1,16 @@
+{
+  "project_name": "rsna_miccai_brain_tumor_mgmt_methylation",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:04:37.606004",
+  "project_metadata": {
+    "created_at": "2025-07-14T09:16:01Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 51,
+    "completed_runs": 42,
+    "failed_runs": 9,
+    "running_runs": 0
+  }
+}

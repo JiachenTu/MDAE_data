@@ -1,0 +1,16 @@
+{
+  "project_name": "july_stratified_upenn_gbm_survival_18month_single_flair",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T04:59:50.200164",
+  "project_metadata": {
+    "created_at": "2025-08-01T04:44:51Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 57,
+    "completed_runs": 53,
+    "failed_runs": 0,
+    "running_runs": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "project_name": "upenn_gbm_classification_single_t1gd",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:04:01.027173",
+  "project_metadata": {
+    "created_at": "2025-07-19T22:19:59Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 5,
+    "completed_runs": 5,
+    "failed_runs": 0,
+    "running_runs": 0
+  }
+}

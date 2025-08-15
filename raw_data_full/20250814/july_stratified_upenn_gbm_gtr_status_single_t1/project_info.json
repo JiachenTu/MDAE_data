@@ -1,0 +1,16 @@
+{
+  "project_name": "july_stratified_upenn_gbm_gtr_status_single_t1",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-14T05:00:11.662217",
+  "project_metadata": {
+    "created_at": "2025-08-01T00:28:34Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 78,
+    "completed_runs": 72,
+    "failed_runs": 0,
+    "running_runs": 3
+  }
+}
