@@ -1,0 +1,20 @@
+
+Continue Pretraining Analysis Summary
+=====================================
+
+Total Paired Comparisons: 199
+
+AUROC Improvements:
+- Mean: -0.0680
+- Std Dev: 0.0920
+- Median: -0.0623
+- Positive Improvement Ratio: 21.61%
+
+Statistical Test (Paired t-test):
+- T-statistic: -10.42740724185743
+- P-value: 1.429755952433503e-20
+
+Interpretation:
+Continue pretraining from MDAE shows an average AUROC decrease of 0.0680.
+This difference is statistically significant (p < 0.05).
+21.6% of continue pretrained models show improvement over vanilla.

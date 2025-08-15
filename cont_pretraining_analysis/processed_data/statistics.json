@@ -1,0 +1,123 @@
+{
+  "overall": {
+    "n_pairs": 199,
+    "mean_auroc_improvement": -0.06803227504294122,
+    "std_auroc_improvement": 0.09203758133415253,
+    "median_auroc_improvement": -0.062346577644348145,
+    "positive_improvement_ratio": 0.21608040201005024,
+    "t_statistic": -10.42740724185743,
+    "p_value": 1.429755952433503e-20
+  },
+  "by_method": {
+    "SWINUNETR": {
+      "n_pairs": 34,
+      "mean_auroc_improvement": -0.050441314192379225,
+      "std_auroc_improvement": 0.07673184900008541,
+      "median_auroc_improvement": -0.059850603342056274,
+      "positive_improvement_ratio": 0.23529411764705882,
+      "t_statistic": -3.8331003410098123,
+      "p_value": 0.0005389516394549768
+    },
+    "MAE": {
+      "n_pairs": 34,
+      "mean_auroc_improvement": -0.11378622931592605,
+      "std_auroc_improvement": 0.08421494430676371,
+      "median_auroc_improvement": -0.10220430791378024,
+      "positive_improvement_ratio": 0.029411764705882353,
+      "t_statistic": -7.878435768124274,
+      "p_value": 4.399251495160692e-09
+    },
+    "MG": {
+      "n_pairs": 34,
+      "mean_auroc_improvement": -0.04679949669276967,
+      "std_auroc_improvement": 0.0782181646525038,
+      "median_auroc_improvement": -0.02499997615814209,
+      "positive_improvement_ratio": 0.3235294117647059,
+      "t_statistic": -3.4887754670650732,
+      "p_value": 0.0013975643770004218
+    },
+    "VOCO": {
+      "n_pairs": 32,
+      "mean_auroc_improvement": -0.07895090244710445,
+      "std_auroc_improvement": 0.0919241705680417,
+      "median_auroc_improvement": -0.08328267931938171,
+      "positive_improvement_ratio": 0.21875,
+      "t_statistic": -4.858501798268394,
+      "p_value": 3.220796143875257e-05
+    },
+    "SIMCLR": {
+      "n_pairs": 32,
+      "mean_auroc_improvement": -0.056090776808559895,
+      "std_auroc_improvement": 0.08289172527632196,
+      "median_auroc_improvement": -0.05378514528274536,
+      "positive_improvement_ratio": 0.15625,
+      "t_statistic": -3.827853119103395,
+      "p_value": 0.0005880416901042423
+    },
+    "VF": {
+      "n_pairs": 33,
+      "mean_auroc_improvement": -0.06188392819780292,
+      "std_auroc_improvement": 0.1205977102780973,
+      "median_auroc_improvement": -0.062346577644348145,
+      "positive_improvement_ratio": 0.3333333333333333,
+      "t_statistic": -2.9477848420701274,
+      "p_value": 0.0059325378753622105
+    }
+  },
+  "by_benchmark": {
+    "brats18_lgg_vs_hgg": {
+      "n_pairs": 16,
+      "mean_auroc_improvement": -0.10510911792516708,
+      "std_auroc_improvement": 0.10973138908461866,
+      "positive_improvement_ratio": 0.125
+    },
+    "ucsf_pdgm_idh_classification": {
+      "n_pairs": 18,
+      "mean_auroc_improvement": -0.1581874837478002,
+      "std_auroc_improvement": 0.08409831271873172,
+      "positive_improvement_ratio": 0.0
+    },
+    "upenn_gbm_age_group": {
+      "n_pairs": 24,
+      "mean_auroc_improvement": -0.1270676702260971,
+      "std_auroc_improvement": 0.08448602082899342,
+      "positive_improvement_ratio": 0.08333333333333333
+    },
+    "upenn_gbm_gender": {
+      "n_pairs": 24,
+      "mean_auroc_improvement": -0.06759751339753468,
+      "std_auroc_improvement": 0.03116901619282437,
+      "positive_improvement_ratio": 0.0
+    },
+    "upenn_gbm_gtr_status": {
+      "n_pairs": 23,
+      "mean_auroc_improvement": -0.0365359744300013,
+      "std_auroc_improvement": 0.062043861613724834,
+      "positive_improvement_ratio": 0.21739130434782608
+    },
+    "upenn_gbm_idh1_status": {
+      "n_pairs": 24,
+      "mean_auroc_improvement": -0.03245172028740247,
+      "std_auroc_improvement": 0.10805184509885324,
+      "positive_improvement_ratio": 0.4166666666666667
+    },
+    "upenn_gbm_survival_18month": {
+      "n_pairs": 22,
+      "mean_auroc_improvement": -0.06906700947067955,
+      "std_auroc_improvement": 0.075381232878438,
+      "positive_improvement_ratio": 0.22727272727272727
+    },
+    "upenn_gbm_survival_1year": {
+      "n_pairs": 24,
+      "mean_auroc_improvement": -0.024051696062088013,
+      "std_auroc_improvement": 0.056065465377025905,
+      "positive_improvement_ratio": 0.4166666666666667
+    },
+    "upenn_gbm_survival_2year": {
+      "n_pairs": 24,
+      "mean_auroc_improvement": -0.02589392165342967,
+      "std_auroc_improvement": 0.10442925876659206,
+      "positive_improvement_ratio": 0.375
+    }
+  }
+}
