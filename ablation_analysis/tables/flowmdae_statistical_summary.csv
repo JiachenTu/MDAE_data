@@ -1,0 +1,7 @@
+Metric,Fixed Masking,Random Sampling
+Mean AUROC,0.6259,0.5893
+Std Dev,0.1344,0.1218
+Difference,-,+0.0366
+T-statistic,-,1.955
+P-value,-,0.0516
+Significant,-,No

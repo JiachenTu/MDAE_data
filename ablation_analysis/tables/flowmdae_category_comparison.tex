@@ -1,0 +1,26 @@
+\begin{table}
+\caption{FlowMDAE: Fixed vs Random Masking Performance Comparison}
+\label{tab:flowmdae_comparison}
+\begin{tabular}{lcccccc}
+\toprule
+Parameter & M (Masking) & N (Noise Level) & Fixed_AUROC & Random_AUROC & Difference & Winner \\
+\midrule
+M25_N25 & 25 & 25 & 0.6221 & 0.6187 & +0.0035 & Fixed \\
+M25_N50 & 25 & 50 & 0.6451 & 0.6099 & +0.0352 & Fixed \\
+M25_N75 & 25 & 75 & 0.6228 & 0.6571 & -0.0344 & Random \\
+M25_N100 & 25 & 100 & 0.6300 & 0.5204 & +0.1096 & Fixed \\
+M50_N25 & 50 & 25 & 0.6091 & 0.5996 & +0.0095 & Fixed \\
+M50_N50 & 50 & 50 & 0.6179 & 0.5720 & +0.0459 & Fixed \\
+M50_N75 & 50 & 75 & 0.6418 & 0.5988 & +0.0430 & Fixed \\
+M50_N100 & 50 & 100 & 0.6478 & 0.5698 & +0.0779 & Fixed \\
+M75_N25 & 75 & 25 & 0.6361 & 0.6218 & +0.0143 & Fixed \\
+M75_N50 & 75 & 50 & 0.6470 & 0.6083 & +0.0386 & Fixed \\
+M75_N75 & 75 & 75 & 0.6040 & 0.6575 & -0.0536 & Random \\
+M75_N100 & 75 & 100 & 0.6584 & 0.6127 & +0.0457 & Fixed \\
+M95_N25 & 95 & 25 & 0.6204 & 0.4560 & +0.1644 & Fixed \\
+M95_N50 & 95 & 50 & 0.6325 & 0.5270 & +0.1055 & Fixed \\
+M95_N75 & 95 & 75 & 0.6156 & 0.5992 & +0.0164 & Fixed \\
+M95_N100 & 95 & 100 & 0.5215 & 0.6000 & -0.0785 & Random \\
+\bottomrule
+\end{tabular}
+\end{table}
