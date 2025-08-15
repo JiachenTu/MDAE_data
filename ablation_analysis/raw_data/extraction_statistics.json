@@ -1,0 +1,16 @@
+{
+  "total_projects": 61,
+  "successful_extractions": 37,
+  "failed_extractions": 24,
+  "total_runs": 2838,
+  "total_ablations": 425,
+  "ablation_types": {
+    "noise_corruption": 112,
+    "masking_type": 12,
+    "masking_ratio": 20,
+    "flowmdae": 64,
+    "other": 217
+  },
+  "extraction_start": "2025-08-14T22:39:02.197628",
+  "extraction_end": "2025-08-14T22:39:52.519516"
+}

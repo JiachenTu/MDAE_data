@@ -1,0 +1,14 @@
+# Best Configs
+
+|    | Benchmark                                | Noise        | Ratio       | Type          | FlowMDAE        |
+|---:|:-----------------------------------------|:-------------|:------------|:--------------|:----------------|
+|  0 | upenn_gbm_survival_1year                 | VP (0.563)   | -           | -             | -               |
+|  1 | upenn_gbm_survival_2year                 | VE (0.580)   | -           | -             | -               |
+|  2 | upenn_gbm_gtr_status                     | VP (0.488)   | -           | -             | -               |
+|  3 | upenn_gbm_gender                         | VP (0.838)   | -           | -             | -               |
+|  4 | ucsf_pdgm_idh_classification             | VE (0.749)   | -           | -             | -               |
+|  5 | upenn_gbm_idh1_status                    | Flow (0.526) | -           | -             | -               |
+|  6 | upenn_gbm_age_group                      | VE (0.865)   | -           | -             | -               |
+|  7 | upenn_gbm_survival_18month               | VP (0.547)   | -           | -             | -               |
+|  8 | rsna_miccai_brain_tumor_mgmt_methylation | VP (0.566)   | -           | -             | -               |
+|  9 | brats18_lgg_vs_hgg                       | VP (0.594)   | 75% (0.625) | Block (0.623) | M25_N25 (0.803) |
