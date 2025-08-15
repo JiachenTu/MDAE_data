@@ -173,14 +173,14 @@ class FlowMDAEEnhancedAnalyzer:
         fixed_df = brats18_df[brats18_df['category'] == 'Fixed Masking']
         random_df = brats18_df[brats18_df['category'] == 'Random Sampling']
         
-        # Create figure with subplots
-        fig, axes = plt.subplots(2, 2, figsize=(14, 12))
-        axes = axes.flatten()
+        # Create figure with subplots - 1x3 layout for 3 modalities
+        fig, axes = plt.subplots(1, 3, figsize=(18, 6))
         
-        modalities = ['flair', 't1', 't1ce', 't2']
+        # Focus on three most common modalities (exclude T1CE)
+        modalities = ['flair', 't1', 't2']
         
         for idx, modality in enumerate(modalities):
-            ax = axes[idx]
+            ax = axes[idx] if len(modalities) > 1 else axes
             
             # Filter by modality
             fixed_mod = fixed_df[fixed_df['modality'] == modality]
@@ -227,10 +227,10 @@ class FlowMDAEEnhancedAnalyzer:
                 ax.axhline(y=np.mean([m for m in random_means if m > 0]), 
                           color='red', linestyle='--', alpha=0.5, linewidth=1)
         
-        plt.suptitle('BraTS18: Fixed vs Random Masking Across Modalities', 
+        plt.suptitle('BraTS18: Fixed vs Random Masking Across Common Modalities (T1, T2, FLAIR)', 
                     fontsize=14, fontweight='bold')
         plt.tight_layout()
-        plt.savefig(self.output_dir / 'brats18_modality_comparison.png', dpi=300, bbox_inches='tight')
+        plt.savefig(self.output_dir / 'brats18_modality_comparison_3mod.png', dpi=300, bbox_inches='tight')
         plt.close()
         
         # Create summary statistics table
@@ -251,6 +251,157 @@ class FlowMDAEEnhancedAnalyzer:
         
         stats_df = pd.DataFrame(modality_stats)
         return stats_df
+    
+    def create_combined_modality_comparison(self, brats18_df, param_filter='full'):
+        """
+        Create combined comparison for 3 modalities with robust statistics
+        
+        Args:
+            brats18_df: DataFrame with BraTS18 data
+            param_filter: 'full' for all parameters, 'middle' for M∈[25,75] and N∈[25,75]
+        """
+        
+        # Filter to 3 common modalities only
+        three_modalities = ['flair', 't1', 't2']
+        df_3mod = brats18_df[brats18_df['modality'].isin(three_modalities)]
+        
+        # Apply parameter filtering if requested
+        if param_filter == 'middle':
+            # Filter to middle range: M ∈ [25, 75] and N ∈ [25, 75]
+            df_3mod = df_3mod[
+                (df_3mod['masking_ratio'] >= 25) & (df_3mod['masking_ratio'] <= 75) &
+                (df_3mod['noise_level'] >= 25) & (df_3mod['noise_level'] <= 75)
+            ]
+            title_suffix = ' (Middle Range: M∈[25,75], N∈[25,75])'
+            filename = 'brats18_combined_3mod_comparison_middle.png'
+        else:
+            title_suffix = ' (Full Parameter Range)'
+            filename = 'brats18_combined_3mod_comparison_full.png'
+        
+        # Separate by category
+        fixed_df = df_3mod[df_3mod['category'] == 'Fixed Masking']
+        random_df = df_3mod[df_3mod['category'] == 'Random Sampling']
+        
+        # Set clean, minimal style
+        plt.style.use('seaborn-v0_8-whitegrid')
+        
+        # Create figure with clean aesthetics
+        fig, ax = plt.subplots(figsize=(16, 8))
+        fig.patch.set_facecolor('white')
+        ax.set_facecolor('white')
+        
+        # Aggregate by parameter combination (combining all modalities)
+        fixed_agg = fixed_df.groupby('param_combo')['test_auroc'].agg([
+            'mean', 'std', 'count',
+            ('q05', lambda x: x.quantile(0.05)),
+            ('q95', lambda x: x.quantile(0.95))
+        ])
+        
+        random_agg = random_df.groupby('param_combo')['test_auroc'].agg([
+            'mean', 'std', 'count',
+            ('q05', lambda x: x.quantile(0.05)),
+            ('q95', lambda x: x.quantile(0.95))
+        ])
+        
+        # Ensure same order
+        params = sorted(set(fixed_agg.index) | set(random_agg.index))
+        x = np.arange(len(params))
+        width = 0.35
+        
+        # Get values
+        fixed_means = [fixed_agg.loc[p, 'mean'] if p in fixed_agg.index else 0 for p in params]
+        fixed_stds = [fixed_agg.loc[p, 'std'] if p in fixed_agg.index else 0 for p in params]
+        fixed_counts = [fixed_agg.loc[p, 'count'] if p in fixed_agg.index else 0 for p in params]
+        
+        random_means = [random_agg.loc[p, 'mean'] if p in random_agg.index else 0 for p in params]
+        random_stds = [random_agg.loc[p, 'std'] if p in random_agg.index else 0 for p in params]
+        random_counts = [random_agg.loc[p, 'count'] if p in random_agg.index else 0 for p in params]
+        
+        # Clean color scheme
+        fixed_color = '#66B2FF'  # Soft blue
+        random_color = '#FF9999'  # Soft red
+        
+        # Plot bars with different hatching patterns
+        bars1 = ax.bar(x - width/2, fixed_means, width,
+                      label='Fixed Masking', color=fixed_color, 
+                      alpha=0.8, edgecolor='darkblue', linewidth=1.5,
+                      hatch='///')
+        bars2 = ax.bar(x + width/2, random_means, width,
+                      label='Random Sampling', color=random_color,
+                      alpha=0.8, edgecolor='darkred', linewidth=1.5,
+                      hatch='\\\\\\\\')
+        
+        # No value labels on bars for cleaner look
+        
+        # Calculate robust means (5th-95th percentile)
+        fixed_robust = fixed_df['test_auroc'].copy()
+        fixed_q05 = fixed_robust.quantile(0.05)
+        fixed_q95 = fixed_robust.quantile(0.95)
+        fixed_robust_filtered = fixed_robust[(fixed_robust >= fixed_q05) & (fixed_robust <= fixed_q95)]
+        fixed_robust_mean = fixed_robust_filtered.mean()
+        
+        random_robust = random_df['test_auroc'].copy()
+        random_q05 = random_robust.quantile(0.05)
+        random_q95 = random_robust.quantile(0.95)
+        random_robust_filtered = random_robust[(random_robust >= random_q05) & (random_robust <= random_q95)]
+        random_robust_mean = random_robust_filtered.mean()
+        
+        # Add robust mean lines without labels
+        ax.axhline(y=fixed_robust_mean, color=fixed_color, linestyle='--', 
+                  alpha=0.6, linewidth=2)
+        ax.axhline(y=random_robust_mean, color=random_color, linestyle='--', 
+                  alpha=0.6, linewidth=2)
+        
+        # NO shaded regions for cleaner look
+        
+        # Enhanced customization
+        ax.set_xlabel('Parameter Combination (M: (Max) Masking Ratio %, N: Max Noise Level)', fontsize=14, fontweight='bold', color='#1A1A1A')
+        ax.set_ylabel('Mean AUROC Score', fontsize=14, fontweight='bold', color='#1A1A1A')
+        
+        # Improved title that explicitly mentions the comparison
+        if param_filter == 'middle':
+            title_text = 'Random vs Fixed Masking Ratio Comparison\nBraTS18 Dataset: Combined T1, T2, FLAIR'
+        else:
+            title_text = 'Random vs Fixed Masking Ratio Comparison\nBraTS18 Dataset: Combined T1, T2, FLAIR (Full Parameter Range)'
+        
+        ax.set_title(title_text, fontsize=16, fontweight='bold', color='#1A1A1A', pad=20)
+        ax.set_xticks(x)
+        ax.set_xticklabels(params, rotation=45, ha='right', fontsize=11, fontweight='semibold')
+        
+        # Move legend to upper right to avoid overlap
+        legend = ax.legend(loc='upper right', fontsize=11, framealpha=0.95,
+                          frameon=True, edgecolor='#CCCCCC', facecolor='#FFFFFF')
+        
+        # Refined grid
+        ax.grid(True, alpha=0.2, axis='y', linestyle='-', linewidth=0.5)
+        ax.set_axisbelow(True)
+        ax.set_ylim([0.35, 0.75])
+        
+        # Add subtle spine styling
+        for spine in ax.spines.values():
+            spine.set_linewidth(1.5)
+            spine.set_color('#34495E')
+            spine.set_alpha(0.7)
+        
+        # Tick styling
+        ax.tick_params(axis='both', which='major', labelsize=10, width=1.5, length=6, color='#34495E')
+        ax.tick_params(axis='y', labelsize=11)
+        
+        plt.tight_layout()
+        plt.savefig(self.output_dir / filename, dpi=300, bbox_inches='tight', facecolor='#F8F9FA')
+        plt.close()
+        
+        # Return statistics for summary
+        return {
+            'fixed_robust_mean': fixed_robust_mean,
+            'random_robust_mean': random_robust_mean,
+            'fixed_q05': fixed_q05,
+            'fixed_q95': fixed_q95,
+            'random_q05': random_q05,
+            'random_q95': random_q95,
+            'fixed_outliers_removed': len(fixed_robust) - len(fixed_robust_filtered),
+            'random_outliers_removed': len(random_robust) - len(random_robust_filtered)
+        }
     
     def create_performance_trends(self, fixed_df, random_df):
         """Create line plots showing trends across M and N"""
@@ -320,6 +471,14 @@ class FlowMDAEEnhancedAnalyzer:
         print("\nAnalyzing BraTS18 modalities...")
         modality_stats = self.analyze_brats18_modalities(brats18_df)
         
+        # Create combined 3-modality comparison - Full range
+        print("Creating combined 3-modality comparison (full range)...")
+        robust_stats_full = self.create_combined_modality_comparison(brats18_df, param_filter='full')
+        
+        # Create combined 3-modality comparison - Middle range
+        print("Creating combined 3-modality comparison (middle range)...")
+        robust_stats_middle = self.create_combined_modality_comparison(brats18_df, param_filter='middle')
+        
         # Create performance trend plots
         print("Creating performance trend plots...")
         self.create_performance_trends(fixed_df, random_df)
@@ -327,21 +486,23 @@ class FlowMDAEEnhancedAnalyzer:
         # Save modality statistics
         tables_dir = self.base_path / 'tables'
         tables_dir.mkdir(exist_ok=True)
-        modality_stats.to_csv(tables_dir / 'brats18_modality_stats.csv', index=False)
+        modality_stats.to_csv(tables_dir / 'brats18_modality_stats_3mod.csv', index=False)
         
         # Print summary
         print("\n" + "="*60)
         print("ANALYSIS SUMMARY")
         print("="*60)
         
-        print("\nBraTS18 Modality Performance:")
+        print("\nBraTS18 Modality Performance (3 Common Modalities):")
         print(modality_stats.to_string(index=False))
         
-        # Overall BraTS18 comparison
-        brats18_fixed = brats18_df[brats18_df['category'] == 'Fixed Masking']
-        brats18_random = brats18_df[brats18_df['category'] == 'Random Sampling']
+        # Overall BraTS18 comparison - filter to 3 modalities only
+        three_modalities = ['flair', 't1', 't2']
+        brats18_3mod = brats18_df[brats18_df['modality'].isin(three_modalities)]
+        brats18_fixed = brats18_3mod[brats18_3mod['category'] == 'Fixed Masking']
+        brats18_random = brats18_3mod[brats18_3mod['category'] == 'Random Sampling']
         
-        print(f"\nBraTS18 Overall:")
+        print(f"\nBraTS18 Overall (3 Modalities - T1, T2, FLAIR):")
         print(f"  Fixed Masking:   {brats18_fixed['test_auroc'].mean():.4f} ± {brats18_fixed['test_auroc'].std():.4f}")
         print(f"  Random Sampling: {brats18_random['test_auroc'].mean():.4f} ± {brats18_random['test_auroc'].std():.4f}")
         print(f"  Difference:      {brats18_fixed['test_auroc'].mean() - brats18_random['test_auroc'].mean():+.4f}")
@@ -353,6 +514,21 @@ class FlowMDAEEnhancedAnalyzer:
         )
         print(f"  P-value:         {p_value:.4f}")
         print(f"  Significant:     {'Yes' if p_value < 0.05 else 'No'}")
+        
+        # Print robust statistics
+        print(f"\nRobust Statistics - Full Range (5th-95th Percentile):")
+        print(f"  Fixed Robust Mean:   {robust_stats_full['fixed_robust_mean']:.4f}")
+        print(f"  Random Robust Mean:  {robust_stats_full['random_robust_mean']:.4f}")
+        print(f"  Difference:          {robust_stats_full['fixed_robust_mean'] - robust_stats_full['random_robust_mean']:+.4f}")
+        print(f"  Fixed outliers removed:  {robust_stats_full['fixed_outliers_removed']}")
+        print(f"  Random outliers removed: {robust_stats_full['random_outliers_removed']}")
+        
+        print(f"\nRobust Statistics - Middle Range (M∈[25,75], N∈[25,75]):")
+        print(f"  Fixed Robust Mean:   {robust_stats_middle['fixed_robust_mean']:.4f}")
+        print(f"  Random Robust Mean:  {robust_stats_middle['random_robust_mean']:.4f}")
+        print(f"  Difference:          {robust_stats_middle['fixed_robust_mean'] - robust_stats_middle['random_robust_mean']:+.4f}")
+        print(f"  Fixed outliers removed:  {robust_stats_middle['fixed_outliers_removed']}")
+        print(f"  Random outliers removed: {robust_stats_middle['random_outliers_removed']}")
         
         print(f"\nOutputs saved to:")
         print(f"  Visualizations: {self.output_dir}")

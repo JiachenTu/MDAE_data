@@ -311,6 +311,80 @@ print(f"\nBest configuration: {best_config} (AUROC: {best_score:.4f})")
    - Handle variations in Notes formatting
    - Check for typos in WandB Notes field
 
+## Performance Results
+
+### Overall Comparison
+- **Fixed Masking**: 0.6278 ± 0.1161 AUROC  
+- **Random Sampling**: 0.5878 ± 0.1329 AUROC
+- **Difference**: +0.0400 (Fixed performs better overall)
+
+### BraTS18 Dataset Comparison (3 Common Modalities)
+- **Fixed Masking**: 0.5401 ± 0.0959 AUROC
+- **Random Sampling**: 0.5523 ± 0.1116 AUROC  
+- **Difference**: -0.0123 (Random performs slightly better)
+
+### Robust Statistics (5th-95th Percentile)
+**Full Parameter Range:**
+- **Fixed Robust Mean**: 0.5422
+- **Random Robust Mean**: 0.5613
+- **Difference**: -0.0192 (Random performs better with outliers excluded)
+
+**Middle Range (M∈[25,75], N∈[25,75]):**
+- **Fixed Robust Mean**: 0.5436
+- **Random Robust Mean**: 0.5888
+- **Difference**: -0.0452 (Random shows stronger advantage in middle range)
+
+### Statistical Significance
+- T-test p-value: 0.5585 (not statistically significant)
+- This suggests the performance difference may be dataset-dependent
+
+## Visualization Creation
+
+### Middle Range Comparison Plot
+
+The enhanced middle range comparison visualization (`brats18_combined_3mod_comparison_middle.png`) was created using the `analyze_flowmdae_enhanced.py` script with the following approach:
+
+**Key Design Elements:**
+```python
+# Clean, modern color scheme
+fixed_color = '#3498DB'  # Clean blue
+random_color = '#E74C3C'  # Clean red
+
+# Filter to middle parameter range
+df_filtered = df[
+    (df['masking_ratio'] >= 25) & (df['masking_ratio'] <= 75) &
+    (df['noise_level'] >= 25) & (df['noise_level'] <= 75)
+]
+
+# Robust statistics (5th-95th percentile)
+q05 = data.quantile(0.05)
+q95 = data.quantile(0.95)
+robust_data = data[(data >= q05) & (data <= q95)]
+robust_mean = robust_data.mean()
+```
+
+**Aesthetic Improvements:**
+1. **Clean Background**: White background with no shading for minimal look
+2. **Clear Title**: Explicitly mentions "Random vs Fixed Masking Ratio Comparison"
+3. **Non-overlapping Legend**: Positioned at upper left with `bbox_to_anchor=(0.02, 0.98)`
+4. **Professional Styling**: 
+   - Clean bars with white edges
+   - Subtle grid lines (alpha=0.2)
+   - Bold value labels on bars
+   - Dashed mean lines for each category
+5. **Focus on Middle Range**: Only includes parameters where M∈[25,75] and N∈[25,75]
+
+**To regenerate the visualization:**
+```bash
+python analyze_flowmdae_enhanced.py
+```
+
+This creates both full range and middle range comparisons in the `visualizations/flowmdae_enhanced/` directory. The script generates:
+- `brats18_combined_3mod_comparison_full.png` - Full parameter range analysis
+- `brats18_combined_3mod_comparison_middle.png` - Middle range focus with cleaner aesthetics
+- `contour_comparison_brats18.png` - Contour maps showing performance landscape
+- `performance_trends.png` - Line plots showing trends across M and N parameters
+
 ---
 
-*This document explains the complete FlowMDAE extraction process from Notes field identification to final data processing.*
+*This document explains the complete FlowMDAE extraction process from Notes field identification to final data processing and visualization.*
