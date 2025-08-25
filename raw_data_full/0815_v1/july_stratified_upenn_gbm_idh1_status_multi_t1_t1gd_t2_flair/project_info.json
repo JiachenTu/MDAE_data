@@ -1,0 +1,17 @@
+{
+  "project_name": "july_stratified_upenn_gbm_idh1_status_multi_t1_t1gd_t2_flair",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-15T10:57:17.752050",
+  "extraction_version": "0815_v1",
+  "project_metadata": {
+    "created_at": "2025-08-10T06:58:01Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 32,
+    "completed_runs": 24,
+    "failed_runs": 2,
+    "running_runs": 0
+  }
+}

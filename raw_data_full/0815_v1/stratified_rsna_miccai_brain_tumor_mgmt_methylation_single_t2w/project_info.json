@@ -1,0 +1,17 @@
+{
+  "project_name": "stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_t2w",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-15T10:59:26.036982",
+  "extraction_version": "0815_v1",
+  "project_metadata": {
+    "created_at": "2025-07-27T10:13:02Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 11,
+    "completed_runs": 11,
+    "failed_runs": 0,
+    "running_runs": 0
+  }
+}

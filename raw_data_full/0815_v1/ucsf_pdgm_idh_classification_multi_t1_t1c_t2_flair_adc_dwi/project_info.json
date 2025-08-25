@@ -1,0 +1,17 @@
+{
+  "project_name": "ucsf_pdgm_idh_classification_multi_t1_t1c_t2_flair_adc_dwi",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-15T11:00:44.335480",
+  "extraction_version": "0815_v1",
+  "project_metadata": {
+    "created_at": "2025-07-21T07:40:21Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 20,
+    "completed_runs": 11,
+    "failed_runs": 7,
+    "running_runs": 0
+  }
+}

@@ -1,0 +1,51 @@
+% BraTS18 LGG vs HGG - Complete Baselines with Best/Second-Best Highlighting
+\begin{table}[h!]
+\centering
+\caption{BraTS18 LGG vs HGG - All Baselines}
+\label{tab:brats18_complete_baselines}
+\begin{tabular}{lcccc}
+\hline
+Method & AUROC & AP & F1 & Bal. Acc. \\
+\hline
+\textbf{MDAE} & \textbf{0.921} & \textbf{0.895} & \textbf{0.845} & \textbf{0.852} \\
+MAE & \underline{0.901} & \underline{0.884} & 0.755 & 0.721 \\
+S3D & 0.894 & 0.836 & 0.792 & 0.786 \\
+% DinoV2 & 0.881 & 0.849 & 0.763 & 0.814 \\
+BrainMVP & 0.852 & 0.836 & 0.763 & 0.752 \\
+MG & 0.849 & 0.825 & 0.638 & 0.688 \\
+VoCo & 0.848 & 0.817 & \underline{0.808} & \underline{0.829} \\
+VF & 0.837 & 0.851 & 0.667 & 0.43 \\
+SwinUNETR & 0.827 & 0.752 & 0.724 & 0.769 \\
+BrainIAC & 0.814 & 0.754 & 0.736 & 0.812 \\
+SimCLR & 0.787 & 0.750 & 0.684 & 0.724 \\
+% ResNet-50 & 0.783 & 0.771 & 0.424 & 0.500 \\
+% MRI-Core & 0.675 & 0.595 & 0.424 & 0.500 \\
+\hline
+\end{tabular}
+\end{table}
+
+% UCSF-PDGM IDH Classification - Complete Baselines with Best/Second-Best Highlighting
+\begin{table}[h!]
+\centering
+\caption{UCSF-PDGM IDH Classification - All Baselines}
+\label{tab:ucsf_complete_baselines}
+\begin{tabular}{lcccc}
+\hline
+Method & AUROC & AP & F1 & Bal. Acc. \\
+\hline
+\textbf{MDAE} & \textbf{0.966} & \textbf{0.945} & 0.830 & 0.797 \\
+MG & \underline{0.923} & 0.857 & 0.813 & \textbf{0.858} \\
+% DinoV2 & 0.917 & 0.914 & 0.175 & 0.500 \\
+VoCo & 0.916 & \underline{0.899} & \textbf{0.830} & 0.797 \\
+VF & 0.902 & 0.861 & 0.807 & \underline{0.812} \\
+BrainMVP & 0.892 & 0.840 & 0.440 & 0.500 \\
+MAE & 0.878 & 0.866 & 0.786 & 0.749 \\
+SwinUNETR & 0.865 & 0.851 & 0.784 & 0.760 \\
+% MRI-Core & 0.855 & 0.818 & 0.441 & 0.500 \\
+S3D & 0.819 & 0.775 & \underline{0.800} & 0.795 \\
+SimCLR & 0.803 & 0.759 & 0.762 & 0.736 \\
+BrainIAC & 0.768 & 0.697 & 0.620 & 0.699 \\
+% ResNet-50 & 0.692 & 0.616 & 0.440 & 0.500 \\
+\hline
+\end{tabular}
+\end{table}

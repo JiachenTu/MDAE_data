@@ -1,0 +1,240 @@
+{
+  "project_name": "nnssl_Dataset001_BrainMVP",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-16T00:16:56.187783",
+  "extraction_version": "0815_v2",
+  "runs": [
+    {
+      "id": "rjrkch1n",
+      "name": "Dataset001_BrainMVP_foldall",
+      "state": "failed",
+      "created_at": "2025-06-16T22:39:18Z",
+      "updated_at": null,
+      "url": "https://microsoft-research.wandb.io/t-jiachentu/nnssl_Dataset001_BrainMVP/runs/rjrkch1n",
+      "config": {},
+      "summary": {
+        "_wandb": "{'runtime': 1}"
+      },
+      "tags": [],
+      "notes": "",
+      "group": "Dataset001_BrainMVP_EvaMAETrainer_nnsslPlans_onemmiso",
+      "job_type": null,
+      "system_metrics": {},
+      "user": "t-jiachentu",
+      "host": null
+    },
+    {
+      "id": "jsuvhyeg",
+      "name": "Dataset001_BrainMVP_foldall",
+      "state": "failed",
+      "created_at": "2025-06-16T22:50:34Z",
+      "updated_at": null,
+      "url": "https://microsoft-research.wandb.io/t-jiachentu/nnssl_Dataset001_BrainMVP/runs/jsuvhyeg",
+      "config": {},
+      "summary": {
+        "_wandb": "{'runtime': 1}"
+      },
+      "tags": [],
+      "notes": "",
+      "group": "Dataset001_BrainMVP_EvaMAETrainer_nnsslPlans_onemmiso",
+      "job_type": null,
+      "system_metrics": {},
+      "user": "t-jiachentu",
+      "host": null
+    },
+    {
+      "id": "h394tyjj",
+      "name": "Dataset001_BrainMVP_foldall",
+      "state": "failed",
+      "created_at": "2025-06-16T22:59:24Z",
+      "updated_at": null,
+      "url": "https://microsoft-research.wandb.io/t-jiachentu/nnssl_Dataset001_BrainMVP/runs/h394tyjj",
+      "config": {},
+      "summary": {
+        "_wandb": "{'runtime': 1}"
+      },
+      "tags": [],
+      "notes": "",
+      "group": "Dataset001_BrainMVP_EvaMAETrainer_nnsslPlans_onemmiso",
+      "job_type": null,
+      "system_metrics": {},
+      "user": "t-jiachentu",
+      "host": null
+    },
+    {
+      "id": "88mv12hn",
+      "name": "Dataset001_BrainMVP_foldall",
+      "state": "failed",
+      "created_at": "2025-06-16T22:59:54Z",
+      "updated_at": null,
+      "url": "https://microsoft-research.wandb.io/t-jiachentu/nnssl_Dataset001_BrainMVP/runs/88mv12hn",
+      "config": {},
+      "summary": {
+        "_wandb": "{'runtime': 1}"
+      },
+      "tags": [],
+      "notes": "",
+      "group": "Dataset001_BrainMVP_EvaMAETrainer_nnsslPlans_onemmiso",
+      "job_type": null,
+      "system_metrics": {},
+      "user": "t-jiachentu",
+      "host": null
+    },
+    {
+      "id": "kc1dxpup",
+      "name": "Dataset001_BrainMVP_foldall",
+      "state": "failed",
+      "created_at": "2025-06-16T23:29:23Z",
+      "updated_at": null,
+      "url": "https://microsoft-research.wandb.io/t-jiachentu/nnssl_Dataset001_BrainMVP/runs/kc1dxpup",
+      "config": {},
+      "summary": {
+        "_wandb": "{'runtime': 3}"
+      },
+      "tags": [],
+      "notes": "",
+      "group": "Dataset001_BrainMVP_MyEvaMAETrainer_nnsslPlans__mask_ratio05__vit_patch_size888__embed_dim864__encoder_eva_depth16__encoder_eva_",
+      "job_type": null,
+      "system_metrics": {},
+      "user": "t-jiachentu",
+      "host": null
+    },
+    {
+      "id": "ssibp7nr",
+      "name": "Dataset001_BrainMVP_foldall",
+      "state": "failed",
+      "created_at": "2025-06-16T23:40:02Z",
+      "updated_at": null,
+      "url": "https://microsoft-research.wandb.io/t-jiachentu/nnssl_Dataset001_BrainMVP/runs/ssibp7nr",
+      "config": {},
+      "summary": {
+        "_wandb": "{'runtime': 4}"
+      },
+      "tags": [],
+      "notes": "",
+      "group": "Dataset001_BrainMVP_MyEvaMAETrainer_nnsslPlans__mask_ratio05__vit_patch_size888__embed_dim864__encoder_eva_depth16__encoder_eva_",
+      "job_type": null,
+      "system_metrics": {},
+      "user": "t-jiachentu",
+      "host": null
+    },
+    {
+      "id": "2rimszbx",
+      "name": "Dataset001_BrainMVP_foldall",
+      "state": "failed",
+      "created_at": "2025-06-16T23:46:31Z",
+      "updated_at": null,
+      "url": "https://microsoft-research.wandb.io/t-jiachentu/nnssl_Dataset001_BrainMVP/runs/2rimszbx",
+      "config": {},
+      "summary": {
+        "_wandb": "{'runtime': 1}"
+      },
+      "tags": [],
+      "notes": "",
+      "group": "Dataset001_BrainMVP_MyEvaMAETrainer_nnsslPlans__mask_ratio05__vit_patch_size888__embed_dim864__encoder_eva_depth16__encoder_eva_",
+      "job_type": null,
+      "system_metrics": {},
+      "user": "t-jiachentu",
+      "host": null
+    },
+    {
+      "id": "073xlpo1",
+      "name": "Dataset001_BrainMVP_foldall",
+      "state": "crashed",
+      "created_at": "2025-06-16T23:48:34Z",
+      "updated_at": null,
+      "url": "https://microsoft-research.wandb.io/t-jiachentu/nnssl_Dataset001_BrainMVP/runs/073xlpo1",
+      "config": {},
+      "summary": {},
+      "tags": [],
+      "notes": "",
+      "group": "Dataset001_BrainMVP_MyEvaMAETrainer_nnsslPlans__mask_ratio05__vit_patch_size888__embed_dim864__encoder_eva_depth16__encoder_eva_",
+      "job_type": null,
+      "system_metrics": {},
+      "user": "t-jiachentu",
+      "host": null
+    },
+    {
+      "id": "ssz4yqnd",
+      "name": "Dataset001_BrainMVP_foldall",
+      "state": "killed",
+      "created_at": "2025-06-16T23:51:41Z",
+      "updated_at": null,
+      "url": "https://microsoft-research.wandb.io/t-jiachentu/nnssl_Dataset001_BrainMVP/runs/ssz4yqnd",
+      "config": {},
+      "summary": {
+        "_wandb": "{'runtime': 17}"
+      },
+      "tags": [],
+      "notes": "",
+      "group": "Dataset001_BrainMVP_MyEvaMAETrainer_nnsslPlans__mask_ratio05__vit_patch_size888__embed_dim864__encoder_eva_depth16__encoder_eva_",
+      "job_type": null,
+      "system_metrics": {},
+      "user": "t-jiachentu",
+      "host": null
+    },
+    {
+      "id": "qvfpgxyj",
+      "name": "Dataset001_BrainMVP_foldall",
+      "state": "crashed",
+      "created_at": "2025-06-16T23:52:15Z",
+      "updated_at": null,
+      "url": "https://microsoft-research.wandb.io/t-jiachentu/nnssl_Dataset001_BrainMVP/runs/qvfpgxyj",
+      "config": {},
+      "summary": {
+        "_runtime": 147850.664029382,
+        "_step": 281,
+        "_timestamp": 1750265784.9990516,
+        "_wandb": "{'runtime': 147850}",
+        "epoch": 281,
+        "learning_rate": 2.3346727338345175e-05,
+        "train_loss": 0.019579844549298286,
+        "val_loss": 0.018906721845269203
+      },
+      "tags": [],
+      "notes": "",
+      "group": "Dataset001_BrainMVP_MyEvaMAETrainer_nnsslPlans__mask_ratio05__vit_patch_size888__embed_dim864__encoder_eva_depth16__encoder_eva_",
+      "job_type": null,
+      "system_metrics": {},
+      "user": "t-jiachentu",
+      "host": null
+    },
+    {
+      "id": "7249868269.29455-e3e3037c-6aa3",
+      "name": "Dataset001_BrainMVP_foldall",
+      "state": "finished",
+      "created_at": "2025-06-17T03:48:45Z",
+      "updated_at": null,
+      "url": "https://microsoft-research.wandb.io/t-jiachentu/nnssl_Dataset001_BrainMVP/runs/7249868269.29455-e3e3037c-6aa3",
+      "config": {},
+      "summary": {
+        "_runtime": 707841.472893802,
+        "_step": 999,
+        "_timestamp": 1750839963.9244316,
+        "_wandb": "{'runtime': 707925}",
+        "epoch": 999,
+        "learning_rate": 6.268592084572874e-08,
+        "train_loss": 0.013288090005517006,
+        "val_loss": 0.013078415766358376
+      },
+      "tags": [],
+      "notes": "MyEvaMAETrainer-nnssl-june16_0_jiachen",
+      "group": "Dataset001_BrainMVP_MyEvaMAETrainer_nnsslPlans__mask_ratio05__vit_patch_size888__embed_dim864__encoder_eva_depth16__encoder_eva_",
+      "job_type": null,
+      "system_metrics": {},
+      "user": "t-jiachentu",
+      "host": null
+    }
+  ],
+  "project_metadata": {
+    "created_at": "2025-06-16T22:39:18Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 11,
+    "completed_runs": 1,
+    "failed_runs": 7,
+    "running_runs": 0
+  }
+}

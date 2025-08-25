@@ -1,0 +1,1847 @@
+{
+  "total_projects": 306,
+  "successful_projects": 306,
+  "failed_projects": 0,
+  "total_runs": 8532,
+  "extraction_start": "2025-08-16T00:10:52.213585",
+  "extraction_version": "0815_v2",
+  "projects": {
+    "july_stratified_upenn_gbm_survival_1year_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 35,
+      "completed_runs": 26,
+      "failed_runs": 2
+    },
+    "july_stratified_upenn_gbm_survival_18month_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 34,
+      "completed_runs": 27,
+      "failed_runs": 2
+    },
+    "july_stratified_upenn_gbm_idh1_status_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 32,
+      "completed_runs": 24,
+      "failed_runs": 2
+    },
+    "july_stratified_upenn_gbm_gender_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 33,
+      "completed_runs": 28,
+      "failed_runs": 2
+    },
+    "july_stratified_upenn_gbm_age_group_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 34,
+      "completed_runs": 28,
+      "failed_runs": 2
+    },
+    "july_stratified_ucsf_pdgm_idh_classification_multi_t1_t1c_t2_flair_swi_asl": {
+      "status": "success",
+      "runs": 85,
+      "completed_runs": 34,
+      "failed_runs": 23
+    },
+    "july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_multi_t1w_t1wce_t2w_flair": {
+      "status": "success",
+      "runs": 42,
+      "completed_runs": 29,
+      "failed_runs": 7
+    },
+    "july_stratified_brats23_men_vs_met_multi_t1n_t1c_t2w_t2f": {
+      "status": "success",
+      "runs": 78,
+      "completed_runs": 40,
+      "failed_runs": 10
+    },
+    "july_stratified_brats23_gli_vs_met_multi_t1n_t1c_t2w_t2f": {
+      "status": "success",
+      "runs": 66,
+      "completed_runs": 31,
+      "failed_runs": 7
+    },
+    "july_stratified_brats23_gli_vs_men_multi_t1n_t1c_t2w_t2f": {
+      "status": "success",
+      "runs": 80,
+      "completed_runs": 41,
+      "failed_runs": 10
+    },
+    "july_stratified_brats18_lgg_vs_hgg_multi_flair_t1_t1ce_t2": {
+      "status": "success",
+      "runs": 74,
+      "completed_runs": 46,
+      "failed_runs": 15
+    },
+    "july_stratified_upenn_gbm_gtr_status_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 34,
+      "completed_runs": 26,
+      "failed_runs": 3
+    },
+    "july_stratified_upenn_gbm_survival_18month_single_t2": {
+      "status": "success",
+      "runs": 63,
+      "completed_runs": 61,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_survival_1year_single_t2": {
+      "status": "success",
+      "runs": 68,
+      "completed_runs": 68,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_idh1_status_single_t1": {
+      "status": "success",
+      "runs": 88,
+      "completed_runs": 88,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_survival_1year_single_t1gd": {
+      "status": "success",
+      "runs": 66,
+      "completed_runs": 65,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_survival_18month_single_t1gd": {
+      "status": "success",
+      "runs": 67,
+      "completed_runs": 66,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_survival_18month_single_flair": {
+      "status": "success",
+      "runs": 62,
+      "completed_runs": 59,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_idh1_status_single_t1gd": {
+      "status": "success",
+      "runs": 90,
+      "completed_runs": 90,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_survival_18month_single_t1": {
+      "status": "success",
+      "runs": 63,
+      "completed_runs": 62,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_survival_1year_single_t1": {
+      "status": "success",
+      "runs": 77,
+      "completed_runs": 77,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_idh1_status_single_t2": {
+      "status": "success",
+      "runs": 87,
+      "completed_runs": 87,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_survival_1year_single_flair": {
+      "status": "success",
+      "runs": 68,
+      "completed_runs": 67,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_idh1_status_single_flair": {
+      "status": "success",
+      "runs": 86,
+      "completed_runs": 85,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_age_group_single_t2": {
+      "status": "success",
+      "runs": 64,
+      "completed_runs": 63,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_gender_single_t1gd": {
+      "status": "success",
+      "runs": 64,
+      "completed_runs": 63,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_gender_single_flair": {
+      "status": "success",
+      "runs": 65,
+      "completed_runs": 64,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_age_group_single_t1gd": {
+      "status": "success",
+      "runs": 64,
+      "completed_runs": 63,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_gender_single_t2": {
+      "status": "success",
+      "runs": 65,
+      "completed_runs": 64,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_age_group_single_flair": {
+      "status": "success",
+      "runs": 61,
+      "completed_runs": 61,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_age_group_single_t1": {
+      "status": "success",
+      "runs": 64,
+      "completed_runs": 64,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_gtr_status_single_t1gd": {
+      "status": "success",
+      "runs": 84,
+      "completed_runs": 79,
+      "failed_runs": 3
+    },
+    "july_stratified_upenn_gbm_gtr_status_single_t2": {
+      "status": "success",
+      "runs": 79,
+      "completed_runs": 76,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_gtr_status_single_t1": {
+      "status": "success",
+      "runs": 83,
+      "completed_runs": 79,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_gtr_status_single_flair": {
+      "status": "success",
+      "runs": 78,
+      "completed_runs": 76,
+      "failed_runs": 0
+    },
+    "july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_t2w": {
+      "status": "success",
+      "runs": 96,
+      "completed_runs": 95,
+      "failed_runs": 0
+    },
+    "july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_t1wce": {
+      "status": "success",
+      "runs": 96,
+      "completed_runs": 96,
+      "failed_runs": 0
+    },
+    "july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_flair": {
+      "status": "success",
+      "runs": 97,
+      "completed_runs": 94,
+      "failed_runs": 1
+    },
+    "july_stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_t1w": {
+      "status": "success",
+      "runs": 100,
+      "completed_runs": 99,
+      "failed_runs": 0
+    },
+    "july_stratified_brats18_lgg_vs_hgg_single_t2": {
+      "status": "success",
+      "runs": 151,
+      "completed_runs": 151,
+      "failed_runs": 0
+    },
+    "july_stratified_brats18_lgg_vs_hgg_single_t1ce": {
+      "status": "success",
+      "runs": 146,
+      "completed_runs": 145,
+      "failed_runs": 0
+    },
+    "july_stratified_brats18_lgg_vs_hgg_single_t1": {
+      "status": "success",
+      "runs": 154,
+      "completed_runs": 153,
+      "failed_runs": 0
+    },
+    "july_stratified_tcga_gbm_dss_1year_single_mixed_contrasts": {
+      "status": "success",
+      "runs": 73,
+      "completed_runs": 63,
+      "failed_runs": 9
+    },
+    "july_stratified_tcga_gbm_pfi_1year_single_mixed_contrasts": {
+      "status": "success",
+      "runs": 74,
+      "completed_runs": 64,
+      "failed_runs": 8
+    },
+    "july_stratified_tcga_gbm_dss_1year_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 35,
+      "completed_runs": 29,
+      "failed_runs": 6
+    },
+    "july_stratified_tcga_gbm_pfi_1year_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 36,
+      "completed_runs": 30,
+      "failed_runs": 6
+    },
+    "july_stratified_upenn_gbm_survival_2year_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 32,
+      "completed_runs": 24,
+      "failed_runs": 2
+    },
+    "july_stratified_upenn_gbm_survival_2year_single_flair": {
+      "status": "success",
+      "runs": 75,
+      "completed_runs": 74,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_survival_2year_single_t1gd": {
+      "status": "success",
+      "runs": 69,
+      "completed_runs": 68,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_survival_2year_single_t2": {
+      "status": "success",
+      "runs": 76,
+      "completed_runs": 76,
+      "failed_runs": 0
+    },
+    "july_stratified_tcga_gbm_dss_1year_single_t2": {
+      "status": "success",
+      "runs": 7,
+      "completed_runs": 7,
+      "failed_runs": 0
+    },
+    "july_stratified_tcga_gbm_dss_1year_single_flair": {
+      "status": "success",
+      "runs": 8,
+      "completed_runs": 8,
+      "failed_runs": 0
+    },
+    "july_stratified_tcga_gbm_dss_1year_single_t1gd": {
+      "status": "success",
+      "runs": 7,
+      "completed_runs": 7,
+      "failed_runs": 0
+    },
+    "july_stratified_tcga_gbm_dss_1year_single_t1": {
+      "status": "success",
+      "runs": 8,
+      "completed_runs": 8,
+      "failed_runs": 0
+    },
+    "july_stratified_brats23_gli_vs_met_single_t2w": {
+      "status": "success",
+      "runs": 92,
+      "completed_runs": 91,
+      "failed_runs": 0
+    },
+    "july_stratified_brats23_gli_vs_met_single_t2f": {
+      "status": "success",
+      "runs": 93,
+      "completed_runs": 92,
+      "failed_runs": 0
+    },
+    "july_stratified_brats23_gli_vs_met_single_t1n": {
+      "status": "success",
+      "runs": 96,
+      "completed_runs": 92,
+      "failed_runs": 0
+    },
+    "july_stratified_brats23_gli_vs_met_single_t1c": {
+      "status": "success",
+      "runs": 93,
+      "completed_runs": 90,
+      "failed_runs": 0
+    },
+    "july_stratified_brats23_men_vs_met_single_t2f": {
+      "status": "success",
+      "runs": 88,
+      "completed_runs": 87,
+      "failed_runs": 0
+    },
+    "july_stratified_brats23_men_vs_met_single_t2w": {
+      "status": "success",
+      "runs": 90,
+      "completed_runs": 88,
+      "failed_runs": 0
+    },
+    "july_stratified_brats23_men_vs_met_single_t1c": {
+      "status": "success",
+      "runs": 91,
+      "completed_runs": 90,
+      "failed_runs": 0
+    },
+    "july_stratified_brats23_gli_vs_men_single_t2f": {
+      "status": "success",
+      "runs": 94,
+      "completed_runs": 93,
+      "failed_runs": 0
+    },
+    "july_stratified_brats23_gli_vs_men_single_t2w": {
+      "status": "success",
+      "runs": 90,
+      "completed_runs": 87,
+      "failed_runs": 0
+    },
+    "july_stratified_brats23_gli_vs_men_single_t1n": {
+      "status": "success",
+      "runs": 108,
+      "completed_runs": 105,
+      "failed_runs": 1
+    },
+    "july_stratified_brats23_gli_vs_men_single_t1c": {
+      "status": "success",
+      "runs": 93,
+      "completed_runs": 90,
+      "failed_runs": 1
+    },
+    "july_stratified_ucsf_pdgm_idh_classification_single_swi": {
+      "status": "success",
+      "runs": 122,
+      "completed_runs": 115,
+      "failed_runs": 4
+    },
+    "july_stratified_ucsf_pdgm_idh_classification_single_asl": {
+      "status": "success",
+      "runs": 116,
+      "completed_runs": 112,
+      "failed_runs": 2
+    },
+    "july_stratified_tcga_gbm_pfi_1year_single_t1": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "july_stratified_brats18_lgg_vs_hgg_single_flair": {
+      "status": "success",
+      "runs": 182,
+      "completed_runs": 175,
+      "failed_runs": 3
+    },
+    "july_stratified_upenn_gbm_gender_single_t1": {
+      "status": "success",
+      "runs": 64,
+      "completed_runs": 62,
+      "failed_runs": 0
+    },
+    "july_stratified_upenn_gbm_survival_2year_single_t1": {
+      "status": "success",
+      "runs": 73,
+      "completed_runs": 73,
+      "failed_runs": 0
+    },
+    "july_stratified_brats23_men_vs_met_single_t1n": {
+      "status": "success",
+      "runs": 97,
+      "completed_runs": 94,
+      "failed_runs": 3
+    },
+    "july_stratified_ucsf_pdgm_idh_classification_single_t1c": {
+      "status": "success",
+      "runs": 130,
+      "completed_runs": 119,
+      "failed_runs": 11
+    },
+    "july_stratified_ucsf_pdgm_idh_classification_single_t1": {
+      "status": "success",
+      "runs": 132,
+      "completed_runs": 119,
+      "failed_runs": 10
+    },
+    "july_stratified_ucsf_pdgm_idh_classification_single_flair": {
+      "status": "success",
+      "runs": 131,
+      "completed_runs": 118,
+      "failed_runs": 12
+    },
+    "july_stratified_ucsf_pdgm_idh_classification_single_t2": {
+      "status": "success",
+      "runs": 134,
+      "completed_runs": 121,
+      "failed_runs": 11
+    },
+    "stratified_ucsf_pdgm_idh_classification_single_dwi": {
+      "status": "success",
+      "runs": 5,
+      "completed_runs": 4,
+      "failed_runs": 0
+    },
+    "stratified_ucsf_pdgm_idh_classification_single_adc": {
+      "status": "success",
+      "runs": 5,
+      "completed_runs": 4,
+      "failed_runs": 0
+    },
+    "stratified-brats18_lgg_vs_hgg_multi_flair_t1_t1ce_t2": {
+      "status": "success",
+      "runs": 4,
+      "completed_runs": 2,
+      "failed_runs": 2
+    },
+    "stratified-brats18_lgg_vs_hgg_single_flair": {
+      "status": "success",
+      "runs": 6,
+      "completed_runs": 6,
+      "failed_runs": 0
+    },
+    "brats18_2_single_t2": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 0,
+      "failed_runs": 2
+    },
+    "stratified_ucsf_pdgm_idh_classification_single_flair": {
+      "status": "success",
+      "runs": 16,
+      "completed_runs": 15,
+      "failed_runs": 0
+    },
+    "stratified_tcga_gbm_dss_1year_single_t2": {
+      "status": "success",
+      "runs": 11,
+      "completed_runs": 11,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_idh1_status_single_t2": {
+      "status": "success",
+      "runs": 12,
+      "completed_runs": 11,
+      "failed_runs": 0
+    },
+    "stratified_ucsf_pdgm_idh_classification_single_t2": {
+      "status": "success",
+      "runs": 17,
+      "completed_runs": 16,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_gender_single_t2": {
+      "status": "success",
+      "runs": 13,
+      "completed_runs": 11,
+      "failed_runs": 1
+    },
+    "stratified_upenn_gbm_gtr_status_single_t2": {
+      "status": "success",
+      "runs": 11,
+      "completed_runs": 10,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_age_group_single_t2": {
+      "status": "success",
+      "runs": 11,
+      "completed_runs": 10,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_survival_2year_single_t2": {
+      "status": "success",
+      "runs": 12,
+      "completed_runs": 11,
+      "failed_runs": 0
+    },
+    "stratified_tcga_gbm_pfi_1year_single_t2": {
+      "status": "success",
+      "runs": 9,
+      "completed_runs": 9,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_survival_18month_single_t2": {
+      "status": "success",
+      "runs": 12,
+      "completed_runs": 11,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_gender_single_flair": {
+      "status": "success",
+      "runs": 13,
+      "completed_runs": 11,
+      "failed_runs": 0
+    },
+    "stratified_tcga_gbm_dss_1year_single_flair": {
+      "status": "success",
+      "runs": 13,
+      "completed_runs": 13,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_gtr_status_single_flair": {
+      "status": "success",
+      "runs": 13,
+      "completed_runs": 12,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_idh1_status_single_flair": {
+      "status": "success",
+      "runs": 14,
+      "completed_runs": 12,
+      "failed_runs": 1
+    },
+    "stratified_tcga_gbm_pfi_1year_single_flair": {
+      "status": "success",
+      "runs": 13,
+      "completed_runs": 12,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_survival_2year_single_flair": {
+      "status": "success",
+      "runs": 13,
+      "completed_runs": 12,
+      "failed_runs": 0
+    },
+    "stratified_brats23_men_vs_met_single_t2f": {
+      "status": "success",
+      "runs": 22,
+      "completed_runs": 20,
+      "failed_runs": 2
+    },
+    "stratified_upenn_gbm_age_group_single_flair": {
+      "status": "success",
+      "runs": 13,
+      "completed_runs": 9,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_survival_18month_single_flair": {
+      "status": "success",
+      "runs": 12,
+      "completed_runs": 10,
+      "failed_runs": 1
+    },
+    "stratified_upenn_gbm_survival_1year_single_flair": {
+      "status": "success",
+      "runs": 13,
+      "completed_runs": 12,
+      "failed_runs": 0
+    },
+    "stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_t2w": {
+      "status": "success",
+      "runs": 11,
+      "completed_runs": 11,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_survival_1year_single_t2": {
+      "status": "success",
+      "runs": 12,
+      "completed_runs": 11,
+      "failed_runs": 0
+    },
+    "stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_flair": {
+      "status": "success",
+      "runs": 12,
+      "completed_runs": 12,
+      "failed_runs": 0
+    },
+    "stratified_brats23_men_vs_met_single_t2w": {
+      "status": "success",
+      "runs": 20,
+      "completed_runs": 18,
+      "failed_runs": 2
+    },
+    "stratified_tcga_gbm_pfi_1year_single_t1gd": {
+      "status": "success",
+      "runs": 20,
+      "completed_runs": 17,
+      "failed_runs": 0
+    },
+    "stratified_tcga_gbm_dss_1year_single_t1gd": {
+      "status": "success",
+      "runs": 21,
+      "completed_runs": 21,
+      "failed_runs": 0
+    },
+    "stratified_ucsf_pdgm_idh_classification_single_t1c": {
+      "status": "success",
+      "runs": 25,
+      "completed_runs": 23,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_gtr_status_single_t1gd": {
+      "status": "success",
+      "runs": 20,
+      "completed_runs": 19,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_age_group_single_t1gd": {
+      "status": "success",
+      "runs": 21,
+      "completed_runs": 19,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_idh1_status_single_t1gd": {
+      "status": "success",
+      "runs": 20,
+      "completed_runs": 17,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_survival_18month_single_t1gd": {
+      "status": "success",
+      "runs": 22,
+      "completed_runs": 21,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_gender_single_t1gd": {
+      "status": "success",
+      "runs": 18,
+      "completed_runs": 17,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_survival_1year_single_t1gd": {
+      "status": "success",
+      "runs": 22,
+      "completed_runs": 21,
+      "failed_runs": 0
+    },
+    "stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_t1wce": {
+      "status": "success",
+      "runs": 19,
+      "completed_runs": 19,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_survival_2year_single_t1gd": {
+      "status": "success",
+      "runs": 20,
+      "completed_runs": 19,
+      "failed_runs": 0
+    },
+    "stratified_brats23_men_vs_met_single_t1c": {
+      "status": "success",
+      "runs": 29,
+      "completed_runs": 26,
+      "failed_runs": 2
+    },
+    "stratified_upenn_gbm_idh1_status_single_t1": {
+      "status": "success",
+      "runs": 17,
+      "completed_runs": 16,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_survival_2year_single_t1": {
+      "status": "success",
+      "runs": 16,
+      "completed_runs": 15,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_survival_1year_single_t1": {
+      "status": "success",
+      "runs": 17,
+      "completed_runs": 16,
+      "failed_runs": 0
+    },
+    "stratified_ucsf_pdgm_idh_classification_single_t1": {
+      "status": "success",
+      "runs": 20,
+      "completed_runs": 19,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_gender_single_t1": {
+      "status": "success",
+      "runs": 16,
+      "completed_runs": 15,
+      "failed_runs": 0
+    },
+    "stratified_brats23_men_vs_met_single_t1n": {
+      "status": "success",
+      "runs": 27,
+      "completed_runs": 25,
+      "failed_runs": 2
+    },
+    "stratified_upenn_gbm_age_group_single_t1": {
+      "status": "success",
+      "runs": 17,
+      "completed_runs": 15,
+      "failed_runs": 1
+    },
+    "stratified_tcga_gbm_pfi_1year_single_t1": {
+      "status": "success",
+      "runs": 16,
+      "completed_runs": 16,
+      "failed_runs": 0
+    },
+    "stratified_brats23_gli_vs_met_single_t2f": {
+      "status": "success",
+      "runs": 14,
+      "completed_runs": 14,
+      "failed_runs": 0
+    },
+    "stratified_brats23_gli_vs_met_single_t2w": {
+      "status": "success",
+      "runs": 12,
+      "completed_runs": 12,
+      "failed_runs": 0
+    },
+    "stratified_brats23_gli_vs_met_single_t1c": {
+      "status": "success",
+      "runs": 22,
+      "completed_runs": 22,
+      "failed_runs": 0
+    },
+    "stratified_brats23_gli_vs_men_single_t2f": {
+      "status": "success",
+      "runs": 14,
+      "completed_runs": 13,
+      "failed_runs": 0
+    },
+    "stratified_brats18_lgg_vs_hgg_single_t1ce": {
+      "status": "success",
+      "runs": 13,
+      "completed_runs": 13,
+      "failed_runs": 0
+    },
+    "stratified_brats23_gli_vs_men_single_t1n": {
+      "status": "success",
+      "runs": 16,
+      "completed_runs": 16,
+      "failed_runs": 0
+    },
+    "stratified_brats23_gli_vs_met_single_t1n": {
+      "status": "success",
+      "runs": 16,
+      "completed_runs": 16,
+      "failed_runs": 0
+    },
+    "stratified_brats23_gli_vs_men_single_t2w": {
+      "status": "success",
+      "runs": 11,
+      "completed_runs": 11,
+      "failed_runs": 0
+    },
+    "stratified_brats23_gli_vs_men_single_t1c": {
+      "status": "success",
+      "runs": 21,
+      "completed_runs": 21,
+      "failed_runs": 0
+    },
+    "stratified_brats18_lgg_vs_hgg_single_t2": {
+      "status": "success",
+      "runs": 14,
+      "completed_runs": 14,
+      "failed_runs": 0
+    },
+    "stratified_brats18_lgg_vs_hgg_single_t1": {
+      "status": "success",
+      "runs": 24,
+      "completed_runs": 24,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_survival_18month_single_t1": {
+      "status": "success",
+      "runs": 19,
+      "completed_runs": 18,
+      "failed_runs": 0
+    },
+    "stratified_upenn_gbm_gtr_status_single_t1": {
+      "status": "success",
+      "runs": 19,
+      "completed_runs": 18,
+      "failed_runs": 0
+    },
+    "stratified_rsna_miccai_brain_tumor_mgmt_methylation_single_t1w": {
+      "status": "success",
+      "runs": 20,
+      "completed_runs": 20,
+      "failed_runs": 0
+    },
+    "stratified_tcga_gbm_dss_1year_single_t1": {
+      "status": "success",
+      "runs": 18,
+      "completed_runs": 18,
+      "failed_runs": 0
+    },
+    "stratified_brats18_lgg_vs_hgg_single_flair": {
+      "status": "success",
+      "runs": 33,
+      "completed_runs": 28,
+      "failed_runs": 2
+    },
+    "brats18_mri_core_frozen_lgg_vs_hgg_t2": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 0,
+      "failed_runs": 1
+    },
+    "stratified_upenn_gbm_survival_18month_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 24,
+      "completed_runs": 13,
+      "failed_runs": 3
+    },
+    "stratified_tcga_gbm_dss_1year_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 32,
+      "completed_runs": 26,
+      "failed_runs": 5
+    },
+    "stratified_ucsf_pdgm_idh_classification_multi_t1_t1c_t2_flair_adc_dwi": {
+      "status": "success",
+      "runs": 29,
+      "completed_runs": 16,
+      "failed_runs": 3
+    },
+    "stratified_upenn_gbm_gtr_status_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 22,
+      "completed_runs": 12,
+      "failed_runs": 3
+    },
+    "stratified_upenn_gbm_gender_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 25,
+      "completed_runs": 13,
+      "failed_runs": 3
+    },
+    "stratified_upenn_gbm_age_group_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 24,
+      "completed_runs": 13,
+      "failed_runs": 3
+    },
+    "stratified_upenn_gbm_idh1_status_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 30,
+      "completed_runs": 19,
+      "failed_runs": 3
+    },
+    "stratified_upenn_gbm_survival_2year_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 23,
+      "completed_runs": 12,
+      "failed_runs": 3
+    },
+    "stratified_upenn_gbm_survival_1year_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 27,
+      "completed_runs": 14,
+      "failed_runs": 5
+    },
+    "stratified_brats23_gli_vs_met_multi_t1n_t1c_t2w_t2f": {
+      "status": "success",
+      "runs": 23,
+      "completed_runs": 14,
+      "failed_runs": 3
+    },
+    "stratified_brats23_men_vs_met_multi_t1n_t1c_t2w_t2f": {
+      "status": "success",
+      "runs": 33,
+      "completed_runs": 20,
+      "failed_runs": 6
+    },
+    "stratified_brats23_gli_vs_men_multi_t1n_t1c_t2w_t2f": {
+      "status": "success",
+      "runs": 26,
+      "completed_runs": 18,
+      "failed_runs": 4
+    },
+    "stratified_rsna_miccai_brain_tumor_mgmt_methylation_multi_t1w_t1wce_t2w_flair": {
+      "status": "success",
+      "runs": 23,
+      "completed_runs": 16,
+      "failed_runs": 3
+    },
+    "stratified_brats18_lgg_vs_hgg_multi_flair_t1_t1ce_t2": {
+      "status": "success",
+      "runs": 35,
+      "completed_runs": 24,
+      "failed_runs": 7
+    },
+    "stratified_tcga_gbm_pfi_1year_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 32,
+      "completed_runs": 23,
+      "failed_runs": 8
+    },
+    "rsna_miccai_mgmt_methylation_mm_pretrained": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_1year_mm_pretrained": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "tcga_gbm_pfi_1year_mm_pretrained": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_men_mm_pretrained": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "brats18_lgg_vs_hgg_mm_pretrained": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "upenn_gbm_gtr_status_single_t1": {
+      "status": "success",
+      "runs": 5,
+      "completed_runs": 5,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_18month_single_t1": {
+      "status": "success",
+      "runs": 6,
+      "completed_runs": 6,
+      "failed_runs": 0
+    },
+    "upenn_gbm_idh1_status_single_t1gd": {
+      "status": "success",
+      "runs": 4,
+      "completed_runs": 3,
+      "failed_runs": 1
+    },
+    "brats18_lgg_vs_hgg_move_multi_flair_t1_t1ce_t2": {
+      "status": "success",
+      "runs": 3,
+      "completed_runs": 1,
+      "failed_runs": 1
+    },
+    "ucsf_pdgm_idh_classification_multi_t1_t1c_t2_flair_adc_dwi": {
+      "status": "success",
+      "runs": 20,
+      "completed_runs": 11,
+      "failed_runs": 7
+    },
+    "upenn_gbm_survival_2year_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 15,
+      "completed_runs": 8,
+      "failed_runs": 4
+    },
+    "tcga_gbm_pfi_1year_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 20,
+      "completed_runs": 10,
+      "failed_runs": 10
+    },
+    "upenn_gbm_survival_18month_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 17,
+      "completed_runs": 8,
+      "failed_runs": 4
+    },
+    "upenn_gbm_idh1_status_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 17,
+      "completed_runs": 7,
+      "failed_runs": 3
+    },
+    "upenn_gbm_gtr_status_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 18,
+      "completed_runs": 9,
+      "failed_runs": 5
+    },
+    "brats23_gli_vs_met_multi_t1n_t1c_t2w_t2f": {
+      "status": "success",
+      "runs": 19,
+      "completed_runs": 7,
+      "failed_runs": 3
+    },
+    "upenn_gbm_gender_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 18,
+      "completed_runs": 10,
+      "failed_runs": 4
+    },
+    "upenn_gbm_age_group_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 19,
+      "completed_runs": 10,
+      "failed_runs": 6
+    },
+    "brats23_men_vs_met_multi_t1n_t1c_t2w_t2f": {
+      "status": "success",
+      "runs": 18,
+      "completed_runs": 13,
+      "failed_runs": 5
+    },
+    "upenn_gbm_age_group_single_t1": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "tcga_gbm_pfi_1year_single_t2": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "upenn_gbm_gtr_status_single_t1gd": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_2year_single_t1": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "rsna_miccai_brain_tumor_mgmt_methylation_single_flair": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "ucsf_pdgm_idh_single_t2": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_1year_single_t2": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 1,
+      "failed_runs": 1
+    },
+    "tcga_gbm_pfi_1year_single_t1gd": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 0,
+      "failed_runs": 1
+    },
+    "upenn_gbm_survival_1year_single_flair": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "tcga_gbm_dss_1year_single_t1": {
+      "status": "success",
+      "runs": 7,
+      "completed_runs": 7,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_men_single_t1c": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_2year_single_t1gd": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "tcga_gbm_pfi_1year_single_flair": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "rsna_miccai_brain_tumor_mgmt_methylation_single_t2w": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_met_single_t2f": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_2year_single_flair": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "rsna_miccai_brain_tumor_mgmt_methylation_single_t1wce": {
+      "status": "success",
+      "runs": 3,
+      "completed_runs": 3,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_met_single_t1c": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "upenn_gbm_idh1_status_single_t1": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 0,
+      "failed_runs": 1
+    },
+    "tcga_gbm_dss_1year_single_flair": {
+      "status": "success",
+      "runs": 3,
+      "completed_runs": 3,
+      "failed_runs": 0
+    },
+    "brats18_4_single_t2": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 0,
+      "failed_runs": 1
+    },
+    "brats23_gli_vs_met_single_t1n": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "tcga_gbm_dss_1year_single_t2": {
+      "status": "success",
+      "runs": 3,
+      "completed_runs": 3,
+      "failed_runs": 0
+    },
+    "upenn_gbm_gender_single_t1gd": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "brats18_1_single_t1": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 0,
+      "failed_runs": 1
+    },
+    "upenn_gbm_survival_1year_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 18,
+      "completed_runs": 12,
+      "failed_runs": 4
+    },
+    "tcga_gbm_dss_1year_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 24,
+      "completed_runs": 14,
+      "failed_runs": 10
+    },
+    "brats23_gli_vs_men_multi_t1n_t1c_t2w_t2f": {
+      "status": "success",
+      "runs": 19,
+      "completed_runs": 7,
+      "failed_runs": 3
+    },
+    "brats18_lgg_vs_hgg_multi_flair_t1_t1ce_t2": {
+      "status": "success",
+      "runs": 44,
+      "completed_runs": 28,
+      "failed_runs": 11
+    },
+    "tcga_gbm_survival_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 0,
+      "failed_runs": 1
+    },
+    "ucsf_pdgm_idh_status_multi_t1_t1c_t2_flair_swi_asl": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "rsna_miccai_brain_tumor_mgmt_methylation_multi_t1w_t1wce_t2w_flair": {
+      "status": "success",
+      "runs": 25,
+      "completed_runs": 12,
+      "failed_runs": 10
+    },
+    "upenn_gbm_survival_multi_t1_t1gd_t2_flair": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 0,
+      "failed_runs": 2
+    },
+    "brats23_lgg_vs_hgg_multi_t1n_t1c_t2w_t2f": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 0,
+      "failed_runs": 1
+    },
+    "upenn_gbm_classification_single_t1gd": {
+      "status": "success",
+      "runs": 5,
+      "completed_runs": 5,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_1year_single_t1gd": {
+      "status": "success",
+      "runs": 5,
+      "completed_runs": 5,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_men_single_t1n": {
+      "status": "success",
+      "runs": 18,
+      "completed_runs": 17,
+      "failed_runs": 0
+    },
+    "rsna_miccai_brain_tumor_mgmt_methylation_single_t1w": {
+      "status": "success",
+      "runs": 13,
+      "completed_runs": 13,
+      "failed_runs": 0
+    },
+    "brats23_men_vs_met_single_t1c": {
+      "status": "success",
+      "runs": 4,
+      "completed_runs": 4,
+      "failed_runs": 0
+    },
+    "brats23_men_vs_met_single_t2f": {
+      "status": "success",
+      "runs": 4,
+      "completed_runs": 4,
+      "failed_runs": 0
+    },
+    "brats23_men_vs_met_single_t2w": {
+      "status": "success",
+      "runs": 7,
+      "completed_runs": 7,
+      "failed_runs": 0
+    },
+    "ucsf_pdgm_idh_single_t1c": {
+      "status": "success",
+      "runs": 14,
+      "completed_runs": 10,
+      "failed_runs": 4
+    },
+    "tcga_gbm_classification_single_t1": {
+      "status": "success",
+      "runs": 18,
+      "completed_runs": 16,
+      "failed_runs": 2
+    },
+    "brats23_men_vs_met_single_t1n": {
+      "status": "success",
+      "runs": 11,
+      "completed_runs": 11,
+      "failed_runs": 0
+    },
+    "brats18_lgg_vs_hgg_single_t2": {
+      "status": "success",
+      "runs": 26,
+      "completed_runs": 21,
+      "failed_runs": 2
+    },
+    "brats18_lgg_vs_hgg_single_t1ce": {
+      "status": "success",
+      "runs": 11,
+      "completed_runs": 11,
+      "failed_runs": 0
+    },
+    "brats18_lgg_vs_hgg_single_t1": {
+      "status": "success",
+      "runs": 23,
+      "completed_runs": 23,
+      "failed_runs": 0
+    },
+    "brats18_lgg_vs_hgg_single_flair": {
+      "status": "success",
+      "runs": 30,
+      "completed_runs": 28,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_met": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "ucsf_pdgm_survival_1year": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "rsna_miccai_brain_tumor_ mgmt_promoter": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 0,
+      "failed_runs": 1
+    },
+    "brats23_ gli_vs_met": {
+      "status": "success",
+      "runs": 4,
+      "completed_runs": 3,
+      "failed_runs": 1
+    },
+    "brats23_ men_vs_met": {
+      "status": "success",
+      "runs": 4,
+      "completed_runs": 2,
+      "failed_runs": 2
+    },
+    "tcga_gbm_ dss_1year": {
+      "status": "success",
+      "runs": 4,
+      "completed_runs": 2,
+      "failed_runs": 1
+    },
+    "ucsf_pdgm_ idh_classification": {
+      "status": "success",
+      "runs": 5,
+      "completed_runs": 4,
+      "failed_runs": 1
+    },
+    "rsna_miccai_brain_tumor_ mgmt_methylation": {
+      "status": "success",
+      "runs": 6,
+      "completed_runs": 2,
+      "failed_runs": 4
+    },
+    "brats18_ lgg_vs_hgg": {
+      "status": "success",
+      "runs": 8,
+      "completed_runs": 6,
+      "failed_runs": 2
+    },
+    "brats23_ gli_vs_men": {
+      "status": "success",
+      "runs": 6,
+      "completed_runs": 3,
+      "failed_runs": 3
+    },
+    "upenn_gbm_ survival_1year": {
+      "status": "success",
+      "runs": 20,
+      "completed_runs": 9,
+      "failed_runs": 10
+    },
+    "brats18": {
+      "status": "success",
+      "runs": 6,
+      "completed_runs": 3,
+      "failed_runs": 2
+    },
+    "ucsf_pdgm": {
+      "status": "success",
+      "runs": 4,
+      "completed_runs": 3,
+      "failed_runs": 0
+    },
+    "brats23_men_vs_met": {
+      "status": "success",
+      "runs": 11,
+      "completed_runs": 3,
+      "failed_runs": 7
+    },
+    "upenn_gbm_survival_1year": {
+      "status": "success",
+      "runs": 24,
+      "completed_runs": 23,
+      "failed_runs": 0
+    },
+    "tcga_gbm_dss_1year": {
+      "status": "success",
+      "runs": 12,
+      "completed_runs": 8,
+      "failed_runs": 1
+    },
+    "rsna_miccai_brain_tumor_mgmt_methylation": {
+      "status": "success",
+      "runs": 51,
+      "completed_runs": 42,
+      "failed_runs": 9
+    },
+    "brats23_gli_vs_men": {
+      "status": "success",
+      "runs": 15,
+      "completed_runs": 9,
+      "failed_runs": 4
+    },
+    "brats18_brain_tumor_classification": {
+      "status": "success",
+      "runs": 11,
+      "completed_runs": 1,
+      "failed_runs": 6
+    },
+    "brats18_lgg_vs_hgg": {
+      "status": "success",
+      "runs": 29,
+      "completed_runs": 19,
+      "failed_runs": 8
+    },
+    "brats18_lgg_vs_hgg_dinov2_tunable": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "brats18_lgg_vs_hgg_resenc_single_mod0": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "brats18_lgg_vs_hgg_dinov2_frozen": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "brats18_lgg_vs_hgg_brainmvp_single_mod0": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "brats18_lgg_vs_hgg_brainiac_scratch_single_mod0": {
+      "status": "success",
+      "runs": 5,
+      "completed_runs": 3,
+      "failed_runs": 1
+    },
+    "brats18_lgg_vs_hgg_brainiac_single_mod0": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_men_dinov2_fixedbackbone": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_men_dinov2_tunable": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_men_brainmvp_single_mod0": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_men_brainiac_scratch_single_mod0": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_men_brainiac_single_mod0": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "brats23_men_vs_met_single_mod0": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_met_single_mod0": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_men_single_mod0": {
+      "status": "success",
+      "runs": 7,
+      "completed_runs": 5,
+      "failed_runs": 2
+    },
+    "brats23_brain_tumor_classification": {
+      "status": "success",
+      "runs": 16,
+      "completed_runs": 1,
+      "failed_runs": 14
+    },
+    "brats23_gli_vs_men_single_mod1": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 0,
+      "failed_runs": 0
+    },
+    "brats23_gli_vs_men_multi_mod_0_1_2_3": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 0,
+      "failed_runs": 1
+    },
+    "rsna_miccai_brain_tumor_mgmt_methylation_single_mod0": {
+      "status": "success",
+      "runs": 9,
+      "completed_runs": 9,
+      "failed_runs": 0
+    },
+    "rsna_miccai_brain_tumor_mgmt_methylation_brainiac_single_mod0": {
+      "status": "success",
+      "runs": 3,
+      "completed_runs": 3,
+      "failed_runs": 0
+    },
+    "rsna_miccai_brain_tumor_mgmt_methylation_dinov2_tunable": {
+      "status": "success",
+      "runs": 5,
+      "completed_runs": 2,
+      "failed_runs": 3
+    },
+    "rsna_miccai_brain_tumor_mgmt_methylation_dinov2_frozen": {
+      "status": "success",
+      "runs": 4,
+      "completed_runs": 2,
+      "failed_runs": 1
+    },
+    "rsna_miccai_brain_tumor_mgmt_methylation_brainmvp_single_mod0": {
+      "status": "success",
+      "runs": 15,
+      "completed_runs": 6,
+      "failed_runs": 8
+    },
+    "rsna_miccai_brain_tumor_mgmt_classification": {
+      "status": "success",
+      "runs": 7,
+      "completed_runs": 4,
+      "failed_runs": 0
+    },
+    "rsna_miccai_brain_tumor_mgmt_methylation_multi_mod_0_1_2_3": {
+      "status": "success",
+      "runs": 3,
+      "completed_runs": 0,
+      "failed_runs": 2
+    },
+    "upenn_gbm_survival_classification": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 0,
+      "failed_runs": 0
+    },
+    "tcga_gbm_dss_1year_brainmvp_finetune": {
+      "status": "success",
+      "runs": 3,
+      "completed_runs": 3,
+      "failed_runs": 0
+    },
+    "tcga_gbm_dss_1year_dinov2_tunable": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 1,
+      "failed_runs": 1
+    },
+    "tcga_gbm_dss_1year_dinov2_frozen": {
+      "status": "success",
+      "runs": 3,
+      "completed_runs": 2,
+      "failed_runs": 1
+    },
+    "tcga_gbm_dss_1year_brainiac_finetune": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "tcga_gbm_dss_1year_brainiac_scratch": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_1year_dinov2_tunable": {
+      "status": "success",
+      "runs": 5,
+      "completed_runs": 2,
+      "failed_runs": 3
+    },
+    "upenn_gbm_survival_1year_dinov2_frozen": {
+      "status": "success",
+      "runs": 4,
+      "completed_runs": 2,
+      "failed_runs": 1
+    },
+    "upenn_gbm_survival_1year_brainmvp_pretrained": {
+      "status": "success",
+      "runs": 3,
+      "completed_runs": 3,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_1year_brainiac": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_1year_brainiac_pretrained": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "ucsf_pdgm_idh_dinov2_local": {
+      "status": "success",
+      "runs": 7,
+      "completed_runs": 4,
+      "failed_runs": 3
+    },
+    "upenn_gbm_survival_brainiac_pretrained": {
+      "status": "success",
+      "runs": 6,
+      "completed_runs": 3,
+      "failed_runs": 3
+    },
+    "ucsf_pdgm_idh_dinov2_multi": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 0,
+      "failed_runs": 1
+    },
+    "upenn_gbm_gtr_status_classification": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "ucsf_pdgm_idh_brainiac_pretrained_multimodal": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 0,
+      "failed_runs": 1
+    },
+    "upenn_gbm_idh1_status_classification": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 1,
+      "failed_runs": 1
+    },
+    "ucsf_pdgm_idh_dinov2": {
+      "status": "success",
+      "runs": 13,
+      "completed_runs": 5,
+      "failed_runs": 6
+    },
+    "upenn_gbm_survival_1year_shared_metadata_multi_mod_0_1_2_3_average_pretrained": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_1year_shared_metadata_multi_mod_0_1_2_3_average_scratch": {
+      "status": "success",
+      "runs": 13,
+      "completed_runs": 5,
+      "failed_runs": 7
+    },
+    "upenn_gbm_survival_1year_shared_multi_mod_0_1_2_3_average_scratch": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_1year_multi_mod_0_1_2_3_shared_average_pretrained": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_1year_multi_mod_0_1_2_3_shared_concatenate_pretrained": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 0,
+      "failed_runs": 2
+    },
+    "upenn_gbm_survival_1year_multi_mod_0_1_2_3_pretrained": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_1year_multi_mod_0_1_2_3": {
+      "status": "success",
+      "runs": 7,
+      "completed_runs": 5,
+      "failed_runs": 1
+    },
+    "tcga_gbm_dss_1year_classification": {
+      "status": "success",
+      "runs": 14,
+      "completed_runs": 13,
+      "failed_runs": 1
+    },
+    "upenn_gbm_survival_1year_classification_c2s": {
+      "status": "success",
+      "runs": 1,
+      "completed_runs": 1,
+      "failed_runs": 0
+    },
+    "ucsf_pdgm_idh_classification_c2s": {
+      "status": "success",
+      "runs": 2,
+      "completed_runs": 2,
+      "failed_runs": 0
+    },
+    "upenn_gbm_survival_1year_classification": {
+      "status": "success",
+      "runs": 27,
+      "completed_runs": 27,
+      "failed_runs": 0
+    },
+    "ucsf_pdgm_idh_classification_brainmvp": {
+      "status": "success",
+      "runs": 29,
+      "completed_runs": 26,
+      "failed_runs": 0
+    },
+    "ucsf_pdgm_idh_brainmvp_pretrained": {
+      "status": "success",
+      "runs": 8,
+      "completed_runs": 7,
+      "failed_runs": 0
+    },
+    "ucsf_pdgm_idh_resenc_pretrained": {
+      "status": "success",
+      "runs": 21,
+      "completed_runs": 8,
+      "failed_runs": 9
+    },
+    "ucsf_pdgm_idh_brainiac_pretrained": {
+      "status": "success",
+      "runs": 19,
+      "completed_runs": 15,
+      "failed_runs": 4
+    },
+    "ucsf_pdgm_idh_brainiac_multi": {
+      "status": "success",
+      "runs": 4,
+      "completed_runs": 4,
+      "failed_runs": 0
+    },
+    "ucsf_pdgm_idh_brainiac": {
+      "status": "success",
+      "runs": 33,
+      "completed_runs": 21,
+      "failed_runs": 9
+    },
+    "ucsf_pdgm_idh_classification": {
+      "status": "success",
+      "runs": 80,
+      "completed_runs": 53,
+      "failed_runs": 20
+    },
+    "nnssl_Dataset001_BrainMVP": {
+      "status": "success",
+      "runs": 11,
+      "completed_runs": 1,
+      "failed_runs": 7
+    },
+    "brats18_classification": {
+      "status": "success",
+      "runs": 30,
+      "completed_runs": 9,
+      "failed_runs": 12
+    }
+  },
+  "extraction_end": "2025-08-16T00:16:58.474607"
+}

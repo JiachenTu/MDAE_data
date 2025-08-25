@@ -1,0 +1,17 @@
+{
+  "project_name": "stratified_brats23_gli_vs_met_single_t1c",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-15T10:59:57.739237",
+  "extraction_version": "0815_v1",
+  "project_metadata": {
+    "created_at": "2025-07-26T10:36:30Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 22,
+    "completed_runs": 22,
+    "failed_runs": 0,
+    "running_runs": 0
+  }
+}

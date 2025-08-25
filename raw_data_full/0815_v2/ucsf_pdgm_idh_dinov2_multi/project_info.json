@@ -1,0 +1,17 @@
+{
+  "project_name": "ucsf_pdgm_idh_dinov2_multi",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-16T00:16:29.908966",
+  "extraction_version": "0815_v2",
+  "project_metadata": {
+    "created_at": "2025-07-09T19:14:38Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 1,
+    "completed_runs": 0,
+    "failed_runs": 1,
+    "running_runs": 0
+  }
+}

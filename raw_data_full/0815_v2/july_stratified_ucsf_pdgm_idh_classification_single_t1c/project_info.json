@@ -1,0 +1,17 @@
+{
+  "project_name": "july_stratified_ucsf_pdgm_idh_classification_single_t1c",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-16T00:12:28.139057",
+  "extraction_version": "0815_v2",
+  "project_metadata": {
+    "created_at": "2025-07-31T02:04:16Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 130,
+    "completed_runs": 119,
+    "failed_runs": 11,
+    "running_runs": 0
+  }
+}

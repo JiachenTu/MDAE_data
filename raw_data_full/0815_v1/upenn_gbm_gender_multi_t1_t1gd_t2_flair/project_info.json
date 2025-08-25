@@ -1,0 +1,17 @@
+{
+  "project_name": "upenn_gbm_gender_multi_t1_t1gd_t2_flair",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-15T11:00:52.813908",
+  "extraction_version": "0815_v1",
+  "project_metadata": {
+    "created_at": "2025-07-21T07:10:35Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 18,
+    "completed_runs": 10,
+    "failed_runs": 4,
+    "running_runs": 0
+  }
+}

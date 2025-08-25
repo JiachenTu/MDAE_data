@@ -1,0 +1,17 @@
+{
+  "project_name": "brats18_lgg_vs_hgg_mm_pretrained",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-16T00:14:13.454939",
+  "extraction_version": "0815_v2",
+  "project_metadata": {
+    "created_at": "2025-07-24T07:39:29Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 1,
+    "completed_runs": 1,
+    "failed_runs": 0,
+    "running_runs": 0
+  }
+}

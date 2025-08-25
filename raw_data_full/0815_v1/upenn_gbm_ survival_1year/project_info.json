@@ -1,0 +1,17 @@
+{
+  "project_name": "upenn_gbm_ survival_1year",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-15T11:02:03.797575",
+  "extraction_version": "0815_v1",
+  "project_metadata": {
+    "created_at": "2025-07-15T00:25:12Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 20,
+    "completed_runs": 9,
+    "failed_runs": 10,
+    "running_runs": 0
+  }
+}

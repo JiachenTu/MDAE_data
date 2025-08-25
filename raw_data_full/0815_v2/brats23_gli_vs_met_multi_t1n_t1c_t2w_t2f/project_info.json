@@ -1,0 +1,17 @@
+{
+  "project_name": "brats23_gli_vs_met_multi_t1n_t1c_t2w_t2f",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-16T00:14:26.195129",
+  "extraction_version": "0815_v2",
+  "project_metadata": {
+    "created_at": "2025-07-21T07:11:28Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 19,
+    "completed_runs": 7,
+    "failed_runs": 3,
+    "running_runs": 0
+  }
+}

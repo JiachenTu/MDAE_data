@@ -1,0 +1,17 @@
+{
+  "project_name": "tcga_gbm_ dss_1year",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-16T00:15:31.460347",
+  "extraction_version": "0815_v2",
+  "project_metadata": {
+    "created_at": "2025-07-15T03:42:36Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 4,
+    "completed_runs": 2,
+    "failed_runs": 1,
+    "running_runs": 0
+  }
+}

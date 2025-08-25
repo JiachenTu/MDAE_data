@@ -1,0 +1,17 @@
+{
+  "project_name": "brats23_ men_vs_met",
+  "entity": "t-jiachentu",
+  "extraction_timestamp": "2025-08-15T11:01:56.718626",
+  "extraction_version": "0815_v1",
+  "project_metadata": {
+    "created_at": "2025-07-15T10:39:05Z",
+    "updated_at": null,
+    "description": null
+  },
+  "statistics": {
+    "total_runs": 4,
+    "completed_runs": 2,
+    "failed_runs": 2,
+    "running_runs": 0
+  }
+}
